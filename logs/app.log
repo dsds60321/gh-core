@@ -1,0 +1,319 @@
+2025-07-02T22:44:54.508+09:00  INFO 18024 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18024 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:44:54.514+09:00  INFO 18024 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:44:54.989+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:44:54.990+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:44:55.062+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:44:55.070+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:44:55.070+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:44:55.079+09:00  INFO 18024 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:44:55.079+09:00  INFO 18024 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:44:55.444+09:00 ERROR 18024 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:44:55.821+09:00  INFO 18024 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 432dfd0d-c32f-43a7-82c3-086ccad1fc93
+
+2025-07-02T22:44:56.028+09:00  INFO 18024 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:44:56.036+09:00  INFO 18024 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.864 seconds (process running for 2.854)
+2025-07-02T22:48:32.199+09:00  INFO 18024 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:48:32.201+09:00  INFO 18024 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:48:37.628+09:00  INFO 18236 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18236 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:48:37.629+09:00  INFO 18236 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:48:38.002+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:48:38.003+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:48:38.122+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:48:38.133+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:48:38.133+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:48:38.144+09:00  INFO 18236 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:48:38.145+09:00  INFO 18236 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:48:38.894+09:00 ERROR 18236 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:48:39.440+09:00  INFO 18236 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4cf68835-a40f-4ff5-96fd-39ad53eef676
+
+2025-07-02T22:48:39.910+09:00  INFO 18236 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:48:39.917+09:00  INFO 18236 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.684 seconds (process running for 3.555)
+2025-07-02T22:49:22.049+09:00  INFO 18236 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:49:22.051+09:00  INFO 18236 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:49:26.684+09:00  INFO 18289 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18289 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:49:26.686+09:00  INFO 18289 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:49:27.011+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:49:27.012+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:49:27.086+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:49:27.093+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:49:27.093+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:49:27.101+09:00  INFO 18289 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:49:27.101+09:00  INFO 18289 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:49:27.446+09:00 ERROR 18289 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:49:27.680+09:00  INFO 18289 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9a1995ee-c18e-4734-aeba-e78769764a70
+
+2025-07-02T22:49:27.890+09:00  INFO 18289 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:49:27.897+09:00  INFO 18289 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.469 seconds (process running for 1.934)
+2025-07-02T22:54:16.893+09:00  INFO 18289 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:54:16.896+09:00  INFO 18289 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:54:21.466+09:00  INFO 18559 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18559 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:54:21.472+09:00  INFO 18559 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:54:22.074+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:54:22.076+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:54:22.168+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:54:22.176+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:54:22.177+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:54:22.186+09:00  INFO 18559 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:54:22.187+09:00  INFO 18559 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:54:22.782+09:00 ERROR 18559 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:54:23.346+09:00  INFO 18559 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fd694481-0bf3-4ef0-8507-6d895d4c60e1
+
+2025-07-02T22:54:23.796+09:00  INFO 18559 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:54:23.803+09:00  INFO 18559 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.742 seconds (process running for 3.378)
+2025-07-02T22:54:40.739+09:00  WARN 18559 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Table 'together.templates' doesn't exist' sqlState='42S02' code=1146 
+2025-07-02T22:54:40.778+09:00  WARN 18559 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Table 'together.templates' doesn't exist' sqlState='42S02' code=1146 
+2025-07-02T22:57:02.535+09:00  INFO 18559 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:57:02.537+09:00  INFO 18559 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:57:06.968+09:00  INFO 18733 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18733 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:57:06.970+09:00  INFO 18733 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:57:07.299+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:57:07.300+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:57:07.372+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:57:07.379+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:57:07.380+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:57:07.388+09:00  INFO 18733 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:57:07.389+09:00  INFO 18733 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:57:07.749+09:00 ERROR 18733 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:57:08.002+09:00  INFO 18733 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 82dc542c-cd70-4dd4-9370-6185054c4e3c
+
+2025-07-02T22:57:08.224+09:00  INFO 18733 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:57:08.230+09:00  INFO 18733 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.514 seconds (process running for 1.972)
+2025-07-02T22:57:17.348+09:00  WARN 18733 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Table 'together.templates' doesn't exist' sqlState='42S02' code=1146 
+2025-07-02T22:57:17.351+09:00  WARN 18733 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Table 'together.templates' doesn't exist' sqlState='42S02' code=1146 
+2025-07-02T22:57:41.401+09:00  INFO 18733 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:57:41.403+09:00  INFO 18733 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:57:45.394+09:00  INFO 18775 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18775 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:57:45.396+09:00  INFO 18775 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:57:45.700+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:57:45.701+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:57:45.768+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:57:45.774+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:57:45.774+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:57:45.782+09:00  INFO 18775 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:57:45.782+09:00  INFO 18775 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:57:46.103+09:00 ERROR 18775 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:57:46.347+09:00  INFO 18775 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4d4cc037-c0f3-41ef-9528-e72b9e26667f
+
+2025-07-02T22:57:46.566+09:00  INFO 18775 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:57:46.573+09:00  INFO 18775 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.407 seconds (process running for 1.918)
+2025-07-02T22:58:02.310+09:00  WARN 18775 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Unknown column 'templates.is_active' in 'SELECT'' sqlState='42S22' code=1054 
+2025-07-02T22:58:02.315+09:00  WARN 18775 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Unknown column 'templates.is_active' in 'SELECT'' sqlState='42S22' code=1054 
+2025-07-02T22:59:38.141+09:00  INFO 18775 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:59:38.143+09:00  INFO 18775 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T22:59:42.647+09:00  INFO 18956 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18956 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T22:59:42.655+09:00  INFO 18956 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T22:59:43.382+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:59:43.383+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T22:59:43.495+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 1 R2DBC repository interface.
+2025-07-02T22:59:43.503+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T22:59:43.505+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T22:59:43.514+09:00  INFO 18956 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T22:59:43.515+09:00  INFO 18956 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-02T22:59:44.236+09:00 ERROR 18956 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T22:59:44.852+09:00  INFO 18956 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1e8afa71-2376-402e-bf98-fa3c6dab3221
+
+2025-07-02T22:59:45.385+09:00  INFO 18956 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T22:59:45.408+09:00  INFO 18956 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 3.11 seconds (process running for 3.765)
+2025-07-02T22:59:46.831+09:00  WARN 18956 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Unknown column 'templates.is_active' in 'SELECT'' sqlState='42S22' code=1054 
+2025-07-02T22:59:59.055+09:00  INFO 18956 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T22:59:59.057+09:00  INFO 18956 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:00:03.791+09:00  INFO 18983 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 18983 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:00:03.793+09:00  INFO 18983 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:00:04.107+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:00:04.108+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:00:04.174+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:00:04.181+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:00:04.181+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:00:04.188+09:00  INFO 18983 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:00:04.189+09:00  INFO 18983 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:00:04.503+09:00 ERROR 18983 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:00:04.727+09:00  INFO 18983 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7e4eb87e-7e7f-405a-9ab0-217e892309d3
+
+2025-07-02T23:00:04.938+09:00  INFO 18983 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:00:04.945+09:00  INFO 18983 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.41 seconds (process running for 1.864)
+2025-07-02T23:01:38.461+09:00  INFO 18983 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:01:38.465+09:00  INFO 18983 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:01:42.753+09:00  INFO 19113 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 19113 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:01:42.754+09:00  INFO 19113 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:01:43.137+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:01:43.138+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:01:43.212+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:01:43.219+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:01:43.220+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:01:43.227+09:00  INFO 19113 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:01:43.227+09:00  INFO 19113 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:01:43.549+09:00 ERROR 19113 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:01:43.782+09:00  INFO 19113 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 84d33390-ddb4-40e4-a558-d2c1d61c454e
+
+2025-07-02T23:01:44.016+09:00  INFO 19113 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:01:44.022+09:00  INFO 19113 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.528 seconds (process running for 2.036)
+2025-07-02T23:07:23.382+09:00  INFO 19113 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:07:23.387+09:00  INFO 19113 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:07:27.893+09:00  INFO 19506 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 19506 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:07:27.896+09:00  INFO 19506 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:07:28.411+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:07:28.412+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:07:28.511+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:07:28.521+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:07:28.522+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:07:28.534+09:00  INFO 19506 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:07:28.534+09:00  INFO 19506 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:07:29.106+09:00 ERROR 19506 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:07:29.540+09:00  INFO 19506 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: df1acf23-c541-40a8-af5a-e2b1a117b0b9
+
+2025-07-02T23:07:30.123+09:00  INFO 19506 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:07:30.138+09:00  INFO 19506 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.575 seconds (process running for 3.221)
+2025-07-02T23:09:12.055+09:00  INFO 19506 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:09:12.059+09:00  INFO 19506 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:09:16.563+09:00  INFO 19616 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 19616 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:09:16.565+09:00  INFO 19616 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:09:17.203+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:09:17.205+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:09:17.516+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 305 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:09:17.534+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:09:17.535+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:09:17.552+09:00  INFO 19616 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:09:17.553+09:00  INFO 19616 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:09:18.650+09:00 ERROR 19616 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:09:19.011+09:00  INFO 19616 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4fd5abe1-0f04-41ae-8b00-a94a23569668
+
+2025-07-02T23:09:19.488+09:00  INFO 19616 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:09:19.495+09:00  INFO 19616 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 3.248 seconds (process running for 3.944)
+2025-07-02T23:09:48.060+09:00 ERROR 19616 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds6321@gmail.com
+
+org.springframework.mail.MailAuthenticationException: Authentication failed
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b34e3205b3dsm12934977a12.78 - gsmtp
+
+	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
+	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
+	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
+	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
+	... 14 common frames omitted
+
+2025-07-02T23:18:19.581+09:00  INFO 19616 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:18:19.585+09:00  INFO 19616 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:18:24.910+09:00  INFO 20097 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 20097 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:18:24.916+09:00  INFO 20097 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:18:25.448+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:18:25.456+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:18:25.591+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:18:25.600+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:18:25.601+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:18:25.612+09:00  INFO 20097 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:18:25.613+09:00  INFO 20097 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:18:26.268+09:00 ERROR 20097 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:18:26.906+09:00  INFO 20097 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6fd413a6-6e15-4933-8689-b38a352611ca
+
+2025-07-02T23:18:27.321+09:00  INFO 20097 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:18:27.331+09:00  INFO 20097 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.954 seconds (process running for 3.79)
+2025-07-02T23:18:36.989+09:00 ERROR 20097 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds6321@gmail.com
+
+org.springframework.mail.MailAuthenticationException: Authentication failed
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74af57f6c76sm15837846b3a.178 - gsmtp
+
+	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
+	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
+	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
+	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
+	... 14 common frames omitted
+
+2025-07-02T23:19:02.989+09:00  INFO 20097 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:19:02.991+09:00  INFO 20097 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:19:08.029+09:00  INFO 20150 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 20150 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:19:08.030+09:00  INFO 20150 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:19:08.552+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:19:08.554+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:19:08.645+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:19:08.657+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:19:08.658+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:19:08.677+09:00  INFO 20150 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:19:08.677+09:00  INFO 20150 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:19:09.134+09:00 ERROR 20150 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:19:09.625+09:00  INFO 20150 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0cd17304-9d66-4c06-b3f4-c22d12c52120
+
+2025-07-02T23:19:10.031+09:00  INFO 20150 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:19:10.045+09:00  INFO 20150 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.243 seconds (process running for 2.581)
+2025-07-02T23:19:14.658+09:00  INFO 20150 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Email sent successfully to: dsds6321@gmail.com
+2025-07-02T23:20:13.974+09:00  INFO 20150 --- [core] [boundedElastic-1] d.gunho.api.global.service.EmailService  : Email sent successfully to: dsds601@naver.com
+2025-07-02T23:30:32.927+09:00  INFO 20150 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-02T23:30:32.931+09:00  INFO 20150 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-02T23:30:37.699+09:00  INFO 20802 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 20802 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-02T23:30:37.702+09:00  INFO 20802 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-02T23:30:38.197+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:30:38.198+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-02T23:30:38.312+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 1 R2DBC repository interface.
+2025-07-02T23:30:38.326+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-02T23:30:38.327+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-02T23:30:38.339+09:00  INFO 20802 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-02T23:30:38.339+09:00  INFO 20802 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-07-02T23:30:38.817+09:00 ERROR 20802 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-02T23:30:39.238+09:00  INFO 20802 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 38d1a2e2-f36d-4015-aaf6-7074691d5766
+
+2025-07-02T23:30:39.565+09:00  INFO 20802 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-02T23:30:39.571+09:00  INFO 20802 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.16 seconds (process running for 2.521)
+2025-07-02T23:31:14.678+09:00  INFO 20802 --- [core] [reactor-http-nio-2] d.g.api.bingous.v1.service.AuthService   : verifyEmail - ID: testets, Email: dsds601@naver.com, Random code: 175098
+2025-07-02T23:31:18.843+09:00  INFO 20802 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Email sent successfully to: dsds601@naver.com

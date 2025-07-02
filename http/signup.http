@@ -1,0 +1,8 @@
+### 1. 회원가입 이메일 인증 요청
+POST http://localhost:8080/bingo-us/v1/sign-up/verify
+Content-Type: application/json
+
+{
+  "id": "testets",
+  "email": "dsds601@naver.com"
+}
