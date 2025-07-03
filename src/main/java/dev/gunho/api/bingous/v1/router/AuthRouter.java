@@ -18,7 +18,9 @@ public class AuthRouter {
     public RouterFunction<ServerResponse> signRoutes(AuthHandler authHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/sign-up/verify", authHandler::verifyEmail))
+                        .POST("/sign-up", authHandler::signUp)
+                        .POST("/sign-up/email/verify", authHandler::verifyEmail)
+                        .POST("/sign-up/email/confirm", authHandler::confirmEamil))
                 .build();
     }
 }

@@ -13,7 +13,7 @@ public class EmailVerify {
 
     public record Request(
             @NotBlank(message = "ID는 필수입니다")
-            @Size(min = 1, max = 100, message = "ID는 1-100자 사이여야 합니다")
+            @Size(min = 1, max = 36, message = "ID는 1-36자 사이여야 합니다")
             String id,
 
             @NotBlank(message = "이메일은 필수입니다")
