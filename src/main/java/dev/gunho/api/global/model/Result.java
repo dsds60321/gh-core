@@ -17,6 +17,7 @@ public abstract class Result<T> {
         }
     }
 
+    @Getter
     public static final class Failure<T> extends Result<T> {
         private final String message;
         private final String code;
@@ -26,13 +27,6 @@ public abstract class Result<T> {
             this.code = code;
         }
 
-        public String getMessage() {
-            return message;
-        }
-
-        public String getCode() {
-            return code;
-        }
     }
 
     // 팩토리 메서드들

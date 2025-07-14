@@ -29,15 +29,10 @@ public class SessionValidationFilter implements WebFilter {
         }
 
         // Authorization 헤더에서 세션 키 추출
-        String rawSessionKey = exchange.getRequest().getHeaders().getFirst("Authorization");
-        if (rawSessionKey == null || rawSessionKey.isEmpty()) {
+        String sessionKey = exchange.getRequest().getHeaders().getFirst("Authorization");
+        if (sessionKey == null || sessionKey.isEmpty()) {
             return unauthorizedResponse(exchange);
         }
-
-        // Bearer 토큰 형식인 경우 "Bearer " 제거 (final 변수로 저장)
-        final String sessionKey = rawSessionKey.startsWith("Bearer ")
-                ? rawSessionKey.substring(7)
-                : rawSessionKey;
 
         // 세션 검증
         return sessionService.validateSession(sessionKey)

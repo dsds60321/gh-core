@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class SignUp {
 
     public record Request(
-
             @NotBlank(message = "ID는 필수입니다")
             @Size(min = 1, max = 36, message = "ID는 1-36 사이여야 합니다")
             String id,
@@ -26,21 +25,15 @@ public class SignUp {
 
             @NotBlank(message = "별칭은 필수입니다")
             String nickname,
+
             @NotBlank(message = "패스워드는 필수 입니다.")
             String password,
 
             String phoneNumber,
-
             Gender gender,
-
             UserStatus status,
-
-            // 이메일 검증
             Boolean email_verified
     ) {
-        /**
-         * 기본값을 적용한 Entity 생성 (편의 메서드)
-         */
         public User toEntity(PasswordEncoder passwordEncoder) {
             return User.builder()
                     .id(this.id)
@@ -58,14 +51,12 @@ public class SignUp {
         }
     }
 
-
     @Getter
-    @Builder
+    @Builder(toBuilder = true)  // toBuilder = true 추가
     public static class Response {
         private String message;
         private String userId;
-        private String sessionKey; // 세션 키 추가
+        private String sessionKey;
         private boolean success;
     }
-
 }

@@ -63,11 +63,16 @@ public class RedisUtil {
      * 문자열 값 조회
      */
     public Mono<String> getString(String key) {
+        log.info("getString : {}", key);
         return reactiveStringRedisTemplate.opsForValue()
                 .get(key)
-                .doOnSuccess(result -> log.debug("Redis GET String - Key: {}, Found: {}", key, result != null))
-                .doOnError(error -> log.error("Redis GET String Error - Key: {}, Error: {}", key, error.getMessage()));
+                .timeout(Duration.ofSeconds(5)) // 5초 타임아웃 설정
+                .doOnSubscribe(subscription -> log.info("Redis GET String - Started for key: {}", key))
+                .doOnSuccess(result -> log.info("Redis GET String - Key: {}, Result: {}", key, result))
+                .doOnError(error -> log.error("Redis GET String Error - Key: {}, Error: {}", key, error.getMessage(), error))
+                .doOnCancel(() -> log.warn("Redis GET String - Cancelled for key: {}", key));
     }
+
 
     /**
      * 키 삭제

@@ -20,7 +20,7 @@ public class AuthRouter {
                 .path(V1_HOST, builder -> builder
                         .POST("/sign-up", authHandler::signUp)
                         .POST("/sign-up/email/verify", authHandler::verifyEmail)
-                        .POST("/sign-up/email/confirm", authHandler::confirmEamil))
+                        .POST("/sign-up/email/confirm", authHandler::confirmEmail))
                 .build();
     }
 }

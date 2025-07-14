@@ -1,0 +1,235 @@
+= Bingous Auth API Documentation
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:snippets: ../../../build/generated-snippets
+
+[[overview]]
+== Overview
+
+Bingous Auth API는 사용자 인증 및 회원가입을 위한 RESTful API입니다.
+
+[[overview-http-verbs]]
+=== HTTP verbs
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PATCH`
+| Used to update an existing resource, including partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+=== HTTP status codes
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[overview-errors]]
+=== Errors
+
+Whenever an error response (status code >= 400) is returned, the body will contain a JSON object
+that describes the problem. The error object has the following structure:
+
+include::{snippets}/auth/sign-up/response-fields.adoc[]
+
+[[resources]]
+== Resources
+
+[[resources-auth]]
+=== Authentication
+
+인증 관련 API입니다.
+
+[[resources-auth-signup]]
+==== 회원가입
+
+`POST` 요청으로 새로운 사용자를 등록합니다.
+
+===== Request structure
+
+include::{snippets}/auth/sign-up/request-fields.adoc[]
+
+===== Example request
+
+include::{snippets}/auth/sign-up/http-request.adoc[]
+
+===== Example response
+
+include::{snippets}/auth/sign-up/http-response.adoc[]
+
+===== Response fields
+
+include::{snippets}/auth/sign-up/response-fields.adoc[]
+
+===== CURL request
+
+include::{snippets}/auth/sign-up/curl-request.adoc[]
+
+[[resources-auth-email-verify]]
+==== 이메일 인증 코드 전송
+
+`POST` 요청으로 이메일 인증 코드를 전송합니다.
+
+===== Request structure
+
+include::{snippets}/auth/email-verify/request-fields.adoc[]
+
+===== Example request
+
+include::{snippets}/auth/email-verify/http-request.adoc[]
+
+===== Example response
+
+include::{snippets}/auth/email-verify/http-response.adoc[]
+
+===== Response fields
+
+include::{snippets}/auth/email-verify/response-fields.adoc[]
+
+===== CURL request
+
+include::{snippets}/auth/email-verify/curl-request.adoc[]
+
+[[resources-auth-email-confirm]]
+==== 이메일 인증 코드 확인
+
+`POST` 요청으로 이메일 인증 코드를 확인합니다.
+
+===== Request structure
+
+include::{snippets}/auth/email-confirm/request-fields.adoc[]
+
+===== Example request
+
+include::{snippets}/auth/email-confirm/http-request.adoc[]
+
+===== Example response
+
+include::{snippets}/auth/email-confirm/http-response.adoc[]
+
+===== Response fields
+
+include::{snippets}/auth/email-confirm/response-fields.adoc[]
+
+===== CURL request
+
+include::{snippets}/auth/email-confirm/curl-request.adoc[]
+
+[[architecture]]
+== Architecture
+
+[[architecture-overview]]
+=== Overview
+
+The Auth API follows a reactive programming model using Spring WebFlux and follows these architectural principles:
+
+* **Reactive Streams**: All operations are non-blocking and use Reactor's `Mono` and `Flux`
+* **Functional Programming**: Uses functional router functions instead of traditional controllers
+* **Layered Architecture**: Clear separation between Router, Handler, Service, and Repository layers
+
+[[architecture-components]]
+=== Components
+
+[[architecture-components-router]]
+==== Router
+
+The `AuthRouter` class defines the routing configuration for authentication endpoints.
+
+[[architecture-components-handler]]
+==== Handler
+
+The `AuthHandler` class handles HTTP requests and responses:
+
+* Validates incoming requests
+* Calls appropriate service methods
+* Handles errors and exceptions
+* Returns proper HTTP responses
+
+[[architecture-components-service]]
+==== Service
+
+The `AuthService` class contains business logic:
+
+* Processes authentication requests
+* Integrates with external services (email, Redis)
+* Handles business rules and validation
+
+[[development]]
+== Development
+
+[[development-setup]]
+=== Setup
+
+1. **Prerequisites**:
+- Java 17
+- Gradle 7.x
+- Redis server
+- MariaDB database
+
+2. **Environment Variables**:
+bash export REDIS_HOST=localhost export REDIS_PORT=6379 export DB_HOST=localhost export DB_PORT=3306 export DB_NAME=bingous export DB_USER=your_username export DB_PASSWORD=your_password
+
+3. **Build and Run**:
+bash ./gradlew build ./gradlew bootRun
+[[development-testing]]
+=== Testing
+
+[[development-testing-unit]]
+==== Unit Tests
+
+Unit tests are located in `src/test/java` and use:
+
+* JUnit 5
+* Mockito for mocking
+* Reactor Test for reactive testing
+
+[[development-testing-integration]]
+==== Integration Tests
+
+Integration tests use Spring Boot Test with WebTestClient for testing reactive endpoints.
+
+[[development-documentation]]
+=== Documentation
+
+Documentation is generated using Spring REST Docs and Asciidoctor:
+
+1. **Generate Documentation**:yaml logging: level: dev.gunho.api: DEBUG
+java Hooks.onOperatorDebug();
+3. **Monitor Reactive Streams**:
+java return service.process(request) .doOnSubscribe(s -> log.debug("Processing started")) .doOnSuccess(result -> log.debug("Processing completed: {}", result)) .doOnError(error -> log.error("Processing failed", error));

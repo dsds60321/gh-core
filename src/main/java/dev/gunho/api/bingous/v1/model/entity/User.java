@@ -63,6 +63,7 @@ public class User implements Persistable<String> {
 
     @Setter
     @Transient
+    @Builder.Default
     private boolean isNew = true;
 
     @Override

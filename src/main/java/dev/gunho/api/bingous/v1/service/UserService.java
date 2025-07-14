@@ -17,7 +17,6 @@ import reactor.core.publisher.Mono;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final SessionService sessionService;
     private final PasswordEncoder passwordEncoder;
 
     public Mono<Result<SignUp.Response>> signUp(SignUp.Request request, ServerHttpRequest httpRequest) {
@@ -40,22 +39,18 @@ public class UserService {
                                 user.setNew(true);
 
                                 return userRepository.save(user)
-                                        .flatMap(savedUser -> {
+                                        .map(savedUser -> {
                                             savedUser.markNotNew();
                                             log.info("User created successfully - ID: {}", savedUser.getId());
 
-                                            // 세션 생성
-                                            return sessionService.createSession(savedUser.getId(), httpRequest)
-                                                    .map(session -> {
-                                                        SignUp.Response responseData = SignUp.Response.builder()
-                                                                .message("회원가입이 완료되었습니다.")
-                                                                .userId(savedUser.getId())
-                                                                .sessionKey(session.getSessionKey()) // 세션 키 추가
-                                                                .success(true)
-                                                                .build();
+                                            SignUp.Response responseData = SignUp.Response.builder()
+                                                    .message("회원가입이 완료되었습니다.")
+                                                    .userId(savedUser.getId())
+                                                    .sessionKey(null) // 세션은 AuthService에서 처리
+                                                    .success(true)
+                                                    .build();
 
-                                                        return Result.success(responseData);
-                                                    });
+                                            return Result.success(responseData);
                                         });
                             });
                 })
