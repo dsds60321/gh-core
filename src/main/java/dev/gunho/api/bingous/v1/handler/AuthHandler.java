@@ -31,10 +31,19 @@ public class AuthHandler {
     public Mono<ServerResponse> signUp(ServerRequest request) {
         return request.bodyToMono(SignUp.Request.class)
                 .flatMap(requestValidator::validate)
-                .flatMap(signUpRequest ->
-                        authService.signUp(signUpRequest, request.exchange().getRequest())
+                .flatMap(authServiceV2::signUp
                 )
-                .flatMap(ResponseHelper::toServerResponse)
+                .flatMap(response -> {
+                    if (response.isSuccess()) {
+                        return ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    } else {
+                        return ServerResponse.badRequest()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    }
+                })
                 .onErrorResume(ResponseHelper::handleException);
     }
 
@@ -42,9 +51,19 @@ public class AuthHandler {
         return request.bodyToMono(SignIn.Request.class)
                 .flatMap(requestValidator::validate)
                 .flatMap(signInRequeset ->
-                    authService.signIn(signInRequeset, request.exchange().getRequest())
+                    authServiceV2.signIn(signInRequeset, request.exchange().getRequest())
                 )
-                .flatMap(ResponseHelper::toServerResponse)
+                .flatMap(response -> {
+                    if (response.isSuccess()) {
+                        return ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    } else {
+                        return ServerResponse.badRequest()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    }
+                })
                 .onErrorResume(ResponseHelper::handleException);
     }
 
@@ -75,8 +94,18 @@ public class AuthHandler {
     public Mono<ServerResponse> confirmEmail(ServerRequest request) {
         return request.bodyToMono(EmailVerify.VerifyCodeRequest.class)
                 .flatMap(requestValidator::validate)
-                .flatMap(authService::confirmEmail)
-                .flatMap(ResponseHelper::toServerResponse)
+                .flatMap(authServiceV2::verifyEmailCode)
+                .flatMap(response -> {
+                    if (response.verified()) {
+                        return ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    } else {
+                        return ServerResponse.badRequest()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response);
+                    }
+                })
                 .onErrorResume(ResponseHelper::handleException);
     }
 }
