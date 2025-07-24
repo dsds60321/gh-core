@@ -30,4 +30,7 @@ public interface AppSessionRepository extends ReactiveCrudRepository<AppSession,
     @Query("SELECT * FROM app_sessions WHERE user_id = :userId AND device_id = :deviceId AND is_active = 1 AND expires_at > NOW()")
     Mono<AppSession> findActiveSessionByUserAndDevice(String userId, String deviceId);
 
+    @Query("UPDATE app_sessions SET expires_at = :expireDate AND SET last_accessed_at = :lastAccessDate WHERE session_key = :sessionKey")
+    Mono<Integer> updateSessionExpiry(String sessionKey, LocalDateTime expireDate, LocalDateTime lastAccessDate);
+
 }

@@ -1,6 +1,7 @@
 package dev.gunho.api.bingous.v1.service;
 
 import dev.gunho.api.bingous.v1.model.dto.EmailVerify;
+import dev.gunho.api.bingous.v1.model.dto.SignIn;
 import dev.gunho.api.bingous.v1.model.dto.SignUp;
 import dev.gunho.api.global.constants.CoreConstants;
 import dev.gunho.api.global.enums.ResponseCode;
@@ -38,28 +39,27 @@ public class AuthService {
         return userService.signUp(request, httpRequest)
                 .flatMap(result -> {
                     if (result.isSuccess()) {
+                        // 타입 캐스팅으로 안전하게 처리
+                        SignUp.Response originalResponse = (SignUp.Response) result.getData();
+
                         // 회원가입 성공 시 세션 생성
                         return sessionService.createSession(request.id(), httpRequest)
                                 .map(session -> {
-                                    // 기존 Response 데이터를 복사하여 새로운 Response 생성
-                                    SignUp.Response originalResponse = result.getData();
                                     SignUp.Response responseWithSession = SignUp.Response.builder()
                                             .message(originalResponse.getMessage())
                                             .userId(originalResponse.getUserId())
                                             .success(originalResponse.isSuccess())
-                                            .sessionKey(session.getSessionKey()) // 세션 키 추가
+                                            .sessionKey(session.getSessionKey())
                                             .build();
 
                                     return ServiceResult.success(responseWithSession, "회원가입이 완료되었습니다.");
                                 })
                                 .onErrorResume(error -> {
                                     log.error("Session creation failed after signup", error);
-                                    // 세션 생성 실패해도 회원가입은 성공했으므로 원본 결과 반환
-                                    return Mono.just(ServiceResult.success(result.getData(), "회원가입은 완료되었지만 세션 생성에 실패했습니다."));
+                                    return Mono.just(ServiceResult.success(originalResponse, "회원가입은 완료되었지만 세션 생성에 실패했습니다."));
                                 });
                     } else {
-                        // Result를 ServiceResult로 변환
-                        return Mono.just(ServiceResult.<SignUp.Response>failure(
+                        return Mono.just(ServiceResult.<SignUp.Response>typedFailure(
                                 ResponseCode.fromResultCode(result.getCode()),
                                 result.getMessage()
                         ));
@@ -67,14 +67,15 @@ public class AuthService {
                 })
                 .onErrorResume(error -> {
                     log.error("Error in signUp", error);
-                    return Mono.just(ServiceResult.<SignUp.Response>failure(ResponseCode.INTERNAL_SERVER_ERROR, error));
+                    return Mono.just(ServiceResult.<SignUp.Response>typedFailure(ResponseCode.INTERNAL_SERVER_ERROR, error));
                 });
     }
+
 
     /**
      * 이메일 인증 코드 전송
      */
-    public Mono<ServiceResult<EmailResponse>> verifyEmail(EmailVerify.Request request) {
+    public Mono<ServiceResult<?>> verifyEmail(EmailVerify.Request request) {
         String randomCode = Util.CommonUtil.generateRandomCode(6);
         String redisKey = CoreConstants.Key.EMAIL_VERIFY.formatted(request.email());
 
@@ -101,14 +102,14 @@ public class AuthService {
                 })
                 .onErrorResume(error -> {
                     log.error("Error in verifyEmail - Email: {}", request.email(), error);
-                    return Mono.just(ServiceResult.<EmailResponse>failure(ResponseCode.EMAIL_SEND_FAILED, error));
+                    return Mono.just(ServiceResult.failure(ResponseCode.EMAIL_SEND_FAILED, error));
                 });
     }
 
     /**
      * 이메일 인증 코드 확인
      */
-    public Mono<ServiceResult<EmailVerify.VerifyCodeResponse>> confirmEmail(EmailVerify.VerifyCodeRequest request) {
+    public Mono<ServiceResult<?>> confirmEmail(EmailVerify.VerifyCodeRequest request) {
         String redisKey = CoreConstants.Key.EMAIL_VERIFY.formatted(request.email());
 
         log.info("confirmEmail - Email: {}, Code: {}", request.email(), request.code());
@@ -141,7 +142,26 @@ public class AuthService {
                 })
                 .onErrorResume(error -> {
                     log.error("Error in confirmEmail - Email: {}", request.email(), error);
-                    return Mono.just(ServiceResult.<EmailVerify.VerifyCodeResponse>failure(ResponseCode.INTERNAL_SERVER_ERROR, error));
+                    return Mono.just(ServiceResult.failure(ResponseCode.INTERNAL_SERVER_ERROR, error));
                 });
     }
+
+    public Mono<ServiceResult<SignIn.Response>> signIn(SignIn.Request request , ServerHttpRequest httpRequest) {
+        log.info("signIn called - ID: {}", request.id());
+
+        return userService.signIn(request, httpRequest)
+                .flatMap(result -> {
+                    if (result.isSuccess()) {
+                        return Mono.just(ServiceResult.success(result.getData(), "로그인에 성공했습니다"));
+                    } else {
+                        return Mono.just(ServiceResult.<SignIn.Response>typedFailure(ResponseCode.BAD_REQUEST, "로그인에 실패했습니다."));
+                    }
+                })
+                .onErrorResume(error -> {
+                    log.error("Error in signIn - ID: {}", request.id(), error);
+                    return Mono.just(ServiceResult.<SignIn.Response>typedFailure(ResponseCode.INTERNAL_SERVER_ERROR, error));
+                });
+    }
+
+
 }

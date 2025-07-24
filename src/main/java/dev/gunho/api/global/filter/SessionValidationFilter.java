@@ -51,6 +51,7 @@ public class SessionValidationFilter implements WebFilter {
 
     private boolean isPublicPath(String path) {
         return path.startsWith(V1_HOST + "/sign-up") ||
+                path.startsWith(V1_HOST + "/sign-in") ||
                 path.startsWith(V1_HOST + "/sign-up/email/verify") ||
                 path.startsWith(V1_HOST + "/sign-up/email/confirm");
     }

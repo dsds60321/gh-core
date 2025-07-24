@@ -1,9 +1,13 @@
 package dev.gunho.api.bingous.v1.model.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum UserStatus {
     ACTIVE("active"),
     INACTIVE("inactive"),
-    SUSPENDED("suspended");
+    SUSPENDED("suspended"),
+    DELETED("deleted");
 
     private final String value;
 
@@ -11,16 +15,23 @@ public enum UserStatus {
         this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
         return value;
     }
 
+    @JsonCreator
     public static UserStatus fromValue(String value) {
+        if (value == null) {
+            return ACTIVE;
+        }
+
         for (UserStatus status : UserStatus.values()) {
-            if (status.getValue().equals(value)) {
+            if (status.getValue().equalsIgnoreCase(value)) {
                 return status;
             }
         }
-        throw new IllegalArgumentException("Unknown status: " + value);
+
+        return ACTIVE; // 기본값
     }
 }

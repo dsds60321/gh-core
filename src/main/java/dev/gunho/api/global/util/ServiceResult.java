@@ -28,30 +28,47 @@ public class ServiceResult<T> {
         return new ServiceResult<>(true, data, message, ResponseCode.SUCCESS, null);
     }
 
-    // 실패 결과
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode) {
+    // 실패 결과 - 와일드카드 타입 지원
+    public static ServiceResult<?> failure(ResponseCode responseCode) {
         return new ServiceResult<>(false, null, responseCode.getMessage(), responseCode, null);
     }
 
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode, String message) {
+    public static ServiceResult<?> failure(ResponseCode responseCode, String message) {
         return new ServiceResult<>(false, null, message, responseCode, null);
     }
 
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode, Throwable throwable) {
+    public static ServiceResult<?> failure(ResponseCode responseCode, Throwable throwable) {
         return new ServiceResult<>(false, null, responseCode.getMessage(), responseCode, throwable);
     }
 
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode, String message, Throwable throwable) {
+    public static ServiceResult<?> failure(ResponseCode responseCode, String message, Throwable throwable) {
         return new ServiceResult<>(false, null, message, responseCode, throwable);
     }
 
     // 하위 호환성을 위한 Exception 메서드들
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode, Exception exception) {
+    public static ServiceResult<?> failure(ResponseCode responseCode, Exception exception) {
         return new ServiceResult<>(false, null, responseCode.getMessage(), responseCode, exception);
     }
 
-    public static <T> ServiceResult<T> failure(ResponseCode responseCode, String message, Exception exception) {
+    public static ServiceResult<?> failure(ResponseCode responseCode, String message, Exception exception) {
         return new ServiceResult<>(false, null, message, responseCode, exception);
+    }
+
+    // 기존 제네릭 타입 failure 메서드들 (하위 호환성)
+    public static <T> ServiceResult<T> typedFailure(ResponseCode responseCode) {
+        return new ServiceResult<>(false, null, responseCode.getMessage(), responseCode, null);
+    }
+
+    public static <T> ServiceResult<T> typedFailure(ResponseCode responseCode, String message) {
+        return new ServiceResult<>(false, null, message, responseCode, null);
+    }
+
+    public static <T> ServiceResult<T> typedFailure(ResponseCode responseCode, Throwable throwable) {
+        return new ServiceResult<>(false, null, responseCode.getMessage(), responseCode, throwable);
+    }
+
+    public static <T> ServiceResult<T> typedFailure(ResponseCode responseCode, String message, Throwable throwable) {
+        return new ServiceResult<>(false, null, message, responseCode, throwable);
     }
 
     // 편의 메서드 - Exception 반환 (하위 호환성)

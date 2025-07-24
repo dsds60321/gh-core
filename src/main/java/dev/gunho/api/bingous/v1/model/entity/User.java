@@ -52,6 +52,9 @@ public class User implements Persistable<String> {
     @Column("phone_verified")
     private Boolean phoneVerified;
 
+    @Column("tryCnt")
+    private Integer tryCnt;
+
     @Column("last_login_at")
     private LocalDateTime lastLoginAt;
 
@@ -80,5 +83,4 @@ public class User implements Persistable<String> {
         this.isNew = false;
         return this;
     }
-
 }

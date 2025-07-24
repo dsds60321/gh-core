@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '3.5.3'
     id 'io.spring.dependency-management' version '1.1.7'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
 }
 
 group = 'dev.gunho'
@@ -14,12 +15,15 @@ java {
     }
 }
 
+configurations {
+    asciidoctorExt
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
     implementation 'org.mariadb:r2dbc-mariadb'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
@@ -28,6 +32,7 @@ dependencies {
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'eu.bitwalker:UserAgentUtils:1.21'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -36,11 +41,50 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-webtestclient'
+
+    // Asciidoctor 관련 의존성
+    asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 }
 
+// snippets 디렉토리 설정
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
+// 테스트 설정
+test {
+    useJUnitPlatform()
+    outputs.dir snippetsDir
+
+    systemProperty 'org.springframework.restdocs.outputDir', snippetsDir
+}
+
+// Asciidoctor 설정
+asciidoctor {
+    inputs.dir snippetsDir
+    configurations 'asciidoctorExt'
+    dependsOn test
+
+    attributes 'snippets': snippetsDir
+
+    baseDirFollowsSourceFile()
+
+    doFirst {
+        delete file('build/docs/asciidoc')
+    }
+}
+
+// 문서 생성 후 static 디렉토리로 복사
+task copyDocument(type: Copy) {
+    dependsOn asciidoctor
+    from file("build/docs/asciidoc")
+    into file("src/main/resources/static/docs")
+}
 
 // 프로파일 설정을 위한 리소스 필터링
 processResources {
@@ -52,14 +96,15 @@ processResources {
     }
 }
 
-// 테스트 설정
-tasks.named('test') {
-    useJUnitPlatform()
-}
-
 // JAR 파일 생성 설정
 bootJar {
     archiveBaseName = 'gh-core'
     archiveVersion = project.version
     archiveClassifier = ''
+    dependsOn copyDocument
+}
+
+// 빌드 시 문서 생성
+build {
+    dependsOn copyDocument
 }

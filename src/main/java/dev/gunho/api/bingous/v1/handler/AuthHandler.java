@@ -1,6 +1,7 @@
 package dev.gunho.api.bingous.v1.handler;
 
 import dev.gunho.api.bingous.v1.model.dto.EmailVerify;
+import dev.gunho.api.bingous.v1.model.dto.SignIn;
 import dev.gunho.api.bingous.v1.model.dto.SignUp;
 import dev.gunho.api.bingous.v1.service.AuthService;
 import dev.gunho.api.global.util.RequestValidator;
@@ -28,6 +29,16 @@ public class AuthHandler {
                 .flatMap(requestValidator::validate)
                 .flatMap(signUpRequest ->
                         authService.signUp(signUpRequest, request.exchange().getRequest())
+                )
+                .flatMap(ResponseHelper::toServerResponse)
+                .onErrorResume(ResponseHelper::handleException);
+    }
+
+    public Mono<ServerResponse> signIn(ServerRequest request) {
+        return request.bodyToMono(SignIn.Request.class)
+                .flatMap(requestValidator::validate)
+                .flatMap(signInRequeset ->
+                    authService.signIn(signInRequeset, request.exchange().getRequest())
                 )
                 .flatMap(ResponseHelper::toServerResponse)
                 .onErrorResume(ResponseHelper::handleException);

@@ -1,8 +1,34 @@
 ### 1. 회원가입 이메일 인증 요청
-POST http://localhost:8080/bingo-us/v1/sign-up/verify
+POST http://localhost:8080/bingo-us/v1/sign-up/email/verify
 Content-Type: application/json
 
 {
   "id": "testets",
   "email": "dsds601@naver.com"
+}
+
+
+### 2. 회원가입 - 기본 케이스
+POST http://localhost:8080/bingo-us/v1/sign-up
+Content-Type: application/json
+
+{
+  "id": "test",
+  "email": "test@example.com",
+  "nickname": "테스트유저",
+  "password": "12345",
+  "phoneNumber": "010-1234-5678",
+  "email_verified" : true,
+  "gender": "MALE",
+  "status": "ACTIVE"
+}
+
+
+### 3. 로그인 - 기본 케이스
+POST http://localhost:8080/bingo-us/v1/sign-in
+Content-Type: application/json
+
+{
+  "id": "test",
+  "password": "12345"
 }
