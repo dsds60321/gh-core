@@ -1,7 +1,9 @@
 package dev.gunho.api.global.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import dev.gunho.api.global.enums.ResponseCode;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -13,7 +15,7 @@ public class ApiResponse<T> {
     private final Object error;
     private final long timestamp;
 
-    private ApiResponse(boolean success, String message, String code, T data, Object error) {
+    private ApiResponse(boolean success, String code, String message, T data, Object error) {
         this.success = success;
         this.message = message;
         this.code = code;
@@ -22,23 +24,41 @@ public class ApiResponse<T> {
         this.timestamp = System.currentTimeMillis();
     }
 
+    private ApiResponse(boolean success, ResponseCode responseCode, T data, Object error) {
+        this.success = success;
+        this.message = responseCode.getMessage();
+        this.code = responseCode.getCode();
+        this.data = data;
+        this.error = error;
+        this.timestamp = System.currentTimeMillis();
+    }
+
     // 성공 응답
+    public static <T> ApiResponse<T> success(String message) {
+        return new ApiResponse<>(true, ResponseCode.SUCCESS.getCode(), message , null, null);
+    }
+
     public static <T> ApiResponse<T> success(T data) {
-        return new ApiResponse<>(true, "요청이 성공적으로 처리되었습니다.", "SUCCESS", data, null);
+        return new ApiResponse<>(true, ResponseCode.SUCCESS , data, null);
     }
 
     public static <T> ApiResponse<T> success(T data, String message) {
-        return new ApiResponse<>(true, message, "SUCCESS", data, null);
+        return new ApiResponse<>(true, ResponseCode.SUCCESS.getCode(), message, data, null);
     }
 
     // 실패 응답
-    public static <T> ApiResponse<T> failure(String message, String code) {
-        return new ApiResponse<>(false, message, code, null, null);
+    public static <T> ApiResponse<T> failure(String message) {
+        return new ApiResponse<>(false, ResponseCode.BAD_REQUEST.getCode() , message, null, null);
     }
 
-    public static <T> ApiResponse<T> failure(String message, String code, Object error) {
-        return new ApiResponse<>(false, message, code, null, error);
+    public static <T> ApiResponse<T> failure(T data) {
+        return new ApiResponse<>(true, ResponseCode.BAD_REQUEST , data, null);
     }
+
+    public static <T> ApiResponse<T> failure(T data, String message) {
+        return new ApiResponse<>(false, ResponseCode.BAD_REQUEST.getCode(), message , data, null);
+    }
+
 
     // 검증 오류 응답
     public static <T> ApiResponse<T> validationError(Object validationErrors) {

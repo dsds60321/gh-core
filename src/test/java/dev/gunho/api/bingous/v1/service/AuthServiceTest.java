@@ -1,7 +1,7 @@
 package dev.gunho.api.bingous.v1.service;
 
-import dev.gunho.api.bingous.v1.model.dto.EmailVerify;
-import dev.gunho.api.bingous.v1.model.dto.SignUp;
+import dev.gunho.api.bingous.v1.model.dto.EmailVerifyDto;
+import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
 import dev.gunho.api.bingous.v1.model.entity.AppSession;
 import dev.gunho.api.global.enums.ResponseCode;
 import dev.gunho.api.global.model.Result;
@@ -23,7 +23,6 @@ import reactor.test.StepVerifier;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
@@ -58,7 +57,7 @@ class AuthServiceTest {
     @DisplayName("회원가입 성공 테스트")
     void signUpSuccess() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "testuser",
                 "test@example.com",
                 "testnickname",
@@ -69,13 +68,13 @@ class AuthServiceTest {
                 false
         );
 
-        SignUp.Response userServiceResponse = SignUp.Response.builder()
+        SignUpDto.Response userServiceResponse = SignUpDto.Response.builder()
                 .message("회원가입이 완료되었습니다.")
                 .userId("testuser")
                 .success(true)
                 .build();
 
-        Result<SignUp.Response> userServiceResult = Result.success(userServiceResponse);
+        Result<SignUpDto.Response> userServiceResult = Result.success(userServiceResponse);
 
         // AppSession 객체 생성
         AppSession sessionResponse = AppSession.builder()
@@ -86,13 +85,13 @@ class AuthServiceTest {
                 .createdAt(LocalDateTime.now())
                 .build();
 
-        when(userService.signUp(any(SignUp.Request.class), any(ServerHttpRequest.class)))
+        when(userService.signUp(any(SignUpDto.Request.class), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.just(userServiceResult));
         when(sessionService.createSession(anyString(), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.just(sessionResponse));
 
         // When
-        Mono<ServiceResult<SignUp.Response>> result = authService.signUp(request, serverHttpRequest);
+        Mono<ServiceResult<SignUpDto.Response>> result = authService.signUp(request, serverHttpRequest);
 
         // Then
         StepVerifier.create(result)
@@ -108,7 +107,7 @@ class AuthServiceTest {
     @DisplayName("회원가입 실패 테스트 - 중복 ID")
     void signUpFailureDuplicateId() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "testuser",
                 "test@example.com",
                 "testnickname",
@@ -119,13 +118,13 @@ class AuthServiceTest {
                 false
         );
 
-        Result<SignUp.Response> userServiceResult = Result.failure("이미 사용 중인 ID입니다.", "DUPLICATE_ID");
+        Result<SignUpDto.Response> userServiceResult = Result.failure("이미 사용 중인 ID입니다.", "DUPLICATE_ID");
 
-        when(userService.signUp(any(SignUp.Request.class), any(ServerHttpRequest.class)))
+        when(userService.signUp(any(SignUpDto.Request.class), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.just(userServiceResult));
 
         // When
-        Mono<ServiceResult<SignUp.Response>> result = authService.signUp(request, serverHttpRequest);
+        Mono<ServiceResult<SignUpDto.Response>> result = authService.signUp(request, serverHttpRequest);
 
         // Then
         StepVerifier.create(result)
@@ -140,7 +139,7 @@ class AuthServiceTest {
     @DisplayName("이메일 인증 코드 전송 성공 테스트")
     void verifyEmailSuccess() {
         // Given
-        EmailVerify.Request request = new EmailVerify.Request(
+        EmailVerifyDto.Request request = new EmailVerifyDto.Request(
                 "testuser",
                 "test@example.com"
         );
@@ -172,7 +171,7 @@ class AuthServiceTest {
     @DisplayName("이메일 인증 코드 확인 성공 테스트")
     void confirmEmailSuccess() {
         // Given
-        EmailVerify.VerifyCodeRequest request = new EmailVerify.VerifyCodeRequest(
+        EmailVerifyDto.VerifyCodeRequest request = new EmailVerifyDto.VerifyCodeRequest(
                 "test@example.com",
                 "123456"
         );
@@ -183,7 +182,7 @@ class AuthServiceTest {
                 .thenReturn(Mono.just(1L)); // Long 타입 반환
 
         // When
-        Mono<ServiceResult<EmailVerify.VerifyCodeResponse>> result = authService.confirmEmail(request);
+        Mono<ServiceResult<EmailVerifyDto.VerifyCodeResponse>> result = authService.confirmEmail(request);
 
         // Then
         StepVerifier.create(result)
@@ -199,7 +198,7 @@ class AuthServiceTest {
     @DisplayName("이메일 인증 코드 확인 실패 테스트 - 잘못된 코드")
     void confirmEmailFailureInvalidCode() {
         // Given
-        EmailVerify.VerifyCodeRequest request = new EmailVerify.VerifyCodeRequest(
+        EmailVerifyDto.VerifyCodeRequest request = new EmailVerifyDto.VerifyCodeRequest(
                 "test@example.com",
                 "123456"
         );
@@ -208,7 +207,7 @@ class AuthServiceTest {
                 .thenReturn(Mono.just("654321")); // 다른 코드
 
         // When
-        Mono<ServiceResult<EmailVerify.VerifyCodeResponse>> result = authService.confirmEmail(request);
+        Mono<ServiceResult<EmailVerifyDto.VerifyCodeResponse>> result = authService.confirmEmail(request);
 
         // Then
         StepVerifier.create(result)
@@ -223,7 +222,7 @@ class AuthServiceTest {
     @DisplayName("이메일 인증 코드 확인 실패 테스트 - 만료된 코드")
     void confirmEmailFailureExpiredCode() {
         // Given
-        EmailVerify.VerifyCodeRequest request = new EmailVerify.VerifyCodeRequest(
+        EmailVerifyDto.VerifyCodeRequest request = new EmailVerifyDto.VerifyCodeRequest(
                 "test@example.com",
                 "123456"
         );
@@ -232,7 +231,7 @@ class AuthServiceTest {
                 .thenReturn(Mono.empty());
 
         // When
-        Mono<ServiceResult<EmailVerify.VerifyCodeResponse>> result = authService.confirmEmail(request);
+        Mono<ServiceResult<EmailVerifyDto.VerifyCodeResponse>> result = authService.confirmEmail(request);
 
         // Then
         StepVerifier.create(result)
@@ -259,7 +258,7 @@ class AuthServiceTest {
     @DisplayName("Redis 저장 실패 테스트")
     void verifyEmailRedisFailure() {
         // Given
-        EmailVerify.Request request = new EmailVerify.Request(
+        EmailVerifyDto.Request request = new EmailVerifyDto.Request(
                 "testuser",
                 "test@example.com"
         );
@@ -283,7 +282,7 @@ class AuthServiceTest {
     @DisplayName("이메일 전송 실패 테스트")
     void verifyEmailSendFailure() {
         // Given
-        EmailVerify.Request request = new EmailVerify.Request(
+        EmailVerifyDto.Request request = new EmailVerifyDto.Request(
                 "testuser",
                 "test@example.com"
         );
@@ -314,7 +313,7 @@ class AuthServiceTest {
     @DisplayName("회원가입 시 세션 생성 실패 테스트")
     void signUpSessionCreationFailure() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "testuser",
                 "test@example.com",
                 "testnickname",
@@ -325,21 +324,21 @@ class AuthServiceTest {
                 false
         );
 
-        SignUp.Response userServiceResponse = SignUp.Response.builder()
+        SignUpDto.Response userServiceResponse = SignUpDto.Response.builder()
                 .message("회원가입이 완료되었습니다.")
                 .userId("testuser")
                 .success(true)
                 .build();
 
-        Result<SignUp.Response> userServiceResult = Result.success(userServiceResponse);
+        Result<SignUpDto.Response> userServiceResult = Result.success(userServiceResponse);
 
-        when(userService.signUp(any(SignUp.Request.class), any(ServerHttpRequest.class)))
+        when(userService.signUp(any(SignUpDto.Request.class), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.just(userServiceResult));
         when(sessionService.createSession(anyString(), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.error(new RuntimeException("세션 생성 실패")));
 
         // When
-        Mono<ServiceResult<SignUp.Response>> result = authService.signUp(request, serverHttpRequest);
+        Mono<ServiceResult<SignUpDto.Response>> result = authService.signUp(request, serverHttpRequest);
 
         // Then
         StepVerifier.create(result)
@@ -355,7 +354,7 @@ class AuthServiceTest {
     @DisplayName("AuthService 전체 플로우 오류 테스트")
     void authServiceGeneralError() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "testuser",
                 "test@example.com",
                 "testnickname",
@@ -366,11 +365,11 @@ class AuthServiceTest {
                 false
         );
 
-        when(userService.signUp(any(SignUp.Request.class), any(ServerHttpRequest.class)))
+        when(userService.signUp(any(SignUpDto.Request.class), any(ServerHttpRequest.class)))
                 .thenReturn(Mono.error(new RuntimeException("데이터베이스 연결 오류")));
 
         // When
-        Mono<ServiceResult<SignUp.Response>> result = authService.signUp(request, serverHttpRequest);
+        Mono<ServiceResult<SignUpDto.Response>> result = authService.signUp(request, serverHttpRequest);
 
         // Then
         StepVerifier.create(result)

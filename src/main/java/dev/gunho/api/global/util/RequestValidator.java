@@ -45,15 +45,6 @@ public class RequestValidator {
         return Mono.error(new ValidationException("입력값 검증에 실패했습니다.", errorMap));
     }
 
-    /**
-     * 검증 결과를 ServerResponse로 변환
-     */
-    public <T> Mono<ServerResponse> validateAndRespond(T request) {
-        return validate(request)
-                .flatMap(validRequest -> ResponseHelper.toServerResponse(
-                        Mono.just(ServiceResult.success(validRequest))))
-                .onErrorResume(this::handleValidationError);
-    }
 
     /**
      * 검증 오류 처리

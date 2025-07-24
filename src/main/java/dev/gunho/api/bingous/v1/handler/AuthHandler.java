@@ -1,10 +1,9 @@
 package dev.gunho.api.bingous.v1.handler;
 
-import dev.gunho.api.bingous.v1.model.dto.EmailVerify;
-import dev.gunho.api.bingous.v1.model.dto.SignIn;
-import dev.gunho.api.bingous.v1.model.dto.SignUp;
+import dev.gunho.api.bingous.v1.model.dto.EmailVerifyDto;
+import dev.gunho.api.bingous.v1.model.dto.SignInDto;
+import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
 import dev.gunho.api.bingous.v1.service.AuthService;
-import dev.gunho.api.bingous.v1.service.AuthServiceV2;
 import dev.gunho.api.global.model.dto.ApiResponse;
 import dev.gunho.api.global.util.RequestValidator;
 import dev.gunho.api.global.util.ResponseHelper;
@@ -22,46 +21,45 @@ import reactor.core.publisher.Mono;
 public class AuthHandler {
 
     private final AuthService authService;
-    private final AuthServiceV2 authServiceV2;
     private final RequestValidator requestValidator;
 
     /**
      * 회원가입 처리
      */
     public Mono<ServerResponse> signUp(ServerRequest request) {
-        return request.bodyToMono(SignUp.Request.class)
+        return request.bodyToMono(SignUpDto.Request.class)
                 .flatMap(requestValidator::validate)
-                .flatMap(authServiceV2::signUp
+                .flatMap(authService::signUp
                 )
                 .flatMap(response -> {
                     if (response.isSuccess()) {
                         return ServerResponse.ok()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                                .bodyValue(ApiResponse.success(response));
                     } else {
                         return ServerResponse.badRequest()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                                .bodyValue(ApiResponse.failure(response));
                     }
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
 
     public Mono<ServerResponse> signIn(ServerRequest request) {
-        return request.bodyToMono(SignIn.Request.class)
+        return request.bodyToMono(SignInDto.Request.class)
                 .flatMap(requestValidator::validate)
                 .flatMap(signInRequeset ->
-                    authServiceV2.signIn(signInRequeset, request.exchange().getRequest())
+                    authService.signIn(signInRequeset, request.exchange().getRequest())
                 )
                 .flatMap(response -> {
                     if (response.isSuccess()) {
                         return ServerResponse.ok()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                                .bodyValue(ApiResponse.success(response));
                     } else {
                         return ServerResponse.badRequest()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                                .bodyValue(ApiResponse.failure(response));
                     }
                 })
                 .onErrorResume(ResponseHelper::handleException);
@@ -71,15 +69,15 @@ public class AuthHandler {
      * 이메일 인증 코드 전송
      */
     public Mono<ServerResponse> verifyEmail(ServerRequest request) {
-        return request.bodyToMono(EmailVerify.Request.class)
+        return request.bodyToMono(EmailVerifyDto.Request.class)
                 .flatMap(requestValidator::validate)
-                .flatMap(authServiceV2::sendEmailVerifyCode)
+                .flatMap(authService::sendEmailVerifyCode)
                 .flatMap(success -> {
                     ApiResponse<?> response;
                     if (success) {
-                        response = ApiResponse.success(null, "인증 코드가 전송되었습니다.");
+                        response = ApiResponse.success( "인증 코드가 전송되었습니다.");
                     } else {
-                        response = ApiResponse.failure("인증 코드 전송에 실패했습니다.", "EMAIL_SEND_FAILED");
+                        response = ApiResponse.failure("인증 코드 전송에 실패했습니다.");
                     }
                     return ServerResponse.ok()
                             .contentType(MediaType.APPLICATION_JSON)
@@ -92,9 +90,9 @@ public class AuthHandler {
      * 이메일 인증 코드 확인
      */
     public Mono<ServerResponse> confirmEmail(ServerRequest request) {
-        return request.bodyToMono(EmailVerify.VerifyCodeRequest.class)
+        return request.bodyToMono(EmailVerifyDto.VerifyCodeRequest.class)
                 .flatMap(requestValidator::validate)
-                .flatMap(authServiceV2::verifyEmailCode)
+                .flatMap(authService::verifyEmailCode)
                 .flatMap(response -> {
                     if (response.verified()) {
                         return ServerResponse.ok()

@@ -12,30 +12,6 @@ import reactor.core.publisher.Mono;
 public class ResponseHelper {
 
     /**
-     * ServiceResult를 ApiResponse로 변환하여 ServerResponse 생성
-     */
-    public static <T> Mono<ServerResponse> toServerResponse(ServiceResult<T> result) {
-        if (result.isSuccess()) {
-            return ServerResponse
-                    .status(result.getResponseCode().getHttpStatus())
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .bodyValue(ApiResponse.success(result.getData(), result.getMessage()));
-        } else {
-            return ServerResponse
-                    .status(result.getResponseCode().getHttpStatus())
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .bodyValue(ApiResponse.failure(result.getMessage(), result.getResponseCode().getCode()));
-        }
-    }
-
-    /**
-     * ServiceResult Mono를 ServerResponse Mono로 변환
-     */
-    public static <T> Mono<ServerResponse> toServerResponse(Mono<ServiceResult<T>> resultMono) {
-        return resultMono.flatMap(ResponseHelper::toServerResponse);
-    }
-
-    /**
      * 검증 오류 응답
      */
     public static Mono<ServerResponse> validationError(Object validationErrors) {

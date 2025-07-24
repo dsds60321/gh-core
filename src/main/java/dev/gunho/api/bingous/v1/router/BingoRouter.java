@@ -1,5 +1,6 @@
 package dev.gunho.api.bingous.v1.router;
 
+import dev.gunho.api.bingous.v1.handler.AnniversaryHandler;
 import dev.gunho.api.bingous.v1.handler.AuthHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +13,10 @@ import static dev.gunho.api.global.constants.CoreConstants.Host.*;
 
 @Configuration
 @RequiredArgsConstructor
-public class AuthRouter {
+public class BingoRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> signRoutes(AuthHandler authHandler) {
+    public RouterFunction<ServerResponse> authRoutes(AuthHandler authHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
                         .POST("/sign-up", authHandler::signUp)
@@ -23,5 +24,10 @@ public class AuthRouter {
                         .POST("/sign-up/email/verify", authHandler::verifyEmail)
                         .POST("/sign-up/email/confirm", authHandler::confirmEmail))
                 .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> anniversaryRoutes(AnniversaryHandler anniversaryHandler) {
+        return null;
     }
 }

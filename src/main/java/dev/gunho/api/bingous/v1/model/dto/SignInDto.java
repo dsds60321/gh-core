@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Getter;
 
-public class SignIn {
+public class SignInDto {
 
     public record Request(
             @NotBlank(message = "ID는 필수입니다")

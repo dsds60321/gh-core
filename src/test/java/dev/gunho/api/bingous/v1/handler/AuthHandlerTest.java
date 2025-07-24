@@ -1,7 +1,7 @@
 package dev.gunho.api.bingous.v1.handler;
 
-import dev.gunho.api.bingous.v1.model.dto.EmailVerify;
-import dev.gunho.api.bingous.v1.model.dto.SignUp;
+import dev.gunho.api.bingous.v1.model.dto.EmailVerifyDto;
+import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
 import dev.gunho.api.bingous.v1.service.AuthService;
 import dev.gunho.api.global.exception.ValidationException;
 import dev.gunho.api.global.model.dto.EmailResponse;
@@ -66,7 +66,7 @@ class AuthHandlerTest {
     @DisplayName("회원가입 성공 테스트")
     void signUpSuccess() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "testuser",
                 "test@example.com",
                 "testnickname",
@@ -77,18 +77,18 @@ class AuthHandlerTest {
                 false
         );
 
-        SignUp.Response response = SignUp.Response.builder()
+        SignUpDto.Response response = SignUpDto.Response.builder()
                 .message("회원가입이 완료되었습니다.")
                 .userId("testuser")
                 .sessionKey("test-session-key")
                 .success(true)
                 .build();
 
-        ServiceResult<SignUp.Response> serviceResult = ServiceResult.success(response, "회원가입이 완료되었습니다.");
+        ServiceResult<SignUpDto.Response> serviceResult = ServiceResult.success(response, "회원가입이 완료되었습니다.");
 
-        when(requestValidator.validate(any(SignUp.Request.class)))
+        when(requestValidator.validate(any(SignUpDto.Request.class)))
                 .thenReturn(Mono.just(request));
-        when(authService.signUp(any(SignUp.Request.class), any()))
+        when(authService.signUp(any(SignUpDto.Request.class), any()))
                 .thenReturn(Mono.just(serviceResult));
 
         // When & Then
@@ -131,7 +131,7 @@ class AuthHandlerTest {
     @DisplayName("이메일 인증 코드 전송 테스트")
     void verifyEmailSuccess() {
         // Given
-        EmailVerify.Request request = new EmailVerify.Request(
+        EmailVerifyDto.Request request = new EmailVerifyDto.Request(
                 "testuser",
                 "test@example.com"
         );
@@ -143,9 +143,9 @@ class AuthHandlerTest {
 
         ServiceResult<EmailResponse> serviceResult = ServiceResult.success(response, "인증 코드가 전송되었습니다.");
 
-        when(requestValidator.validate(any(EmailVerify.Request.class)))
+        when(requestValidator.validate(any(EmailVerifyDto.Request.class)))
                 .thenReturn(Mono.just(request));
-        when(authService.verifyEmail(any(EmailVerify.Request.class)))
+        when(authService.verifyEmail(any(EmailVerifyDto.Request.class)))
                 .thenReturn(Mono.just(serviceResult));
 
         // When & Then
@@ -181,22 +181,22 @@ class AuthHandlerTest {
     @DisplayName("이메일 인증 코드 확인 테스트")
     void confirmEmailSuccess() {
         // Given
-        EmailVerify.VerifyCodeRequest request = new EmailVerify.VerifyCodeRequest(
+        EmailVerifyDto.VerifyCodeRequest request = new EmailVerifyDto.VerifyCodeRequest(
                 "test@example.com",
                 "123456"
         );
 
-        EmailVerify.VerifyCodeResponse response = EmailVerify.VerifyCodeResponse.builder()
+        EmailVerifyDto.VerifyCodeResponse response = EmailVerifyDto.VerifyCodeResponse.builder()
                 .email("test@example.com")
                 .verified(true)
                 .message("인증에 성공했습니다.")
                 .build();
 
-        ServiceResult<EmailVerify.VerifyCodeResponse> serviceResult = ServiceResult.success(response, "인증에 성공했습니다.");
+        ServiceResult<EmailVerifyDto.VerifyCodeResponse> serviceResult = ServiceResult.success(response, "인증에 성공했습니다.");
 
-        when(requestValidator.validate(any(EmailVerify.VerifyCodeRequest.class)))
+        when(requestValidator.validate(any(EmailVerifyDto.VerifyCodeRequest.class)))
                 .thenReturn(Mono.just(request));
-        when(authService.confirmEmail(any(EmailVerify.VerifyCodeRequest.class)))
+        when(authService.confirmEmail(any(EmailVerifyDto.VerifyCodeRequest.class)))
                 .thenReturn(Mono.just(serviceResult));
 
         // When & Then
@@ -232,7 +232,7 @@ class AuthHandlerTest {
     @DisplayName("회원가입 실패 테스트 - 검증 오류")
     void signUpValidationError() {
         // Given
-        SignUp.Request request = new SignUp.Request(
+        SignUpDto.Request request = new SignUpDto.Request(
                 "", // 빈 ID
                 "invalid-email", // 잘못된 이메일
                 "",
@@ -250,7 +250,7 @@ class AuthHandlerTest {
                 "password", "비밀번호는 최소 8자 이상이어야 합니다."
         );
 
-        when(requestValidator.validate(any(SignUp.Request.class)))
+        when(requestValidator.validate(any(SignUpDto.Request.class)))
                 .thenReturn(Mono.error(new ValidationException("입력값이 올바르지 않습니다.", validationErrors)));
 
         // When & Then
@@ -292,14 +292,14 @@ class AuthHandlerTest {
     @DisplayName("이메일 인증 코드 전송 실패 테스트")
     void verifyEmailFailure() {
         // Given
-        EmailVerify.Request request = new EmailVerify.Request(
+        EmailVerifyDto.Request request = new EmailVerifyDto.Request(
                 "testuser",
                 "test@example.com"
         );
 
-        when(requestValidator.validate(any(EmailVerify.Request.class)))
+        when(requestValidator.validate(any(EmailVerifyDto.Request.class)))
                 .thenReturn(Mono.just(request));
-        when(authService.verifyEmail(any(EmailVerify.Request.class)))
+        when(authService.verifyEmail(any(EmailVerifyDto.Request.class)))
                 .thenReturn(Mono.error(new RuntimeException("이메일 전송 실패")));
 
         // When & Then

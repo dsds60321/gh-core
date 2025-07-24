@@ -169,7 +169,7 @@ The Auth API follows a reactive programming model using Spring WebFlux and follo
 [[architecture-components-router]]
 ==== Router
 
-The `AuthRouter` class defines the routing configuration for authentication endpoints.
+The `BingoRouter` class defines the routing configuration for authentication endpoints.
 
 [[architecture-components-handler]]
 ==== Handler

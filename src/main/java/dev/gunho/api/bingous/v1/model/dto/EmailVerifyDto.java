@@ -9,7 +9,7 @@ import lombok.Builder;
 /**
  * 이메일 인증 DTO
  */
-public class EmailVerify {
+public class EmailVerifyDto {
 
     public record Request(
             @NotBlank(message = "ID는 필수입니다")

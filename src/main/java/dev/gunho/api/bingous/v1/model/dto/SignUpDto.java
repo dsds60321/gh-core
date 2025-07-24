@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 
-public class SignUp {
+public class SignUpDto {
 
     public record Request(
             @NotBlank(message = "ID는 필수입니다")
