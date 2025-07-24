@@ -133,7 +133,6 @@ public class AuthService {
                     return redisUtil.delete(redisKey)
                             .thenReturn(ServiceResult.success(
                                     EmailVerify.VerifyCodeResponse.builder()
-                                            .email(request.email())
                                             .verified(true)
                                             .message("인증에 성공했습니다.")
                                             .build(),

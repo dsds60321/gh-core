@@ -39,9 +39,8 @@ public class EmailVerify {
             String code
     ) {}
 
-    @Builder
+    @Builder(toBuilder = true)
     public record VerifyCodeResponse(
-            String email,
             boolean verified,
             String message
     ) {}
