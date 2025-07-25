@@ -11,9 +11,14 @@ public class CoreConstants {
 
     }
 
+    public static class Network {
+        public static final String AUTH_KEY = "Authorization";
+    }
+
     public static class Key {
 
-        public static String EMAIL_VERIFY = "EMAIL_VERIFY:%s";
+        public static final String EMAIL_VERIFY = "EMAIL_VERIFY:%s";
+        public static final String COUPLE_INVITE = "COUPLE_INVITE:%s";
     }
 
 

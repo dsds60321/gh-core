@@ -31,16 +31,16 @@ public class AuthHandler {
                 .flatMap(requestValidator::validate)
                 .flatMap(authService::signUp
                 )
-                .flatMap(response -> {
-                    if (response.isSuccess()) {
-                        return ServerResponse.ok()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(ApiResponse.success(response));
+                .flatMap(serviceResponse -> {
+
+                    ApiResponse<?> response;
+                    if (serviceResponse.isSuccess()) {
+                        response = ApiResponse.success(serviceResponse);
                     } else {
-                        return ServerResponse.badRequest()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(ApiResponse.failure(response));
+                        response = ApiResponse.failure(serviceResponse);
                     }
+
+                    return ResponseHelper.ok(response);
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
@@ -51,16 +51,16 @@ public class AuthHandler {
                 .flatMap(signInRequeset ->
                     authService.signIn(signInRequeset, request.exchange().getRequest())
                 )
-                .flatMap(response -> {
-                    if (response.isSuccess()) {
-                        return ServerResponse.ok()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(ApiResponse.success(response));
+                .flatMap(serviceResponse -> {
+
+                    ApiResponse<?> response;
+                    if (serviceResponse.isSuccess()) {
+                        response = ApiResponse.success(serviceResponse);
                     } else {
-                        return ServerResponse.badRequest()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(ApiResponse.failure(response));
+                        response = ApiResponse.failure(serviceResponse);
                     }
+
+                    return ResponseHelper.ok(response);
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
@@ -79,9 +79,8 @@ public class AuthHandler {
                     } else {
                         response = ApiResponse.failure("인증 코드 전송에 실패했습니다.");
                     }
-                    return ServerResponse.ok()
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .bodyValue(response);
+
+                    return ResponseHelper.ok(response);
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
@@ -93,16 +92,15 @@ public class AuthHandler {
         return request.bodyToMono(EmailVerifyDto.VerifyCodeRequest.class)
                 .flatMap(requestValidator::validate)
                 .flatMap(authService::verifyEmailCode)
-                .flatMap(response -> {
-                    if (response.verified()) {
-                        return ServerResponse.ok()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                .flatMap(verifiedResponse -> {
+                    ApiResponse<?> response;
+                    if (verifiedResponse.verified()) {
+                        response = ApiResponse.success(verifiedResponse);
                     } else {
-                        return ServerResponse.badRequest()
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(response);
+                        response = ApiResponse.failure(verifiedResponse);
                     }
+
+                    return ResponseHelper.ok(response);
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }

@@ -12,6 +12,26 @@ import reactor.core.publisher.Mono;
 public class ResponseHelper {
 
     /**
+     * 기본 성공 응답
+     */
+    public static Mono<ServerResponse> ok(ApiResponse<?> response) {
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(response);
+    }
+
+    /**
+     * 기본 실패 응답
+     */
+    public static Mono<ServerResponse> badRequest(ApiResponse<?> response) {
+        return ServerResponse.badRequest()
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(response);
+    }
+
+
+
+    /**
      * 검증 오류 응답
      */
     public static Mono<ServerResponse> validationError(Object validationErrors) {

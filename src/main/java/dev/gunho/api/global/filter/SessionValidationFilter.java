@@ -1,6 +1,7 @@
 package dev.gunho.api.global.filter;
 
 import dev.gunho.api.bingous.v1.service.SessionService;
+import dev.gunho.api.global.constants.CoreConstants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,7 @@ public class SessionValidationFilter implements WebFilter {
         }
 
         // Authorization 헤더에서 세션 키 추출
-        String sessionKey = exchange.getRequest().getHeaders().getFirst("Authorization");
+        String sessionKey = exchange.getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
         if (sessionKey == null || sessionKey.isEmpty()) {
             return unauthorizedResponse(exchange);
         }

@@ -1,6 +1,8 @@
 package dev.gunho.api.global.util;
 
 import java.security.SecureRandom;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Util {
@@ -18,6 +20,10 @@ public class Util {
 
             return String.valueOf(code);
         }
+
+    }
+
+    public static class Encrypt {
 
     }
 
@@ -43,7 +49,15 @@ public class Util {
             return result;
         }
 
+    }
 
+    public static class Date {
 
+        public static String getDay() {
+            return getDay("yyyy-MM-dd HH:mm:ss");
+        }
+        public static String getDay(String format) {
+            return LocalDateTime.now().format(DateTimeFormatter.ofPattern(format));
+        }
     }
 }

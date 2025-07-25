@@ -52,7 +52,7 @@ public class ApiResponse<T> {
     }
 
     public static <T> ApiResponse<T> failure(T data) {
-        return new ApiResponse<>(true, ResponseCode.BAD_REQUEST , data, null);
+        return new ApiResponse<>(false, ResponseCode.BAD_REQUEST , data, null);
     }
 
     public static <T> ApiResponse<T> failure(T data, String message) {

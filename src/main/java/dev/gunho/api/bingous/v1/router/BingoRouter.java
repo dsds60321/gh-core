@@ -2,6 +2,7 @@ package dev.gunho.api.bingous.v1.router;
 
 import dev.gunho.api.bingous.v1.handler.AnniversaryHandler;
 import dev.gunho.api.bingous.v1.handler.AuthHandler;
+import dev.gunho.api.bingous.v1.handler.CoupleHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,15 @@ public class BingoRouter {
                         .POST("/sign-in", authHandler::signIn)
                         .POST("/sign-up/email/verify", authHandler::verifyEmail)
                         .POST("/sign-up/email/confirm", authHandler::confirmEmail))
+                .build();
+    }
+
+
+    @Bean
+    public RouterFunction<ServerResponse> coupleRoutes(CoupleHandler coupleHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .POST("/couple/link", coupleHandler::createLink))
                 .build();
     }
 

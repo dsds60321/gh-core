@@ -170,20 +170,4 @@ public class AuthService {
                     return Mono.just(response);
                 });
     }
-
-    public Mono<String> inviteCouple(InviteDto.Request request) {
-        return userRepository.findById(request.id())
-                .flatMap(user -> {
-
-
-
-
-
-                })
-                .switchIfEmpty(Mono.just(null))
-                .onErrorResume(error -> {
-                    log.error("Error in inviteCouple - ID: {}", request.id(), error);
-                    return Mono.just(null);
-                });
-    }
 }
