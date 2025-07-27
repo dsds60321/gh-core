@@ -10,10 +10,6 @@ public class Util {
     public static class CommonUtil {
 
         public static String generateRandomCode(int length) {
-            if (length < 4 || length > 8) {
-                throw new IllegalArgumentException("코드 길이는 4-8자리여야 합니다.");
-            }
-
             int min = (int) Math.pow(10, length - 1);
             int max = (int) Math.pow(10, length) - 1;
             int code = new SecureRandom().nextInt(max - min + 1) + min;

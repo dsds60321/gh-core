@@ -1,605 +1,175 @@
-2025-07-24T22:46:39.913+09:00  INFO 10842 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 10842 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
-2025-07-24T22:46:39.920+09:00  INFO 10842 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-07-24T22:46:40.300+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:46:40.301+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-07-24T22:46:40.379+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 R2DBC repository interfaces.
-2025-07-24T22:46:40.386+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:46:40.387+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-24T22:46:40.395+09:00  INFO 10842 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:46:40.395+09:00  INFO 10842 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:46:40.396+09:00  INFO 10842 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:46:40.396+09:00  INFO 10842 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
-2025-07-24T22:46:40.809+09:00 ERROR 10842 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-07-24T22:46:41.162+09:00  INFO 10842 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+2025-07-28T00:07:21.427+09:00  INFO 11270 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11270 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-28T00:07:21.432+09:00 DEBUG 11270 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-28T00:07:21.433+09:00  INFO 11270 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-28T00:07:21.785+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:07:21.786+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-28T00:07:21.866+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 6 R2DBC repository interfaces.
+2025-07-28T00:07:21.874+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:07:21.874+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-28T00:07:21.882+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.882+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.882+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.882+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.882+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.883+09:00  INFO 11270 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:07:21.883+09:00  INFO 11270 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-28T00:07:22.210+09:00 ERROR 11270 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-28T00:07:22.496+09:00  INFO 11270 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 85d19760-1e8b-4ea3-93d1-9a69f2e10e7a
+Using generated security password: 15c00470-c824-4435-bea2-afa2c7bb56bb
 
-2025-07-24T22:46:41.424+09:00  INFO 10842 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2025-07-24T22:46:41.430+09:00  INFO 10842 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.851 seconds (process running for 2.793)
-2025-07-24T22:47:12.624+09:00  INFO 10842 --- [core] [reactor-http-nio-2] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:47:15.552+09:00 ERROR 10842 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds601@naver.com
+2025-07-28T00:07:22.733+09:00  INFO 11270 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-28T00:07:22.739+09:00  INFO 11270 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.561 seconds (process running for 2.1)
+2025-07-28T00:07:41.145+09:00  INFO 11270 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [36490cd9-8afb-4405-abc6-2db5fd01730e] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:07:41.146+09:00 DEBUG 11270 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [36490cd9-8afb-4405-abc6-2db5fd01730e] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:07:41.249+09:00  INFO 11270 --- [core] [reactor-http-nio-2] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:07:44.941+09:00  INFO 11270 --- [core] [reactor-tcp-nio-1] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:07:45.073+09:00  INFO 11270 --- [core] [reactor-tcp-nio-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:07:45.079+09:00  INFO 11270 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:07:45.115+09:00  INFO 11270 --- [core] [lettuce-nioEventLoop-7-1] d.gunho.api.global.filter.LoggingFilter  : [36490cd9-8afb-4405-abc6-2db5fd01730e] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (3970ms)
+2025-07-28T00:08:55.563+09:00  INFO 11270 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [6fabce8a-9ea1-4ee3-ae93-92dbc9b650c1] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:08:55.564+09:00 DEBUG 11270 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [6fabce8a-9ea1-4ee3-ae93-92dbc9b650c1] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:08:55.567+09:00  INFO 11270 --- [core] [reactor-http-nio-3] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:08:55.656+09:00  INFO 11270 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:08:55.656+09:00  INFO 11270 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:08:55.657+09:00  INFO 11270 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:09:16.371+09:00  INFO 11270 --- [core] [lettuce-nioEventLoop-7-1] d.gunho.api.global.filter.LoggingFilter  : [6fabce8a-9ea1-4ee3-ae93-92dbc9b650c1] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (20808ms)
+2025-07-28T00:10:14.398+09:00  INFO 11270 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-28T00:10:14.399+09:00  INFO 11270 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-28T00:10:19.559+09:00  INFO 11444 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11444 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-28T00:10:19.560+09:00 DEBUG 11444 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-28T00:10:19.560+09:00  INFO 11444 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-28T00:10:19.876+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:10:19.877+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-28T00:10:19.942+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 6 R2DBC repository interfaces.
+2025-07-28T00:10:19.948+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:10:19.948+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-28T00:10:19.955+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.955+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.955+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.955+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.955+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.956+09:00  INFO 11444 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:10:19.956+09:00  INFO 11444 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-28T00:10:20.247+09:00 ERROR 11444 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-28T00:10:20.532+09:00  INFO 11444 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
 
-org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b04b2af8sm1758222b3a.77 - gsmtp
+Using generated security password: 8ea434cd-3a8c-4d19-bcc1-e5485f946871
 
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
+2025-07-28T00:10:20.743+09:00  INFO 11444 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-28T00:10:20.750+09:00  INFO 11444 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.614 seconds (process running for 2.44)
+2025-07-28T00:11:14.265+09:00  INFO 11444 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-28T00:11:14.267+09:00  INFO 11444 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-28T00:11:18.573+09:00  INFO 11520 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11520 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-28T00:11:18.574+09:00 DEBUG 11520 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-28T00:11:18.575+09:00  INFO 11520 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-28T00:11:18.910+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:11:18.911+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-28T00:11:18.992+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 6 R2DBC repository interfaces.
+2025-07-28T00:11:18.998+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:11:18.998+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-28T00:11:19.005+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:11:19.006+09:00  INFO 11520 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-28T00:11:19.300+09:00 ERROR 11520 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-28T00:11:19.571+09:00  INFO 11520 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
 
-2025-07-24T22:47:15.555+09:00 ERROR 10842 --- [core] [boundedElastic-2] d.g.a.bingous.v1.service.AuthServiceV2   : Error sendEmailVerifyCode - Email: dsds601@naver.com
+Using generated security password: 37b4bac7-a9a3-49b4-a16c-f29b728ec7b5
 
-dev.gunho.api.global.exception.EmailSendException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoError] :
-	reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231)
-	reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-Error has been observed at the following site(s):
-	*__FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run ⇢ at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	*______________________________________________Mono.onErrorMap ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:73)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:81)
-	|_                                            Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:93)
-	|_                                                Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.lambda$sendEmailVerifyCode$1(AuthServiceV2.java:55)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.sendEmailVerifyCode(AuthServiceV2.java:45)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-		at reactor.core.publisher.Mono.lambda$onErrorMap$29(Mono.java:3862) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.lang.RuntimeException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoSubscribeOnCallable] :
-	reactor.core.publisher.Mono.subscribeOn(Mono.java:4625)
-	dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Error has been observed at the following site(s):
-	*__Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-		at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b04b2af8sm1758222b3a.77 - gsmtp
+2025-07-28T00:11:19.806+09:00  INFO 11520 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-28T00:11:19.813+09:00  INFO 11520 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.505 seconds (process running for 2.103)
+2025-07-28T00:11:20.807+09:00  INFO 11520 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [f135119d-fab0-4659-a2e5-ceb6e724f3f6] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:11:20.807+09:00 DEBUG 11520 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [f135119d-fab0-4659-a2e5-ceb6e724f3f6] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:11:20.904+09:00  INFO 11520 --- [core] [reactor-http-nio-2] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:11:21.068+09:00  INFO 11520 --- [core] [reactor-tcp-nio-1] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:11:21.187+09:00  INFO 11520 --- [core] [reactor-tcp-nio-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:11:21.193+09:00  INFO 11520 --- [core] [reactor-tcp-nio-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:11:22.954+09:00 DEBUG 11520 --- [core] [reactor-tcp-nio-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [UPDATE invite_tokens SET invitee_id = :userId, couple_name = CONCAT(inviter_id, '_', :userId), status = 'accepted', updated_at = NOW() WHERE token = :token] to [UPDATE invite_tokens SET invitee_id = ?, couple_name = CONCAT(inviter_id, '_', ?), status = 'accepted', updated_at = NOW() WHERE token = ?]
+2025-07-28T00:11:22.973+09:00  INFO 11520 --- [core] [reactor-tcp-nio-1] d.g.api.bingous.v1.service.AuthService   : Couple registration successful - Token: 1018666881, InviteeId: test_couple
+2025-07-28T00:11:22.978+09:00  WARN 11520 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Unknown column 'inviter_id' in 'INSERT INTO'' sqlState='42S22' code=1054 
+2025-07-28T00:11:23.005+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [f135119d-fab0-4659-a2e5-ceb6e724f3f6] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (2198ms)
+2025-07-28T00:13:13.368+09:00  INFO 11520 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [68fcce53-cc19-4b13-ad07-3ebe90de7c84] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:13:13.369+09:00 DEBUG 11520 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [68fcce53-cc19-4b13-ad07-3ebe90de7c84] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:13:13.373+09:00  INFO 11520 --- [core] [reactor-http-nio-3] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:13:13.467+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:13:13.467+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:13:13.468+09:00  INFO 11520 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:13:13.468+09:00 DEBUG 11520 --- [core] [lettuce-nioEventLoop-7-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [UPDATE invite_tokens SET invitee_id = :userId, couple_name = CONCAT(inviter_id, '_', :userId), status = 'accepted', updated_at = NOW() WHERE token = :token] to [UPDATE invite_tokens SET invitee_id = ?, couple_name = CONCAT(inviter_id, '_', ?), status = 'accepted', updated_at = NOW() WHERE token = ?]
+2025-07-28T00:13:13.470+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] d.g.api.bingous.v1.service.AuthService   : Couple registration successful - Token: 1018666881, InviteeId: test_couple
+2025-07-28T00:13:13.471+09:00  WARN 11520 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Table 'gd.couples' doesn't exist' sqlState='42S02' code=1146 
+2025-07-28T00:13:13.473+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [68fcce53-cc19-4b13-ad07-3ebe90de7c84] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (105ms)
+2025-07-28T00:13:54.249+09:00  INFO 11520 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [2ce33f69-18b3-4ee6-925e-4c1cd840990a] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:13:54.250+09:00 DEBUG 11520 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [2ce33f69-18b3-4ee6-925e-4c1cd840990a] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:13:54.253+09:00  INFO 11520 --- [core] [reactor-http-nio-4] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:13:54.257+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [2ce33f69-18b3-4ee6-925e-4c1cd840990a] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (8ms)
+2025-07-28T00:14:01.947+09:00  INFO 11520 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [e2a039d3-b7e0-4bac-898e-5b80b99c0e21] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:14:01.947+09:00 DEBUG 11520 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [e2a039d3-b7e0-4bac-898e-5b80b99c0e21] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:14:01.951+09:00  INFO 11520 --- [core] [reactor-http-nio-5] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:14:01.955+09:00  INFO 11520 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [e2a039d3-b7e0-4bac-898e-5b80b99c0e21] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (8ms)
+2025-07-28T00:14:44.371+09:00  INFO 11520 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-28T00:14:44.374+09:00  INFO 11520 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-07-28T00:14:48.289+09:00  INFO 11837 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11837 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
+2025-07-28T00:14:48.291+09:00 DEBUG 11837 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-28T00:14:48.291+09:00  INFO 11837 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-28T00:14:48.711+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:14:48.712+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-07-28T00:14:48.782+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 6 R2DBC repository interfaces.
+2025-07-28T00:14:48.788+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-28T00:14:48.789+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-07-28T00:14:48.796+09:00  INFO 11837 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-28T00:14:49.122+09:00 ERROR 11837 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-07-28T00:14:49.409+09:00  INFO 11837 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
 
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
+Using generated security password: 9731477b-3a28-4f92-8ec3-5af3dee91b58
 
-2025-07-24T22:48:53.037+09:00  INFO 10842 --- [core] [reactor-http-nio-3] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:49:02.250+09:00 ERROR 10842 --- [core] [boundedElastic-4] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds601@naver.com
-
-org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23fa48bd646sm16268845ad.105 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:49:02.253+09:00 ERROR 10842 --- [core] [boundedElastic-4] d.g.a.bingous.v1.service.AuthServiceV2   : Error sendEmailVerifyCode - Email: dsds601@naver.com
-
-dev.gunho.api.global.exception.EmailSendException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoError] :
-	reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231)
-	reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-Error has been observed at the following site(s):
-	*__FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run ⇢ at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	*______________________________________________Mono.onErrorMap ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:73)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:81)
-	|_                                            Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:93)
-	|_                                                Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.lambda$sendEmailVerifyCode$1(AuthServiceV2.java:55)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.sendEmailVerifyCode(AuthServiceV2.java:45)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-		at reactor.core.publisher.Mono.lambda$onErrorMap$29(Mono.java:3862) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.lang.RuntimeException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoSubscribeOnCallable] :
-	reactor.core.publisher.Mono.subscribeOn(Mono.java:4625)
-	dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Error has been observed at the following site(s):
-	*__Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-		at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23fa48bd646sm16268845ad.105 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:50:28.213+09:00  INFO 10842 --- [core] [reactor-http-nio-4] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:50:44.647+09:00 ERROR 10842 --- [core] [boundedElastic-5] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds601@naver.com
-
-org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-31e662f635dsm1461227a91.33 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:50:44.650+09:00 ERROR 10842 --- [core] [boundedElastic-5] d.g.a.bingous.v1.service.AuthServiceV2   : Error sendEmailVerifyCode - Email: dsds601@naver.com
-
-dev.gunho.api.global.exception.EmailSendException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoError] :
-	reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231)
-	reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-Error has been observed at the following site(s):
-	*__FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run ⇢ at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	*______________________________________________Mono.onErrorMap ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:73)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:81)
-	|_                                            Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:93)
-	|_                                                Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.lambda$sendEmailVerifyCode$1(AuthServiceV2.java:55)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.sendEmailVerifyCode(AuthServiceV2.java:45)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-		at reactor.core.publisher.Mono.lambda$onErrorMap$29(Mono.java:3862) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.lang.RuntimeException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoSubscribeOnCallable] :
-	reactor.core.publisher.Mono.subscribeOn(Mono.java:4625)
-	dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Error has been observed at the following site(s):
-	*__Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-		at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-31e662f635dsm1461227a91.33 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:54:24.005+09:00  INFO 10842 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-24T22:54:24.012+09:00  INFO 10842 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2025-07-24T22:54:30.025+09:00  INFO 11378 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11378 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
-2025-07-24T22:54:30.032+09:00  INFO 11378 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-07-24T22:54:30.734+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:54:30.737+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-07-24T22:54:30.849+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 3 R2DBC repository interfaces.
-2025-07-24T22:54:30.859+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:54:30.860+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-24T22:54:30.870+09:00  INFO 11378 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:54:30.870+09:00  INFO 11378 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:54:30.871+09:00  INFO 11378 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:54:30.871+09:00  INFO 11378 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2025-07-24T22:54:31.505+09:00 ERROR 11378 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-07-24T22:54:32.062+09:00  INFO 11378 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 139b5fe4-61bd-4c32-8124-be63c48a1e6c
-
-2025-07-24T22:54:32.563+09:00  INFO 11378 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2025-07-24T22:54:32.572+09:00  INFO 11378 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 3.11 seconds (process running for 4.204)
-2025-07-24T22:54:36.063+09:00  INFO 11378 --- [core] [reactor-http-nio-2] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:54:44.972+09:00 ERROR 11378 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds601@naver.com
-
-org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b3f6c117796sm1457120a12.59 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:54:44.979+09:00 ERROR 11378 --- [core] [boundedElastic-2] d.g.a.bingous.v1.service.AuthServiceV2   : Error sendEmailVerifyCode - Email: dsds601@naver.com
-
-dev.gunho.api.global.exception.EmailSendException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoError] :
-	reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231)
-	reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-Error has been observed at the following site(s):
-	*__FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run ⇢ at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	*______________________________________________Mono.onErrorMap ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:73)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:81)
-	|_                                            Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:93)
-	|_                                                Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.lambda$sendEmailVerifyCode$1(AuthServiceV2.java:55)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.sendEmailVerifyCode(AuthServiceV2.java:45)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-		at reactor.core.publisher.Mono.lambda$onErrorMap$29(Mono.java:3862) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.lang.RuntimeException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoSubscribeOnCallable] :
-	reactor.core.publisher.Mono.subscribeOn(Mono.java:4625)
-	dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Error has been observed at the following site(s):
-	*__Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-		at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b3f6c117796sm1457120a12.59 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:55:42.713+09:00  INFO 11378 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-24T22:55:42.715+09:00  INFO 11378 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2025-07-24T22:55:47.573+09:00  INFO 11454 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11454 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
-2025-07-24T22:55:47.576+09:00  INFO 11454 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-07-24T22:55:48.201+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:55:48.202+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-07-24T22:55:48.287+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 3 R2DBC repository interfaces.
-2025-07-24T22:55:48.295+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:55:48.297+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-24T22:55:48.324+09:00  INFO 11454 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:55:48.324+09:00  INFO 11454 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:55:48.324+09:00  INFO 11454 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:55:48.324+09:00  INFO 11454 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2025-07-24T22:55:48.996+09:00 ERROR 11454 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-07-24T22:55:49.581+09:00  INFO 11454 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 1bd9466c-0c23-4bab-9f81-cfc4d5ba0f82
-
-2025-07-24T22:55:49.966+09:00  INFO 11454 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2025-07-24T22:55:49.973+09:00  INFO 11454 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 3.099 seconds (process running for 3.847)
-2025-07-24T22:55:54.642+09:00  INFO 11454 --- [core] [reactor-http-nio-2] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:55:57.098+09:00 ERROR 11454 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Failed to send email to: dsds601@naver.com
-
-org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b0627d49sm1661491b3a.128 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:55:57.100+09:00 ERROR 11454 --- [core] [boundedElastic-2] d.g.a.bingous.v1.service.AuthServiceV2   : Error sendEmailVerifyCode - Email: dsds601@naver.com
-
-dev.gunho.api.global.exception.EmailSendException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoError] :
-	reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231)
-	reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-Error has been observed at the following site(s):
-	*__FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run ⇢ at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
-	*______________________________________________Mono.onErrorMap ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:73)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:81)
-	|_                                            Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendTemplateEmail(EmailService.java:93)
-	|_                                                Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.lambda$sendEmailVerifyCode$1(AuthServiceV2.java:55)
-	*_________________________________________________Mono.flatMap ⇢ at dev.gunho.api.bingous.v1.service.AuthServiceV2.sendEmailVerifyCode(AuthServiceV2.java:45)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$2(EmailService.java:73) ~[main/:na]
-		at reactor.core.publisher.Mono.lambda$onErrorMap$29(Mono.java:3862) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:231) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: java.lang.RuntimeException: 이메일 발송 실패
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Assembly trace from producer [reactor.core.publisher.MonoSubscribeOnCallable] :
-	reactor.core.publisher.Mono.subscribeOn(Mono.java:4625)
-	dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Error has been observed at the following site(s):
-	*__Mono.subscribeOn ⇢ at dev.gunho.api.global.service.EmailService.sendEmail(EmailService.java:72)
-Original Stack Trace:
-		at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:69) ~[main/:na]
-		at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-		at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-		at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: org.springframework.mail.MailAuthenticationException: Authentication failed
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at dev.gunho.api.global.service.EmailService.lambda$sendEmail$1(EmailService.java:59) ~[main/:na]
-	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoCallableOnAssembly.call(MonoCallableOnAssembly.java:91) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:228) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.7.jar:3.7.7]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-761b0627d49sm1661491b3a.128 - gsmtp
-
-	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865) ~[jakarta.mail-2.0.3.jar:na]
-	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769) ~[jakarta.mail-2.0.3.jar:na]
-	at jakarta.mail.Service.connect(Service.java:345) ~[jakarta.mail-2.0.3.jar:na]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480) ~[spring-context-support-6.2.8.jar:6.2.8]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399) ~[spring-context-support-6.2.8.jar:6.2.8]
-	... 14 common frames omitted
-
-2025-07-24T22:56:52.590+09:00  INFO 11454 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-24T22:56:52.593+09:00  INFO 11454 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2025-07-24T22:56:56.858+09:00  INFO 11533 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 11533 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
-2025-07-24T22:56:56.859+09:00  INFO 11533 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-07-24T22:56:57.755+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:56:57.757+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-07-24T22:56:57.853+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 3 R2DBC repository interfaces.
-2025-07-24T22:56:57.861+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-24T22:56:57.862+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-24T22:56:57.875+09:00  INFO 11533 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:56:57.876+09:00  INFO 11533 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:56:57.876+09:00  INFO 11533 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-24T22:56:57.876+09:00  INFO 11533 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2025-07-24T22:56:58.410+09:00 ERROR 11533 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-07-24T22:56:58.925+09:00  INFO 11533 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
-
-Using generated security password: e2a79c2a-d465-4556-affd-87d03db513c4
-
-2025-07-24T22:56:59.389+09:00  INFO 11533 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2025-07-24T22:56:59.407+09:00  INFO 11533 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.912 seconds (process running for 3.484)
-2025-07-24T22:57:03.352+09:00  INFO 11533 --- [core] [reactor-http-nio-2] d.g.a.bingous.v1.service.AuthServiceV2   : sendEmailVerifyCode - ID: testets, Email: dsds601@naver.com
-2025-07-24T22:57:08.469+09:00  INFO 11533 --- [core] [boundedElastic-2] d.gunho.api.global.service.EmailService  : Email sent successfully to: dsds601@naver.com
+2025-07-28T00:14:49.690+09:00  INFO 11837 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-28T00:14:49.696+09:00  INFO 11837 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.764 seconds (process running for 2.346)
+2025-07-28T00:14:55.594+09:00  INFO 11837 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [d164332e-ed62-4d98-92c7-24bd36764c58] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:14:55.594+09:00 DEBUG 11837 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [d164332e-ed62-4d98-92c7-24bd36764c58] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:14:55.693+09:00  INFO 11837 --- [core] [reactor-http-nio-2] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:14:55.787+09:00  INFO 11837 --- [core] [reactor-tcp-nio-2] d.gunho.api.global.filter.LoggingFilter  : [d164332e-ed62-4d98-92c7-24bd36764c58] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (193ms)
+2025-07-28T00:15:09.292+09:00  INFO 11837 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [63e5c463-2a1b-47c4-90b4-12deb15f45e1] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:15:09.292+09:00 DEBUG 11837 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [63e5c463-2a1b-47c4-90b4-12deb15f45e1] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:15:09.295+09:00  INFO 11837 --- [core] [reactor-http-nio-3] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:15:09.300+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [63e5c463-2a1b-47c4-90b4-12deb15f45e1] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (8ms)
+2025-07-28T00:15:28.962+09:00  INFO 11837 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [054f8af0-caa4-44c2-abf7-a7591a5cb8e0] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:15:28.962+09:00 DEBUG 11837 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [054f8af0-caa4-44c2-abf7-a7591a5cb8e0] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:15:28.966+09:00  INFO 11837 --- [core] [reactor-http-nio-4] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:15:29.068+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:15:29.201+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:15:29.207+09:00  INFO 11837 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:15:29.212+09:00 DEBUG 11837 --- [core] [lettuce-nioEventLoop-7-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [UPDATE invite_tokens SET invitee_id = :userId, couple_name = CONCAT(inviter_id, '_', :userId), status = 'accepted', updated_at = NOW() WHERE token = :token] to [UPDATE invite_tokens SET invitee_id = ?, couple_name = CONCAT(inviter_id, '_', ?), status = 'accepted', updated_at = NOW() WHERE token = ?]
+2025-07-28T00:15:29.217+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.g.api.bingous.v1.service.AuthService   : Couple registration successful - Token: 1018666881, InviteeId: test_couple
+2025-07-28T00:15:29.221+09:00  WARN 11837 --- [core] [reactor-tcp-nio-3] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Field 'start_date' doesn't have a default value' sqlState='HY000' code=1364 
+2025-07-28T00:15:29.223+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [054f8af0-caa4-44c2-abf7-a7591a5cb8e0] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (261ms)
+2025-07-28T00:16:50.130+09:00  INFO 11837 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [972a1423-7faf-433c-b76f-346d8ba73c00] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:16:50.131+09:00 DEBUG 11837 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [972a1423-7faf-433c-b76f-346d8ba73c00] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:16:50.134+09:00  INFO 11837 --- [core] [reactor-http-nio-5] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:16:50.222+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:16:50.222+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:16:50.223+09:00  INFO 11837 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:16:50.223+09:00 DEBUG 11837 --- [core] [lettuce-nioEventLoop-7-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [UPDATE invite_tokens SET invitee_id = :userId, couple_name = CONCAT(inviter_id, '_', :userId), status = 'accepted', updated_at = NOW() WHERE token = :token] to [UPDATE invite_tokens SET invitee_id = ?, couple_name = CONCAT(inviter_id, '_', ?), status = 'accepted', updated_at = NOW() WHERE token = ?]
+2025-07-28T00:16:50.225+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.g.api.bingous.v1.service.AuthService   : Couple registration successful - Token: 1018666881, InviteeId: test_couple
+2025-07-28T00:16:50.229+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [972a1423-7faf-433c-b76f-346d8ba73c00] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (99ms)
+2025-07-28T00:24:24.344+09:00  INFO 11837 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [7f5a7179-2322-4ffd-ac4f-f640d2a69c64] 요청 시작: POST http://localhost:8080/bingo-us/v1/sign-up (ContentLength: 253)
+2025-07-28T00:24:24.347+09:00 DEBUG 11837 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [7f5a7179-2322-4ffd-ac4f-f640d2a69c64] Headers: [Content-Length:"253", Host:"localhost:8080", User-Agent:"Java-http-client/21.0.7", Content-Type:"application/json"]
+2025-07-28T00:24:24.351+09:00  INFO 11837 --- [core] [reactor-http-nio-6] d.g.api.bingous.v1.service.AuthService   : signUp called - ID: test_couple, Email: test_couple@example.com
+2025-07-28T00:24:24.439+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : getString : COUPLE_INVITE:1018666881
+2025-07-28T00:24:24.440+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Started for key: COUPLE_INVITE:1018666881
+2025-07-28T00:24:24.440+09:00  INFO 11837 --- [core] [lettuce-nioEventLoop-7-1] dev.gunho.api.global.util.RedisUtil      : Redis GET String - Key: COUPLE_INVITE:1018666881, Result: test
+2025-07-28T00:24:24.441+09:00 DEBUG 11837 --- [core] [lettuce-nioEventLoop-7-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [UPDATE invite_tokens SET invitee_id = :userId, couple_name = CONCAT(inviter_id, '_', :userId), status = 'accepted', updated_at = NOW() WHERE token = :token] to [UPDATE invite_tokens SET invitee_id = ?, couple_name = CONCAT(inviter_id, '_', ?), status = 'accepted', updated_at = NOW() WHERE token = ?]
+2025-07-28T00:24:24.442+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.g.api.bingous.v1.service.AuthService   : Couple registration successful - Token: 1018666881, InviteeId: test_couple
+2025-07-28T00:24:24.445+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.g.api.bingous.v1.service.AuthService   : Couple saved successfully - ID: 1
+2025-07-28T00:24:24.446+09:00  INFO 11837 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [7f5a7179-2322-4ffd-ac4f-f640d2a69c64] 요청 완료: POST http://localhost:8080/bingo-us/v1/sign-up - 200 OK (102ms)
+2025-07-28T00:24:33.437+09:00  INFO 11837 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-28T00:24:33.440+09:00  INFO 11837 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete

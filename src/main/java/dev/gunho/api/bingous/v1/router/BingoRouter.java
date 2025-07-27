@@ -32,7 +32,7 @@ public class BingoRouter {
     public RouterFunction<ServerResponse> coupleRoutes(CoupleHandler coupleHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/couple/link", coupleHandler::createLink))
+                        .GET("/couple/link", coupleHandler::createLink))
                 .build();
     }
 

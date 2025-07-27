@@ -32,7 +32,8 @@ public class SignUpDto {
             String phoneNumber,
             Gender gender,
             UserStatus status,
-            Boolean email_verified
+            Boolean email_verified,
+            String token
     ) {
         public User toEntity(PasswordEncoder passwordEncoder) {
             return User.builder()

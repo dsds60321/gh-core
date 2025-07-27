@@ -25,6 +25,7 @@ public interface AppSessionRepository extends ReactiveCrudRepository<AppSession,
     Mono<Integer> deactivateExpiredSessions(LocalDateTime now);
 
     // 세션 키로 세션 조회 (만료 여부 무관)
+    @Query("SELECT * FROM app_sessions WHERE session_key = :sessionKey")
     Mono<AppSession> findBySessionKey(String sessionKey);
 
     @Query("SELECT * FROM app_sessions WHERE user_id = :userId AND device_id = :deviceId AND is_active = 1 AND expires_at > NOW()")

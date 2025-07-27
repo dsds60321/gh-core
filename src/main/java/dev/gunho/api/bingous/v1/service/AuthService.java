@@ -1,10 +1,12 @@
 package dev.gunho.api.bingous.v1.service;
 
 import dev.gunho.api.bingous.v1.model.dto.EmailVerifyDto;
-import dev.gunho.api.bingous.v1.model.dto.InviteDto;
 import dev.gunho.api.bingous.v1.model.dto.SignInDto;
 import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
+import dev.gunho.api.bingous.v1.model.entity.Couples;
 import dev.gunho.api.bingous.v1.model.entity.User;
+import dev.gunho.api.bingous.v1.repository.CoupleRepository;
+import dev.gunho.api.bingous.v1.repository.InviteTokenRepository;
 import dev.gunho.api.bingous.v1.repository.UserRepository;
 import dev.gunho.api.global.constants.CoreConstants;
 import dev.gunho.api.global.enums.TemplateCode;
@@ -32,6 +34,8 @@ public class AuthService {
     private final SessionService sessionService;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final CoupleRepository coupleRepository;
+    private final InviteTokenRepository inviteTokenRepository;
 
     /**
      * 이메일 인증코드 발송
@@ -101,38 +105,47 @@ public class AuthService {
      */
     public Mono<SignUpDto.Response> signUp(SignUpDto.Request request) {
         log.info("signUp called - ID: {}, Email: {}", request.id(), request.email());
-        SignUpDto.Response response = SignUpDto.Response
-                .builder()
-                .success(false)
-                .message("이미 사용중인 아이디입니다.")
-                .build();
 
         return userRepository.existsById(request.id())
                 .flatMap(exists -> {
-                    if (!exists) {
-                        return Mono.just(response);
+                    if (exists) {
+                        return Mono.just(SignUpDto.Response.builder()
+                                .success(false)
+                                .message("이미 사용중인 아이디입니다.")
+                                .build());
                     }
 
                     User user = request.toEntity(passwordEncoder);
                     user.setNew(true);
 
                     return userRepository.save(user)
-                            .map(savedUser -> {
+                            .flatMap(savedUser -> {
                                 savedUser.markNotNew();
-                                log.info("User created successfully - ID: {}", savedUser.getId());
 
-                                return response.toBuilder()
+                                // 토큰이 있으면 커플 등록 처리
+                                if (!request.token().isBlank()) {
+                                    return processCoupleRegistration(request.token(), savedUser.getId());
+                                }
+
+                                log.info("User created successfully - ID: {}", savedUser.getId());
+                                // 일반 회원가입
+                                return Mono.just(SignUpDto.Response.builder()
                                         .message("회원가입이 완료되었습니다.")
                                         .userId(savedUser.getId())
                                         .success(true)
-                                        .build();
+                                        .build());
                             });
                 })
                 .onErrorResume(error -> {
                     log.error("Error signUp - id: {}", request.id(), error);
-                    return Mono.just(response);
+                    return Mono.just(SignUpDto.Response.builder()
+                            .message("회원가입 중 오류가 발생했습니다.")
+                            .success(false)
+                            .build());
                 });
     }
+
+
 
     /**
      * 로그인
@@ -170,4 +183,52 @@ public class AuthService {
                     return Mono.just(response);
                 });
     }
+
+    /**
+     * 커플 등록 처리 (별도 메서드로 분리)
+     */
+    private Mono<SignUpDto.Response> processCoupleRegistration(String token, String userId) {
+        String redisKey = CoreConstants.Key.COUPLE_INVITE.formatted(token);
+
+        return redisUtil.getString(redisKey)
+                .flatMap(inviterUserId -> {
+                    if (inviterUserId == null) {
+                        return Mono.just(createResponse(userId, "회원가입은 성공했으나 초대 링크가 만료되었습니다.", true));
+                    }
+
+                    return inviteTokenRepository.updateInviteeUser(token, userId)
+                            .flatMap(updateCount -> {
+                                if (updateCount > 0) {
+                                    log.info("Couple registration successful - Token: {}, InviteeId: {}", token, userId);
+
+                                    // couple 등록
+                                    Couples couples = Couples.toEntity(inviterUserId, userId);
+                                    return coupleRepository.save(couples)
+                                            .map(savedCouples -> {
+                                                log.info("Couple saved successfully - ID: {}", savedCouples.getId());
+                                                return createResponse(userId, "회원가입 및 커플 등록이 완료되었습니다.", true);
+                                            })
+                                            .onErrorReturn(createResponse(userId, "회원가입은 성공했으나 커플 등록에 실패했습니다.", true));
+                                } else {
+                                    log.error("Couple registration failed - Token: {}, InviteeId: {}", token, userId);
+                                    return Mono.just(createResponse(userId, "회원가입에 성공했으나 커플 등록에 실패했습니다.", true));
+                                }
+                            });
+                })
+                .switchIfEmpty(Mono.just(createResponse(userId, "회원가입은 성공했으나 초대 정보를 찾을 수 없습니다.", true)))
+                .onErrorReturn(createResponse(userId, "회원가입에 성공했으나 커플 등록에 실패했습니다.", true));
+    }
+
+
+    /**
+     * Response 생성 헬퍼 메서드
+     */
+    private SignUpDto.Response createResponse(String userId, String message, boolean success) {
+        return SignUpDto.Response.builder()
+                .userId(userId)
+                .message(message)
+                .success(success)
+                .build();
+    }
+
 }

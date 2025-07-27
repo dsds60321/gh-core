@@ -1,0 +1,19 @@
+### 1. 링크 요청
+GET http://localhost:8080/bingo-us/v1/couple/link
+Authorization: ytIDL63i94TiKBaNZM7322V03SU_xRht1dBAt-RzyOg
+
+### 2. 링크를 통한 회워가입
+POST http://localhost:8080/bingo-us/v1/sign-up
+Content-Type: application/json
+
+{
+  "id": "test_couple",
+  "token" : "1018666881",
+  "email": "test_couple@example.com",
+  "nickname": "테스1트유저",
+  "password": "122345",
+  "phoneNumber": "010-0234-5678",
+  "email_verified" : true,
+  "gender": "FEMALE",
+  "status": "ACTIVE"
+}
