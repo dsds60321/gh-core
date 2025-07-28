@@ -1,11 +1,15 @@
 package dev.gunho.api.global.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.lang.reflect.Array;
 import java.security.SecureRandom;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+@Slf4j
 public class Util {
 
     public static class CommonUtil {
@@ -78,6 +82,21 @@ public class Util {
         }
         public static String getDay(String format) {
             return LocalDateTime.now().format(DateTimeFormatter.ofPattern(format));
+        }
+
+        public static LocalDate parseDate(String dateStr) {
+            try {
+                if (dateStr.matches("\\d{8}")) {
+                    // YYYYMMDD 형식인 경우
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+                    return LocalDate.parse(dateStr, formatter);
+                } else {
+                    return LocalDate.parse(dateStr);
+                }
+            } catch (Exception e) {
+                log.warn("날짜 파싱 오류. 기본값을 사용합니다. 입력값: {}, 오류: {}", dateStr, e.getMessage());
+                return LocalDate.now();
+            }
         }
     }
 }

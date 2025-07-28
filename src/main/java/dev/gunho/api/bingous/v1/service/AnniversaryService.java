@@ -66,11 +66,11 @@ public class AnniversaryService {
 
         // 날짜 파라미터 추출 (startDate, endDate 형식으로 검색)a
         LocalDate startDate = request.queryParam("startDate")
-                .map(this::parseDate)
+                .map(Util.Date::parseDate)
                 .orElse(LocalDate.now().minusMonths(1)); // 기본값: 1개월 전
 
         LocalDate endDate = request.queryParam("endDate")
-                .map(this::parseDate)
+                .map(Util.Date::parseDate)
                 .orElse(LocalDate.now().plusMonths(1)); // 기본값: 1개월 후
 
         return userRepository.findBySessionKey(key)
@@ -80,20 +80,6 @@ public class AnniversaryService {
                 .switchIfEmpty(Flux.empty());
     }
 
-    private LocalDate parseDate(String dateStr) {
-        try {
-            if (dateStr.matches("\\d{8}")) {
-                // YYYYMMDD 형식인 경우
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-                return LocalDate.parse(dateStr, formatter);
-            } else {
-                // ISO 형식(YYYY-MM-DD)
-                return LocalDate.parse(dateStr);
-            }
-        } catch (Exception e) {
-            log.warn("날짜 파싱 오류. 기본값을 사용합니다. 입력값: {}, 오류: {}", dateStr, e.getMessage());
-            return LocalDate.now();
-        }
-    }
+
 
 }
