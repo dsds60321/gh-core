@@ -1,6 +1,5 @@
 package dev.gunho.api.bingous.v1.model.entity;
 
-import dev.gunho.api.bingous.v1.model.enums.CoupleStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

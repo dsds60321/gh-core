@@ -23,7 +23,7 @@ public class Anniversary {
     private Long id;
 
     @Column("couple_id")
-    private String coupleId;
+    private Long coupleId;
 
     @Column
     private AnniversariesType type;

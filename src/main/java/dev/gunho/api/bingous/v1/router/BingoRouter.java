@@ -3,6 +3,7 @@ package dev.gunho.api.bingous.v1.router;
 import dev.gunho.api.bingous.v1.handler.AnniversaryHandler;
 import dev.gunho.api.bingous.v1.handler.AuthHandler;
 import dev.gunho.api.bingous.v1.handler.CoupleHandler;
+import dev.gunho.api.bingous.v1.handler.DashboardHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,14 @@ public class BingoRouter {
                 .build();
     }
 
+    @Bean
+    public RouterFunction<ServerResponse> dashboardRoutes(DashboardHandler dashboardHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .GET("/dashboard", dashboardHandler::getDashboard))
+                .build();
+    }
+
 
     @Bean
     public RouterFunction<ServerResponse> coupleRoutes(CoupleHandler coupleHandler) {
@@ -40,8 +49,8 @@ public class BingoRouter {
     public RouterFunction<ServerResponse> anniversaryRoutes(AnniversaryHandler anniversaryHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/anniversary", anniversaryHandler::create)
-                        .GET("/anniversary", anniversaryHandler::search))
+                        .POST("/anniversaries", anniversaryHandler::create)
+                        .GET("/anniversaries", anniversaryHandler::search))
                 .build();
     }
 }

@@ -23,7 +23,7 @@ public class User implements Persistable<String> {
     private String id;
 
     @Column("couple_id")
-    private String coupleId;
+    private Long coupleId;
 
     @Column("email")
     private String email;

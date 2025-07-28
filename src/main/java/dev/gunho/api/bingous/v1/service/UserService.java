@@ -21,41 +21,41 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final SessionService sessionService;
 
-    public Mono<Result<SignInDto.Response>> signIn(SignInDto.Request request, ServerHttpRequest httpRequest) {
-        log.info("signIn - ID: {}", request.id());
-
-        return userRepository.findById(request.id())
-                .flatMap(user -> {
-                    // 비밀번호 검증
-                    if (!passwordEncoder.matches(request.password(), user.getPasswordHash())) {
-                        log.warn("Password mismatch - ID: {}", request.id());
-
-                        // 실패 횟수 증가
-                        return userRepository.incrementTryCnt(user.getId())
-                                .map(savedUser -> Result.<SignInDto.Response>failure("아이디 혹은 비밀번호를 확인해주세요", "LOGIN_FAILED"));
-                    }
-
-                    // 로그인 성공 - 마지막 로그인 시간 업데이트
-                    return sessionService.invalidateAllUserSessions(user.getId())
-                            .then(Mono.defer(() ->  sessionService.createSession(user.getId(), httpRequest)))
-                            .then(Mono.defer(() -> userRepository.updateLastLogin(user.getId())
-                                    .map(savedUser -> {
-                                        SignInDto.Response response = SignInDto.Response.builder()
-                                                .userId(user.getId())
-                                                .success(true)
-                                                .nickname(user.getNickname())
-                                                .message("로그인 성공")
-                                                .build();
-                                        return Result.success(response);
-                                    })));
-
-                })
-                .switchIfEmpty(Mono.just(Result.<SignInDto.Response>failure("사용자를 찾을 수 없습니다.", "USER_NOT_FOUND")))
-                .onErrorResume(error -> {
-                    log.error("Error in signIn - ID: {}", request.id(), error);
-                    return Mono.just(Result.<SignInDto.Response>failure("로그인 처리 중 오류가 발생했습니다.", "LOGIN_ERROR"));
-                });
-    }
+//    public Mono<Result<SignInDto.Response>> signIn(SignInDto.Request request, ServerHttpRequest httpRequest) {
+//        log.info("signIn - ID: {}", request.id());
+//
+//        return userRepository.findById(request.id())
+//                .flatMap(user -> {
+//                    // 비밀번호 검증
+//                    if (!passwordEncoder.matches(request.password(), user.getPasswordHash())) {
+//                        log.warn("Password mismatch - ID: {}", request.id());
+//
+//                        // 실패 횟수 증가
+//                        return userRepository.incrementTryCnt(user.getId())
+//                                .map(savedUser -> Result.<SignInDto.Response>failure("아이디 혹은 비밀번호를 확인해주세요", "LOGIN_FAILED"));
+//                    }
+//
+//                    // 로그인 성공 - 마지막 로그인 시간 업데이트
+//                    return sessionService.invalidateAllUserSessions(user.getId())
+//                            .then(Mono.defer(() ->  sessionService.createSession(user.getId(), httpRequest)))
+//                            .then(Mono.defer(() -> userRepository.updateLastLogin(user.getId())
+//                                    .map(savedUser -> {
+//                                        SignInDto.Response response = SignInDto.Response.builder()
+//                                                .userId(user.getId())
+//                                                .success(true)
+//                                                .nickname(user.getNickname())
+//                                                .message("로그인 성공")
+//                                                .build();
+//                                        return Result.success(response);
+//                                    })));
+//
+//                })
+//                .switchIfEmpty(Mono.just(Result.<SignInDto.Response>failure("사용자를 찾을 수 없습니다.", "USER_NOT_FOUND")))
+//                .onErrorResume(error -> {
+//                    log.error("Error in signIn - ID: {}", request.id(), error);
+//                    return Mono.just(Result.<SignInDto.Response>failure("로그인 처리 중 오류가 발생했습니다.", "LOGIN_ERROR"));
+//                });
+//    }
 
 
 

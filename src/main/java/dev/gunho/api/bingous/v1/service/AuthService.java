@@ -166,16 +166,37 @@ public class AuthService {
                                 .map(udtCnt -> response);
                     }
 
-                    return sessionService.invalidateAllUserSessions(user.getId())
-                            .then(Mono.defer(() -> userRepository.updateLastLogin(user.getId())))
-                            .then(Mono.defer(() ->  sessionService.createSession(user.getId(), httpRequest)))
-                            .map(session -> response.toBuilder()
-                                    .sessionKey(session.getSessionKey())
-                                    .userId(user.getId())
-                                    .success(true)
-                                    .nickname(user.getNickname())
-                                    .message("로그인에 성공했습니다")
-                                    .build());
+                    // 커플정보가 없는 경우
+                    if (Util.CommonUtil.isEmpty(user.getCoupleId())) {
+                        return sessionService.invalidateAllUserSessions(user.getId())
+                                .then(Mono.defer(() -> userRepository.updateLastLogin(user.getId())))
+                                .then(Mono.defer(() -> sessionService.createSession(user.getId(), httpRequest)))
+                                .map(session -> response.toBuilder()
+                                        .sessionKey(session.getSessionKey())
+                                        .user(SignInDto.toUserPayload(user))
+                                        .couple(null)
+                                        .success(true)
+                                        .nickname(user.getNickname())
+                                        .message("로그인에 성공했습니다")
+                                        .build());
+                    }
+
+                    // 커플 정보 조회
+                    return coupleRepository.findById(user.getCoupleId())
+                            .flatMap(couples -> {
+                                // 커플 정보가 있는 경우
+                                return sessionService.invalidateAllUserSessions(user.getId())
+                                        .then(Mono.defer(() -> userRepository.updateLastLogin(user.getId())))
+                                        .then(Mono.defer(() -> sessionService.createSession(user.getId(), httpRequest)))
+                                        .map(session -> response.toBuilder()
+                                                .sessionKey(session.getSessionKey())
+                                                .user(SignInDto.toUserPayload(user))
+                                                .couple(SignInDto.toCouplePayload(couples))
+                                                .success(true)
+                                                .nickname(user.getNickname())
+                                                .message("로그인에 성공했습니다")
+                                                .build());
+                            });
                 })
                 .switchIfEmpty(Mono.just(response))
                 .onErrorResume(error -> {
@@ -183,6 +204,7 @@ public class AuthService {
                     return Mono.just(response);
                 });
     }
+
 
     /**
      * 커플 등록 처리 (별도 메서드로 분리)
