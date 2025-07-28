@@ -40,7 +40,8 @@ public class BingoRouter {
     public RouterFunction<ServerResponse> anniversaryRoutes(AnniversaryHandler anniversaryHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/anniversary", anniversaryHandler::create))
+                        .POST("/anniversary", anniversaryHandler::create)
+                        .GET("/anniversary", anniversaryHandler::search))
                 .build();
     }
 }

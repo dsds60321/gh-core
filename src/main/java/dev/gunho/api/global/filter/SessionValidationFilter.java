@@ -2,8 +2,10 @@ package dev.gunho.api.global.filter;
 
 import dev.gunho.api.bingous.v1.service.SessionService;
 import dev.gunho.api.global.constants.CoreConstants;
+import dev.gunho.api.global.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -19,6 +21,7 @@ import static dev.gunho.api.global.constants.CoreConstants.Host.V1_HOST;
 public class SessionValidationFilter implements WebFilter {
 
     private final SessionService sessionService;
+    private final RedisTemplate<Object, Object> redisTemplate;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
@@ -31,7 +34,7 @@ public class SessionValidationFilter implements WebFilter {
 
         // Authorization 헤더에서 세션 키 추출
         String sessionKey = exchange.getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
-        if (sessionKey == null || sessionKey.isEmpty()) {
+        if (Util.CommonUtil.isEmpty(sessionKey)) {
             return unauthorizedResponse(exchange);
         }
 

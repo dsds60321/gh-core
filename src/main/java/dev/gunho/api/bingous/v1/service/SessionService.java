@@ -72,7 +72,11 @@ public class SessionService {
                 })
                 .doOnNext(session -> log.debug("Session validated - ID: {}, User: {}, SessionKey: {}",
                         session.getId(), session.getUserId(), sessionKey))
-                .doOnError(error -> log.warn("Session validation failed - SessionKey: {}", sessionKey));
+                .doOnError(error -> log.warn("Session validation failed - SessionKey: {}", sessionKey))
+                .switchIfEmpty(Mono.defer(() -> {
+                    log.warn("Session not found or expired - SessionKey: {}", sessionKey);
+                    return Mono.error(new RuntimeException("세션이 존재하지 않거나 만료되었습니다."));
+                }));
     }
 
     /**
