@@ -13,14 +13,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
+@Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Table("anniversaries")
 public class Anniversary {
 
     @Id
-    private Long idx;
+    private Long id;
 
     @Column("couple_id")
     private String coupleId;

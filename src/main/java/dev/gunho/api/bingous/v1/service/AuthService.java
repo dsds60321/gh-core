@@ -123,7 +123,7 @@ public class AuthService {
                                 savedUser.markNotNew();
 
                                 // 토큰이 있으면 커플 등록 처리
-                                if (!request.token().isBlank()) {
+                                if (Util.CommonUtil.isNotEmpty(request.token())) {
                                     return processCoupleRegistration(request.token(), savedUser.getId());
                                 }
 
@@ -198,25 +198,38 @@ public class AuthService {
 
                     return inviteTokenRepository.updateInviteeUser(token, userId)
                             .flatMap(updateCount -> {
-                                if (updateCount > 0) {
-                                    log.info("Couple registration successful - Token: {}, InviteeId: {}", token, userId);
-
-                                    // couple 등록
-                                    Couples couples = Couples.toEntity(inviterUserId, userId);
-                                    return coupleRepository.save(couples)
-                                            .map(savedCouples -> {
-                                                log.info("Couple saved successfully - ID: {}", savedCouples.getId());
-                                                return createResponse(userId, "회원가입 및 커플 등록이 완료되었습니다.", true);
-                                            })
-                                            .onErrorReturn(createResponse(userId, "회원가입은 성공했으나 커플 등록에 실패했습니다.", true));
-                                } else {
+                                if (updateCount <= 0) {
                                     log.error("Couple registration failed - Token: {}, InviteeId: {}", token, userId);
                                     return Mono.just(createResponse(userId, "회원가입에 성공했으나 커플 등록에 실패했습니다.", true));
                                 }
+
+                                log.info("Couple registration successful - Token: {}, InviteeId: {}", token, userId);
+
+                                // couple 등록
+                                Couples couples = Couples.toEntity(inviterUserId, userId);
+                                return coupleRepository.save(couples)
+                                        .flatMap(savedCouples -> {
+                                            log.info("Couple saved successfully - ID: {}", savedCouples.getId());
+                                            log.info("User CoupleIdx update - InviterId: {}, InviteeId: {}", inviterUserId, userId);
+
+                                            // userIdx 업데이트
+                                            List<String> userIds = List.of(inviterUserId, userId);
+                                            return userRepository.updateCoupleFk(savedCouples.getId(), userIds)
+                                                    .map(coupleIdxUpdateCount -> {
+                                                        if (coupleIdxUpdateCount > 0) {
+                                                            return createResponse(userId, "회원가입 및 커플 등록이 완료되었습니다.", true);
+                                                        } else {
+                                                            return createResponse(userId, "회원가입은 성공했으나 커플 등록에 실패했습니다.", false);
+                                                        }
+                                                    });
+                                        });
                             });
                 })
                 .switchIfEmpty(Mono.just(createResponse(userId, "회원가입은 성공했으나 초대 정보를 찾을 수 없습니다.", true)))
-                .onErrorReturn(createResponse(userId, "회원가입에 성공했으나 커플 등록에 실패했습니다.", true));
+                .onErrorResume(error -> {
+                    log.error("Error in processCoupleRegistration - Token: {}, UserId: {}", token, userId, error);
+                    return Mono.just(createResponse(userId, "회원가입에 성공했으나 커플 등록에 실패했습니다.", true));
+                });
     }
 
 

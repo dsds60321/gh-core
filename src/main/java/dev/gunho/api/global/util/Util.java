@@ -1,9 +1,10 @@
 package dev.gunho.api.global.util;
 
+import java.lang.reflect.Array;
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+import java.util.*;
 
 public class Util {
 
@@ -15,6 +16,29 @@ public class Util {
             int code = new SecureRandom().nextInt(max - min + 1) + min;
 
             return String.valueOf(code);
+        }
+
+
+        public static boolean isEmpty(Object obj) {
+            if (obj == null) {
+                return true;
+            } else if (obj instanceof String) {
+                return ((String) obj).isEmpty();
+            } else if (obj instanceof Optional) {
+                return ((Optional<?>)obj).isEmpty();
+            } else if (obj instanceof CharSequence) {
+                return ((CharSequence) obj).isEmpty();
+            } else if (obj.getClass().isArray()) {
+                return Array.getLength(obj) == 0;
+            } else if (obj instanceof Collection) {
+                return ((Collection<?>)obj).isEmpty();
+            } else {
+                return obj instanceof Map && ((Map<?, ?>) obj).isEmpty();
+            }
+        }
+
+        public static boolean isNotEmpty(Object obj) {
+            return !CommonUtil.isEmpty(obj);
         }
 
     }

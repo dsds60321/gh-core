@@ -22,6 +22,9 @@ public class User implements Persistable<String> {
     @Id
     private String id;
 
+    @Column("couple_id")
+    private String coupleId;
+
     @Column("email")
     private String email;
 
