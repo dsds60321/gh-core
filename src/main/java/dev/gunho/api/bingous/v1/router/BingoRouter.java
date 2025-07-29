@@ -1,9 +1,6 @@
 package dev.gunho.api.bingous.v1.router;
 
-import dev.gunho.api.bingous.v1.handler.AnniversaryHandler;
-import dev.gunho.api.bingous.v1.handler.AuthHandler;
-import dev.gunho.api.bingous.v1.handler.CoupleHandler;
-import dev.gunho.api.bingous.v1.handler.DashboardHandler;
+import dev.gunho.api.bingous.v1.handler.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +8,7 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static dev.gunho.api.global.constants.CoreConstants.Host.*;
+import static dev.gunho.api.global.constants.CoreConstants.Host.V1_HOST;
 
 @Configuration
 @RequiredArgsConstructor
@@ -51,6 +48,14 @@ public class BingoRouter {
                 .path(V1_HOST, builder -> builder
                         .POST("/anniversaries", anniversaryHandler::create)
                         .GET("/anniversaries", anniversaryHandler::search))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> budgetItemsRoutes(BudgetItemsHandler budgetItemsHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .POST("/budget-items", budgetItemsHandler::create))
                 .build();
     }
 }

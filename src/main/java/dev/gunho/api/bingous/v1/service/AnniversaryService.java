@@ -2,11 +2,8 @@ package dev.gunho.api.bingous.v1.service;
 
 import dev.gunho.api.bingous.v1.model.dto.AnniversaryDto;
 import dev.gunho.api.bingous.v1.model.entity.Anniversary;
-import dev.gunho.api.bingous.v1.model.entity.AppSession;
 import dev.gunho.api.bingous.v1.repository.AnniversaryRepository;
-import dev.gunho.api.bingous.v1.repository.AppSessionRepository;
 import dev.gunho.api.bingous.v1.repository.UserRepository;
-import dev.gunho.api.global.constants.CoreConstants;
 import dev.gunho.api.global.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +14,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-import static dev.gunho.api.global.constants.CoreConstants.*;
+import static dev.gunho.api.global.constants.CoreConstants.Network;
 
 @Slf4j
 @Service
