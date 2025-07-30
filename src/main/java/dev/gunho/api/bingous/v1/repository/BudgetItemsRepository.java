@@ -1,8 +1,10 @@
 package dev.gunho.api.bingous.v1.repository;
 
+import org.reactivestreams.Publisher;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import dev.gunho.api.bingous.v1.model.entity.BudgetItems;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
@@ -17,7 +19,7 @@ public interface BudgetItemsRepository extends ReactiveCrudRepository<BudgetItem
         VALUES 
         (:coupleId, :paidBy, :title, :description, :location, :amount, :category, :expenseDate, :createdBy, :createdAt, :updatedAt)
     """)
-    Mono<Void> insertBudgetItem(
+    Mono<BudgetItems> insertBudgetItem(
             Long coupleId,
             String paidBy,
             String title,
@@ -30,4 +32,12 @@ public interface BudgetItemsRepository extends ReactiveCrudRepository<BudgetItem
             LocalDateTime createdAt,
             LocalDateTime updatedAt
     );
+
+    @Query("SELECT * FROM budget_items WHERE couple_id = :coupleId AND TO_CHAR(expense_date, 'YYYYMM') = :month")
+    Flux<BudgetItems> findAllByMonth(String month, Long coupleId);
+
+    @Query("SELECT * FROM budget_items WHERE id = LAST_INSERT_ID()")
+    Mono<BudgetItems> findLastInsertedBudgetItem();
+
 }
+

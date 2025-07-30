@@ -1,41 +1,356 @@
-2025-07-30T00:00:06.067+09:00  INFO 16288 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-30T00:00:06.076+09:00  INFO 16288 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2025-07-30T00:00:11.854+09:00  INFO 16391 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.5 with PID 16391 (/Users/gang-geonho/Develope/portfolio/core/build/classes/java/main started by gang-geonho in /Users/gang-geonho/Develope/portfolio/core)
-2025-07-30T00:00:11.855+09:00 DEBUG 16391 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
-2025-07-30T00:00:11.856+09:00  INFO 16391 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-07-30T00:00:12.396+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-30T00:00:12.397+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-07-30T00:00:12.482+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 8 R2DBC repository interfaces.
-2025-07-30T00:00:12.490+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-30T00:00:12.491+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-30T00:00:12.504+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.504+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.BudgetItemsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-07-30T00:00:12.506+09:00  INFO 16391 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2025-07-30T00:00:12.957+09:00 ERROR 16391 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-07-30T00:00:13.311+09:00  INFO 16391 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+2025-07-31T00:00:41.527+09:00  INFO 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [88132634-09cd-4b2f-885c-497277ccf328] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:00:41.561+09:00 DEBUG 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [88132634-09cd-4b2f-885c-497277ccf328] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:00:41.571+09:00  INFO 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [c497bc02-69d4-4d69-89b2-24c9a9fa5048] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:00:41.571+09:00 DEBUG 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [c497bc02-69d4-4d69-89b2-24c9a9fa5048] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:00:41.572+09:00  INFO 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [4b1c3efc-9f6d-4bd1-ab00-85d660ac4721] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:00:41.573+09:00 DEBUG 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [4b1c3efc-9f6d-4bd1-ab00-85d660ac4721] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:00:41.584+09:00 DEBUG 16485 --- [core] [parallel-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:00:41.584+09:00 DEBUG 16485 --- [core] [parallel-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:00:41.586+09:00 DEBUG 16485 --- [core] [parallel-8] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:00:41.602+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-8] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:00:41.606+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-2] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:00:41.607+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:00:41.607+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-2] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:00:41.607+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:00:41.607+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-8] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:00:41.609+09:00  INFO 16485 --- [core] [reactor-tcp-nio-2] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:00:41.609+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:00:41.610+09:00  INFO 16485 --- [core] [reactor-tcp-nio-8] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:00:41.617+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [88132634-09cd-4b2f-885c-497277ccf328] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (90ms)
+2025-07-31T00:00:41.617+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [c497bc02-69d4-4d69-89b2-24c9a9fa5048] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (46ms)
+2025-07-31T00:00:41.621+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.gunho.api.global.filter.LoggingFilter  : [4b1c3efc-9f6d-4bd1-ab00-85d660ac4721] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (49ms)
+2025-07-31T00:01:09.177+09:00  INFO 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [e26e928a-941e-41a9-87d5-bb1f71efa1f2] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:09.181+09:00 DEBUG 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [e26e928a-941e-41a9-87d5-bb1f71efa1f2] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:09.197+09:00 DEBUG 16485 --- [core] [parallel-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:09.211+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:09.214+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:09.218+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:09.223+09:00  INFO 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [f5387c6c-e55c-4ac3-b4a2-a424772d68dd] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:09.223+09:00 DEBUG 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [f5387c6c-e55c-4ac3-b4a2-a424772d68dd] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:09.223+09:00  INFO 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [da29132c-282e-459d-bc27-90e4905e90e2] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:09.223+09:00 DEBUG 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [da29132c-282e-459d-bc27-90e4905e90e2] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:09.226+09:00 DEBUG 16485 --- [core] [parallel-2] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:09.226+09:00 DEBUG 16485 --- [core] [parallel-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:09.230+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:09.230+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:09.231+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:09.231+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:09.231+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [e26e928a-941e-41a9-87d5-bb1f71efa1f2] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (54ms)
+2025-07-31T00:01:09.233+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:09.233+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:09.244+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [f5387c6c-e55c-4ac3-b4a2-a424772d68dd] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (21ms)
+2025-07-31T00:01:09.248+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.gunho.api.global.filter.LoggingFilter  : [da29132c-282e-459d-bc27-90e4905e90e2] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (25ms)
+2025-07-31T00:01:28.017+09:00  INFO 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [23800bcd-7c24-403a-8e92-095c3aaabe1a] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:28.018+09:00 DEBUG 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [23800bcd-7c24-403a-8e92-095c3aaabe1a] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:28.026+09:00 DEBUG 16485 --- [core] [parallel-4] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:28.032+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:28.037+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:28.040+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:28.045+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.gunho.api.global.filter.LoggingFilter  : [23800bcd-7c24-403a-8e92-095c3aaabe1a] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (28ms)
+2025-07-31T00:01:28.055+09:00  INFO 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [10af0b6b-e1bb-42be-80fc-25ef130a2b3b] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:28.055+09:00  INFO 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [7bbba85a-cfe0-40a5-b998-1ca2a1022b6a] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:01:28.059+09:00 DEBUG 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [7bbba85a-cfe0-40a5-b998-1ca2a1022b6a] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:28.059+09:00 DEBUG 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [10af0b6b-e1bb-42be-80fc-25ef130a2b3b] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:01:28.060+09:00 DEBUG 16485 --- [core] [parallel-5] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:28.060+09:00 DEBUG 16485 --- [core] [parallel-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:01:28.062+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:28.062+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:01:28.062+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:28.062+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:01:28.063+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:28.063+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:01:28.064+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [10af0b6b-e1bb-42be-80fc-25ef130a2b3b] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (9ms)
+2025-07-31T00:01:28.064+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.gunho.api.global.filter.LoggingFilter  : [7bbba85a-cfe0-40a5-b998-1ca2a1022b6a] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (9ms)
+2025-07-31T00:02:14.902+09:00  INFO 16485 --- [core] [reactor-http-nio-7] d.gunho.api.global.filter.LoggingFilter  : [72b6456b-2b37-4e90-8163-b30a040a67ff] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:02:14.904+09:00 DEBUG 16485 --- [core] [reactor-http-nio-7] d.gunho.api.global.filter.LoggingFilter  : [72b6456b-2b37-4e90-8163-b30a040a67ff] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:02:14.914+09:00 DEBUG 16485 --- [core] [parallel-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:02:14.932+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:02:14.934+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:02:14.939+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:02:14.945+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [72b6456b-2b37-4e90-8163-b30a040a67ff] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (43ms)
+2025-07-31T00:02:14.946+09:00  INFO 16485 --- [core] [reactor-http-nio-8] d.gunho.api.global.filter.LoggingFilter  : [04534bdd-9c62-4e69-9974-b0c5a9658ce9] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:02:14.946+09:00 DEBUG 16485 --- [core] [reactor-http-nio-8] d.gunho.api.global.filter.LoggingFilter  : [04534bdd-9c62-4e69-9974-b0c5a9658ce9] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:02:14.947+09:00  INFO 16485 --- [core] [reactor-http-nio-1] d.gunho.api.global.filter.LoggingFilter  : [578ac82d-3fe1-4e94-ab0b-4db1aed8e1c3] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:02:14.947+09:00 DEBUG 16485 --- [core] [reactor-http-nio-1] d.gunho.api.global.filter.LoggingFilter  : [578ac82d-3fe1-4e94-ab0b-4db1aed8e1c3] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:02:14.947+09:00 DEBUG 16485 --- [core] [parallel-8] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:02:14.956+09:00 DEBUG 16485 --- [core] [parallel-1] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:02:14.963+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:02:14.963+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:02:14.964+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:02:14.964+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:02:14.966+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:02:14.966+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:02:14.969+09:00  INFO 16485 --- [core] [reactor-tcp-nio-1] d.gunho.api.global.filter.LoggingFilter  : [578ac82d-3fe1-4e94-ab0b-4db1aed8e1c3] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (22ms)
+2025-07-31T00:02:14.969+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [04534bdd-9c62-4e69-9974-b0c5a9658ce9] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (23ms)
+2025-07-31T00:03:06.214+09:00  INFO 16485 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [848361a8-3812-4d8e-b9a8-560d39989a6d] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:06.217+09:00 DEBUG 16485 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [848361a8-3812-4d8e-b9a8-560d39989a6d] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:06.227+09:00 DEBUG 16485 --- [core] [parallel-2] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:06.245+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:06.247+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:06.256+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:06.259+09:00  INFO 16485 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [461961f5-3b97-47f7-9a5c-98a92e9416e7] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:06.259+09:00 DEBUG 16485 --- [core] [reactor-http-nio-3] d.gunho.api.global.filter.LoggingFilter  : [461961f5-3b97-47f7-9a5c-98a92e9416e7] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:06.260+09:00  INFO 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [d40c93da-5063-4a9d-8fff-60e845035181] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:06.260+09:00 DEBUG 16485 --- [core] [reactor-http-nio-4] d.gunho.api.global.filter.LoggingFilter  : [d40c93da-5063-4a9d-8fff-60e845035181] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:06.261+09:00 DEBUG 16485 --- [core] [parallel-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:06.261+09:00 DEBUG 16485 --- [core] [parallel-4] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:06.275+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [848361a8-3812-4d8e-b9a8-560d39989a6d] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (61ms)
+2025-07-31T00:03:06.278+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:06.278+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:06.278+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:06.279+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:06.281+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:06.281+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:06.285+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [d40c93da-5063-4a9d-8fff-60e845035181] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (25ms)
+2025-07-31T00:03:06.285+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [461961f5-3b97-47f7-9a5c-98a92e9416e7] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (26ms)
+2025-07-31T00:03:51.456+09:00  INFO 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [580200f4-e421-4b7e-8b3f-f5e43ab4dfa4] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:51.457+09:00 DEBUG 16485 --- [core] [reactor-http-nio-5] d.gunho.api.global.filter.LoggingFilter  : [580200f4-e421-4b7e-8b3f-f5e43ab4dfa4] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:51.465+09:00 DEBUG 16485 --- [core] [parallel-5] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:51.487+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:51.493+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:51.497+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:51.497+09:00  INFO 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [13c75b77-96ea-45b3-bec9-32eaa657309d] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:51.498+09:00  INFO 16485 --- [core] [reactor-http-nio-7] d.gunho.api.global.filter.LoggingFilter  : [9e2ad121-8646-4c50-a9d8-ac4501f4a7e1] 요청 시작: GET http://localhost:8080/bingo-us/v1/dashboard (ContentLength: -1)
+2025-07-31T00:03:51.498+09:00 DEBUG 16485 --- [core] [reactor-http-nio-7] d.gunho.api.global.filter.LoggingFilter  : [9e2ad121-8646-4c50-a9d8-ac4501f4a7e1] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:51.498+09:00 DEBUG 16485 --- [core] [reactor-http-nio-6] d.gunho.api.global.filter.LoggingFilter  : [13c75b77-96ea-45b3-bec9-32eaa657309d] Headers: [Host:"localhost:8080", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:03:51.500+09:00 DEBUG 16485 --- [core] [parallel-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:51.501+09:00 DEBUG 16485 --- [core] [parallel-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:03:51.505+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [580200f4-e421-4b7e-8b3f-f5e43ab4dfa4] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (49ms)
+2025-07-31T00:03:51.505+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:51.506+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-7] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:51.507+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:03:51.507+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-6] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
+2025-07-31T00:03:51.509+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:51.509+09:00  INFO 16485 --- [core] [reactor-tcp-nio-7] d.g.a.b.v1.service.DashboardService      : getDashboardData called - CoupleId: 3
+2025-07-31T00:03:51.515+09:00  INFO 16485 --- [core] [reactor-tcp-nio-6] d.gunho.api.global.filter.LoggingFilter  : [9e2ad121-8646-4c50-a9d8-ac4501f4a7e1] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (17ms)
+2025-07-31T00:03:51.515+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [13c75b77-96ea-45b3-bec9-32eaa657309d] 요청 완료: GET http://localhost:8080/bingo-us/v1/dashboard - 200 OK (18ms)
+2025-07-31T00:05:37.386+09:00  INFO 16485 --- [core] [reactor-http-nio-8] d.gunho.api.global.filter.LoggingFilter  : [31b55633-89ec-4334-8ddf-178c05336ea3] 요청 시작: POST http://localhost:8080/bingo-us/v1 (ContentLength: 0)
+2025-07-31T00:05:37.387+09:00 DEBUG 16485 --- [core] [reactor-http-nio-8] d.gunho.api.global.filter.LoggingFilter  : [31b55633-89ec-4334-8ddf-178c05336ea3] Headers: [Host:"localhost:8080", Content-Length:"0", Connection:"keep-alive", Accept:"application/json, text/plain, */*", User-Agent:"bingoUs/1 CFNetwork/3826.500.131 Darwin/24.4.0", Accept-Language:"ko-KR,ko;q=0.9", Authorization:"OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o", Accept-Encoding:"gzip, deflate"]
+2025-07-31T00:05:37.393+09:00 DEBUG 16485 --- [core] [parallel-8] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
+2025-07-31T00:05:37.401+09:00 DEBUG 16485 --- [core] [reactor-tcp-nio-3] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 58, User: gunho, SessionKey: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
+2025-07-31T00:05:37.438+09:00  WARN 16485 --- [core] [reactor-tcp-nio-3] d.g.a.g.filter.SessionValidationFilter   : Session validation failed for key: OT3YuHVL00zUWQ5BgApW6_85xtVk_bsBbXkcUtjoI3o
 
-Using generated security password: fac6fe88-e794-4ac6-b619-8a9a1b6adcf6
+org.springframework.web.reactive.resource.NoResourceFoundException: 404 NOT_FOUND "No static resource bingo-us/v1."
+	at org.springframework.web.reactive.resource.ResourceWebHandler.lambda$handle$1(ResourceWebHandler.java:434) ~[spring-webflux-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:45) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:357) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2366) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2240) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2570) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2366) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2240) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:96) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:207) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:335) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerComplete(FluxConcatMapNoPrefetch.java:275) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onComplete(FluxConcatMap.java:889) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onComplete(FluxConcatArray.java:209) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onComplete(FluxConcatArray.java:209) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onComplete(FluxConcatArray.java:209) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onComplete(FluxConcatArray.java:209) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerComplete(FluxConcatMapNoPrefetch.java:287) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onComplete(FluxConcatMap.java:889) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onComplete(FluxConcatMapNoPrefetch.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:357) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:138) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2330) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.request(FluxConcatArray.java:256) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.request(FluxConcatArray.java:256) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.request(FluxConcatArray.java:256) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.request(FluxConcatArray.java:256) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:138) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2330) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2366) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2240) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onNext(FluxPeekFuseable.java:503) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoUsingWhen$MonoUsingWhenSubscriber.deferredComplete(MonoUsingWhen.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:532) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:389) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHide$SuppressFuseableSubscriber.onComplete(FluxHide.java:147) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:295) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:188) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:237) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandle$HandleSubscriber.onComplete(FluxHandle.java:223) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoUsingWhen$MonoUsingWhenSubscriber.deferredComplete(MonoUsingWhen.java:270) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:532) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:389) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoStreamCollector$StreamCollectorSubscriber.onComplete(MonoStreamCollector.java:159) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:850) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:469) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onComplete(FluxOnAssembly.java:549) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:850) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:469) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:540) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:488) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:432) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:312) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BaseSink.complete(FluxCreate.java:465) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:871) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.complete(FluxCreate.java:819) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.drainLoop(FluxCreate.java:249) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.drain(FluxCreate.java:215) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.complete(FluxCreate.java:206) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:69) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2025-07-30T00:00:13.542+09:00  INFO 16391 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2025-07-30T00:00:13.550+09:00  INFO 16391 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 2.327 seconds (process running for 3.259)
-2025-07-30T00:00:14.256+09:00  INFO 16391 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [67809b55-5990-4d5f-9ac5-85493ca4041b] 요청 시작: POST http://127.0.0.1:8080/bingo-us/v1/budget-items (ContentLength: 150)
-2025-07-30T00:00:14.256+09:00 DEBUG 16391 --- [core] [reactor-http-nio-2] d.gunho.api.global.filter.LoggingFilter  : [67809b55-5990-4d5f-9ac5-85493ca4041b] Headers: [Authorization:"DFkC-k13xOjnbHBqm_9rX2QkrYxmGF-iEC-HSFR7pYo", Content-Type:"application/json", User-Agent:"PostmanRuntime/7.44.1", Accept:"*/*", Cache-Control:"no-cache", Postman-Token:"26f3acd0-c587-4e07-826f-20466899649d", Host:"127.0.0.1:8080", Accept-Encoding:"gzip, deflate, br", Connection:"keep-alive", Content-Length:"150"]
-2025-07-30T00:00:14.289+09:00 DEBUG 16391 --- [core] [parallel-2] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT * FROM app_sessions WHERE session_key = :sessionKey AND is_active = 1 AND expires_at > :now] to [SELECT * FROM app_sessions WHERE session_key = ? AND is_active = 1 AND expires_at > ?]
-2025-07-30T00:00:14.399+09:00 DEBUG 16391 --- [core] [reactor-tcp-nio-1] d.g.a.bingous.v1.service.SessionService  : Session validated - ID: 50, User: sebin, SessionKey: DFkC-k13xOjnbHBqm_9rX2QkrYxmGF-iEC-HSFR7pYo
-2025-07-30T00:00:14.490+09:00 DEBUG 16391 --- [core] [reactor-http-nio-2] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key] to [SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = ?]
-2025-07-30T00:00:14.497+09:00 DEBUG 16391 --- [core] [reactor-tcp-nio-3] o.s.d.r2dbc.core.NamedParameterExpander  : Expanding SQL statement [    INSERT INTO budget_items
-    (couple_id, paid_by, title, description, location, amount, category, expense_date, created_by, created_at, updated_at)
-    VALUES
-    (:coupleId, :paidBy, :title, :description, :location, :amount, :category, :expenseDate, :createdBy, :createdAt, :updatedAt)
-] to [    INSERT INTO budget_items
-    (couple_id, paid_by, title, description, location, amount, category, expense_date, created_by, created_at, updated_at)
-    VALUES
-    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-]
-2025-07-30T00:00:14.523+09:00  INFO 16391 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [67809b55-5990-4d5f-9ac5-85493ca4041b] 요청 완료: POST http://127.0.0.1:8080/bingo-us/v1/budget-items - 200 OK (267ms)
+2025-07-31T00:05:37.441+09:00  INFO 16485 --- [core] [reactor-tcp-nio-3] d.gunho.api.global.filter.LoggingFilter  : [31b55633-89ec-4334-8ddf-178c05336ea3] 요청 완료: POST http://localhost:8080/bingo-us/v1 - 401 UNAUTHORIZED (55ms)

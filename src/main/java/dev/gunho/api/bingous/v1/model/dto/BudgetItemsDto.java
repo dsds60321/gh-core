@@ -19,7 +19,7 @@ public class BudgetItemsDto {
             @NotNull(message = "금액은 필수 값 입니다.")
             BigDecimal amount,
             @NotNull(message = "카테고리는 필수 값 입니다.")
-            BudgetCategory category,
+            String category,
             @NotNull(message = "날짜는 필수 값 입니다.")
             LocalDate date,
             String location

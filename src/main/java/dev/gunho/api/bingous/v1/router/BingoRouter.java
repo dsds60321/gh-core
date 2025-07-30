@@ -55,7 +55,8 @@ public class BingoRouter {
     public RouterFunction<ServerResponse> budgetItemsRoutes(BudgetItemsHandler budgetItemsHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/budget-items", budgetItemsHandler::create))
+                        .POST("/budget-items", budgetItemsHandler::create)
+                        .GET("/budget-items", budgetItemsHandler::search))
                 .build();
     }
 }

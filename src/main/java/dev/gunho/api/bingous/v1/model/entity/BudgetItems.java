@@ -44,7 +44,7 @@ public class BudgetItems {
     private BigDecimal amount;
 
     @Column("category")
-    private BudgetCategory category;
+    private String category;
 
     @Column("expense_date")
     private LocalDate expenseDate;

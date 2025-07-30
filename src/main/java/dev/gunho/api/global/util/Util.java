@@ -98,5 +98,20 @@ public class Util {
                 return LocalDate.now();
             }
         }
+
+        public static LocalDate parseMonth(String dateStr) {
+            try {
+                if (dateStr.matches("\\d{6}")) {
+                    // YYYYMM 형식인 경우
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMM");
+                    return LocalDate.parse(dateStr, formatter);
+                } else {
+                    return LocalDate.parse(dateStr);
+                }
+            } catch (Exception e) {
+                log.warn("날짜 파싱 오류. 기본값을 사용합니다. 입력값: {}, 오류: {}", dateStr, e.getMessage());
+                return LocalDate.now();
+            }
+        }
     }
 }
