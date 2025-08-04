@@ -1,10 +1,7 @@
 package dev.gunho.api.bingous.v1.service;
 
 import dev.gunho.api.bingous.v1.model.dto.DashboardDto;
-import dev.gunho.api.bingous.v1.repository.AnniversaryRepository;
-import dev.gunho.api.bingous.v1.repository.CoupleRepository;
-import dev.gunho.api.bingous.v1.repository.ScheduleRepository;
-import dev.gunho.api.bingous.v1.repository.UserRepository;
+import dev.gunho.api.bingous.v1.repository.*;
 import dev.gunho.api.global.constants.CoreConstants;
 import dev.gunho.api.global.util.Util;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +21,7 @@ public class DashboardService {
     private final ScheduleRepository scheduleRepository;
     private final CoupleRepository coupleRepository;
     private final UserRepository userRepository;
+    private final BudgetItemsRepository budgetItemsRepository;
 
     public Mono<DashboardDto.Response> getDashboardData(ServerRequest request) {
 
@@ -39,10 +37,12 @@ public class DashboardService {
                     log.info("getDashboardData called - CoupleId: {}", coupleId);
 
                     return Mono.zip(getAnniversaries(coupleId),
-                                    getSchedules(coupleId))
+                                    getSchedules(coupleId),
+                                    getBudgetItems(coupleId))
                             .map(tuple -> DashboardDto.Response.builder()
                                     .anniversaries(tuple.getT1())
                                     .schedules(tuple.getT2())
+                                    .budget(tuple.getT3())
                                     .build());
                 });
     }
@@ -56,6 +56,12 @@ public class DashboardService {
     private Mono<List<DashboardDto.SchedulePayload>> getSchedules(Long coupleId) {
         return scheduleRepository.findAllByCoupleId(coupleId)
                 .map(DashboardDto::toSchedule)
+                .collectList();
+    }
+
+    private Mono<List<DashboardDto.BudgetItemPayload>> getBudgetItems(Long coupleId) {
+        return budgetItemsRepository.findAllByCoupleId(coupleId)
+                .map(DashboardDto::toBudgetItems)
                 .collectList();
     }
 }

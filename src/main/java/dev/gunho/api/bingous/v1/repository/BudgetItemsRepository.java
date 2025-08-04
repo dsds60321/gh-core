@@ -1,6 +1,5 @@
 package dev.gunho.api.bingous.v1.repository;
 
-import org.reactivestreams.Publisher;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import dev.gunho.api.bingous.v1.model.entity.BudgetItems;
@@ -39,5 +38,6 @@ public interface BudgetItemsRepository extends ReactiveCrudRepository<BudgetItem
     @Query("SELECT * FROM budget_items WHERE id = LAST_INSERT_ID()")
     Mono<BudgetItems> findLastInsertedBudgetItem();
 
+    Flux<BudgetItems> findAllByCoupleId(Long coupleId);
 }
 

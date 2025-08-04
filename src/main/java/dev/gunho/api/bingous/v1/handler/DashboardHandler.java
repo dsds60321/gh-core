@@ -34,110 +34,76 @@ public class DashboardHandler {
 
 //    {
 //        "code": "200",
-//            "message": "대시보드 데이터 조회 성공",
-//            "description": "Dashboard data retrieved successfully",
-//            "timestamp": "2025-07-28T13:00:00Z",
+//            "message": "성공",
+//            "description": "대시보드 데이터 조회 성공",
+//            "timestamp": "2025-08-03T23:30:00Z",
 //            "data": {
 //        "anniversaries": [
 //        {
-//            "id": "uuid-1",
+//            "id": "1",
 //                "type": "ANNIVERSARY",
-//                "title": "처음 만난 날",
+//                "title": "사귄 지 100일",
 //                "date": "2025-08-15",
 //                "isContinue": 1,
 //                "isPrivate": 0,
-//                "description": "소중한 첫만남",
-//                "createdAt": "2025-01-01T10:00:00Z",
-//                "updatedAt": "2025-01-01T10:00:00Z"
-//        },
-//        {
-//            "id": "uuid-2",
-//                "type": "BIRTHDAY",
-//                "title": "생일",
-//                "date": "2025-09-20",
-//                "isContinue": 1,
-//                "isPrivate": 0,
-//                "description": "생일 축하해",
-//                "createdAt": "2025-01-01T10:00:00Z",
-//                "updatedAt": "2025-01-01T10:00:00Z"
-//        },
-//        {
-//            "id": "uuid-3",
-//                "type": "ANNIVERSARY",
-//                "title": "6개월 기념일",
-//                "date": "2025-12-15",
-//                "isContinue": 0,
-//                "isPrivate": 0,
-//                "description": "6개월 축하",
-//                "createdAt": "2025-01-01T10:00:00Z",
-//                "updatedAt": "2025-01-01T10:00:00Z"
+//                "description": "우리가 사귄 지 100일째 되는 날",
+//                "createdAt": "2025-05-01T10:00:00Z",
+//                "updatedAt": "2025-05-01T10:00:00Z"
 //        }
 //    ],
 //        "schedules": [
 //        {
-//            "id": "todo-1",
+//            "id": "1",
 //                "title": "영화 보기",
-//                "description": "아바타 보러가기",
-//                "date": "2025-07-28",
+//                "description": "아바타 보러 가기",
+//                "date": "2025-08-04",
+//                "time": "19:00",
 //                "location": "CGV 강남",
 //                "priority": "high",
 //                "status": "pending",
-//                "assignedTo": "user-1",
-//                "category": "데이트",
+//                "assignedTo": "sebin",
+//                "category": "entertainment",
 //                "estimatedDuration": 180,
-//                "tags": ["영화", "데이트"],
+//                "tags": ["데이트", "영화"],
 //            "completedAt": null,
 //                "completedBy": null,
-//                "createdBy": "user-1",
-//                "createdAt": "2025-07-28T09:00:00Z",
-//                "updatedAt": "2025-07-28T09:00:00Z"
-//        },
-//        {
-//            "id": "todo-2",
-//                "title": "카페 가기",
-//                "description": "새로 생긴 카페 체크",
-//                "date": "2025-07-29",
-//                "location": "홍대 카페거리",
-//                "priority": "medium",
-//                "status": "pending",
-//                "assignedTo": "user-2",
-//                "category": "데이트",
-//                "estimatedDuration": 120,
-//                "tags": ["카페", "데이트"],
-//            "completedAt": null,
-//                "completedBy": null,
-//                "createdBy": "user-2",
-//                "createdAt": "2025-07-28T10:00:00Z",
-//                "updatedAt": "2025-07-28T10:00:00Z"
-//        },
-//        {
-//            "id": "todo-3",
-//                "title": "쇼핑하기",
-//                "description": "여름옷 쇼핑",
-//                "date": "2025-08-02",
-//                "location": "명동",
-//                "priority": "low",
-//                "status": "pending",
-//                "assignedTo": null,
-//                "category": "쇼핑",
-//                "estimatedDuration": 240,
-//                "tags": ["쇼핑", "옷"],
-//            "completedAt": null,
-//                "completedBy": null,
-//                "createdBy": "user-1",
-//                "createdAt": "2025-07-28T11:00:00Z",
-//                "updatedAt": "2025-07-28T11:00:00Z"
+//                "createdBy": "gunho",
+//                "createdAt": "2025-08-03T15:00:00Z",
+//                "updatedAt": "2025-08-03T15:00:00Z"
 //        }
 //    ],
+//        "budget": {
+//            "total": 634580,
+//                    "byUser": {
+//                "sebin": 223600,
+//                        "gunho": 410980
+//            },
+//            "items": [
+//            {
+//                "id": 40,
+//                    "coupleId": 3,
+//                    "paidBy": "sebin",
+//                    "title": "캠핑 식비",
+//                    "description": "하이볼 위해 사이다 + 라면 등 구매",
+//                    "location": "영월 캠핑장 앞 슈퍼",
+//                    "amount": 9300,
+//                    "category": "food",
+//                    "expenseDate": "2025-08-02",
+//                    "createdBy": "sebin",
+//                    "createdAt": "2025-08-03T23:23:53",
+//                    "updatedAt": "2025-08-03T23:24:10"
+//            }
+//      ]
+//        },
 //        "completedTasksThisWeek": 3,
-//                "pendingTasksCount": 7,
+//                "pendingTasksCount": 5,
 //                "stats": {
 //            "totalAnniversaries": 8,
-//                    "completedTasksThisMonth": 15,
-//                    "pendingTasks": 7,
-//                    "thisMonthTasks": 22,
-//                    "daysFromStart": 1
+//                    "completedTasksThisMonth": 12,
+//                    "pendingTasks": 5,
+//                    "thisMonthTasks": 17,
+//                    "daysFromStart": 245
 //        }
 //    }
-//    };
+//    }
 }

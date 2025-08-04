@@ -1,7 +1,6 @@
 package dev.gunho.api.bingous.v1.model.dto;
 
 import dev.gunho.api.bingous.v1.model.entity.BudgetItems;
-import dev.gunho.api.bingous.v1.model.enums.BudgetCategory;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

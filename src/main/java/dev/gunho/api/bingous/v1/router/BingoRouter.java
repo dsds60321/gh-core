@@ -43,11 +43,28 @@ public class BingoRouter {
     }
 
     @Bean
+    public RouterFunction<ServerResponse> scheduleRoutes(ScheduleHandler scheduleHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .POST("/schedule", scheduleHandler::create))
+                .build();
+    }
+
+    @Bean
     public RouterFunction<ServerResponse> anniversaryRoutes(AnniversaryHandler anniversaryHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
                         .POST("/anniversaries", anniversaryHandler::create)
                         .GET("/anniversaries", anniversaryHandler::search))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> reflectionRoutes(ReflectionHandler reflectionHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .POST("/reflections", reflectionHandler::create)
+                        .GET("/reflections", reflectionHandler::search))
                 .build();
     }
 
