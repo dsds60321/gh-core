@@ -64,7 +64,8 @@ public class BingoRouter {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
                         .POST("/reflections", reflectionHandler::create)
-                        .GET("/reflections", reflectionHandler::search))
+                        .GET("/reflections", reflectionHandler::search)
+                        .PUT("/reflections/{reflectionId}", reflectionHandler::updateStatus))
                 .build();
     }
 

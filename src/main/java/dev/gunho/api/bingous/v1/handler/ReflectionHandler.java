@@ -45,6 +45,29 @@ public class ReflectionHandler {
                 .onErrorResume(ResponseHelper::handleException);
     }
 
+    /**
+     * 반성문 상태 업데이트 (승인/반려)
+     */
+    public Mono<ServerResponse> updateStatus(ServerRequest request) {
+        return request.bodyToMono(ReflectionDto.StatusUpdate.class)
+                .flatMap(requestValidator::validate)
+                .flatMap(statusRequest -> {
+                    Long reflectionId = Long.valueOf(request.pathVariable("reflectionId"));
+                    return reflectionService.updateStatus(reflectionId, statusRequest, request.exchange().getRequest());
+                })
+                .flatMap(result -> {
+                    ApiResponse<?> response;
+                    if (result) {
+                        response = ApiResponse.success("반성문 상태가 업데이트되었습니다.");
+                    } else {
+                        response = ApiResponse.failure("반성문 상태 업데이트에 실패했습니다.");
+                    }
+                    return ResponseHelper.ok(response);
+                })
+                .onErrorResume(ResponseHelper::handleException);
+    }
+
+
     public Mono<ServerResponse> search(ServerRequest request) {
         return reflectionService.search(request)
                 .collectList()
