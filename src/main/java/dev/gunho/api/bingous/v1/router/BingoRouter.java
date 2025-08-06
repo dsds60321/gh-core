@@ -20,6 +20,7 @@ public class BingoRouter {
                 .path(V1_HOST, builder -> builder
                         .POST("/sign-up", authHandler::signUp)
                         .POST("/sign-in", authHandler::signIn)
+                        .GET("/sign-out", authHandler::signOut)
                         .POST("/sign-up/email/verify", authHandler::verifyEmail)
                         .POST("/sign-up/email/confirm", authHandler::confirmEmail))
                 .build();

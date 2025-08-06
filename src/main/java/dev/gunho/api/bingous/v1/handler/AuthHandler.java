@@ -4,12 +4,16 @@ import dev.gunho.api.bingous.v1.model.dto.EmailVerifyDto;
 import dev.gunho.api.bingous.v1.model.dto.SignInDto;
 import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
 import dev.gunho.api.bingous.v1.service.AuthService;
+import dev.gunho.api.bingous.v1.service.SessionService;
+import dev.gunho.api.global.constants.CoreConstants;
 import dev.gunho.api.global.model.dto.ApiResponse;
 import dev.gunho.api.global.util.RequestValidator;
 import dev.gunho.api.global.util.ResponseHelper;
+import dev.gunho.api.global.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -21,6 +25,7 @@ import reactor.core.publisher.Mono;
 public class AuthHandler {
 
     private final AuthService authService;
+    private final SessionService sessionService;
     private final RequestValidator requestValidator;
 
     /**
@@ -104,4 +109,16 @@ public class AuthHandler {
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
+
+    public Mono<ServerResponse> signOut(ServerRequest serverRequest) {
+        String key = serverRequest.exchange().getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
+
+        return sessionService.invalidateSession(key)
+                .then(Mono.defer(() -> {
+                    ApiResponse<?> response = ApiResponse.success("로그아웃이 완료되었습니다.");
+                    return ResponseHelper.ok(response);
+                }))
+                .onErrorResume(ResponseHelper::handleException);
+    }
+
 }

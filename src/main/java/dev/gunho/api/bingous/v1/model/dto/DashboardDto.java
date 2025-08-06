@@ -2,6 +2,7 @@ package dev.gunho.api.bingous.v1.model.dto;
 
 import dev.gunho.api.bingous.v1.model.entity.Anniversary;
 import dev.gunho.api.bingous.v1.model.entity.BudgetItems;
+import dev.gunho.api.bingous.v1.model.entity.Reflection;
 import dev.gunho.api.bingous.v1.model.entity.Schedules;
 import dev.gunho.api.bingous.v1.model.enums.AnniversariesType;
 import dev.gunho.api.bingous.v1.model.enums.ScheduleType;
@@ -21,6 +22,7 @@ public class DashboardDto {
         private List<AnniversaryPayload> anniversaries;
         private List<SchedulePayload> schedules;
         private List<BudgetItemPayload> budget;
+        private List<ReflectionPayload> reflections;
         private int completedTasksThisWeek;
         private int pendingTasksCount;
         private Stats stats;
@@ -65,6 +67,17 @@ public class DashboardDto {
         String category;
         LocalDate date;
         String location;
+    }
+
+    @Getter
+    @Builder
+    public static class ReflectionPayload {
+        private String authorUserId;
+        private String approverUserId;
+        private String incident;
+        private String reason;
+        private String improvement;
+        private String status;
     }
 
     @Getter
@@ -116,6 +129,17 @@ public class DashboardDto {
                 .category(entity.getCategory())
                 .date(entity.getExpenseDate())
                 .location(entity.getLocation())
+                .build();
+    }
+
+    public static ReflectionPayload toReflections(Reflection entity) {
+        return ReflectionPayload.builder()
+                .authorUserId(entity.getAuthorUserId())
+                .approverUserId(entity.getApproverUserId())
+                .incident(entity.getIncident())
+                .reason(entity.getReason())
+                .improvement(entity.getImprovement())
+                .status(entity.getStatus())
                 .build();
     }
 }

@@ -24,6 +24,8 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 import java.util.List;
 
+import static dev.gunho.api.global.constants.CoreConstants.Key.*;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -42,7 +44,7 @@ public class AuthService {
      */
     public Mono<Boolean> sendEmailVerifyCode(EmailVerifyDto.Request request) {
         String randomCode = Util.CommonUtil.generateRandomCode(6);
-        String redisKey = CoreConstants.Key.EMAIL_VERIFY.formatted(request.email());
+        String redisKey = EMAIL_VERIFY.formatted(request.email());
 
         log.info("sendEmailVerifyCode - ID: {}, Email: {}", request.id(), request.email());
 
@@ -76,10 +78,11 @@ public class AuthService {
         EmailVerifyDto.VerifyCodeResponse response = EmailVerifyDto.VerifyCodeResponse
                 .builder()
                 .verified(false)
-                .message("이메일 인증에 실패했습니다.")
+                .message("인증 코드가 올바르지 않습니다.")
                 .build();
 
-        return redisUtil.getString(request.code())
+
+        return redisUtil.getString(EMAIL_VERIFY.formatted(request.email()))
                 .flatMap(code -> {
                     if (StringUtil.isNullOrEmpty(code)) {
                         return Mono.just(response);
@@ -94,6 +97,7 @@ public class AuthService {
 
                     return Mono.just(response);
                 })
+                .switchIfEmpty(Mono.just(response))
                 .onErrorResume(error -> {
                     log.error("Error verifyEmailCode - Email: {}", request.email(), error);
                     return Mono.just(response);
@@ -210,7 +214,7 @@ public class AuthService {
      * 커플 등록 처리 (별도 메서드로 분리)
      */
     private Mono<SignUpDto.Response> processCoupleRegistration(String token, String userId) {
-        String redisKey = CoreConstants.Key.COUPLE_INVITE.formatted(token);
+        String redisKey = COUPLE_INVITE.formatted(token);
 
         return redisUtil.getString(redisKey)
                 .flatMap(inviterUserId -> {

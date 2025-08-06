@@ -6,6 +6,7 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
@@ -40,6 +41,10 @@ public class RequestValidator {
             String fieldName = violation.getPropertyPath().toString();
             String errorMessage = violation.getMessage();
             errorMap.put(fieldName, errorMessage);
+        }
+
+        if (Util.CommonUtil.isNotEmpty(errorMap)) {
+            log.error("Validation error: {}", errorMap);
         }
 
         return Mono.error(new ValidationException("입력값 검증에 실패했습니다.", errorMap));

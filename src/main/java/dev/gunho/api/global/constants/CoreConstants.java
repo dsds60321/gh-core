@@ -8,7 +8,7 @@ public class CoreConstants {
     public static class Host {
 
         public static final String V1_HOST = "/bingo-us/v1";
-        public static final String INVITE_URL = "/bingo-us/v1/couple/?token=%s";
+        public static final String INVITE_URL = "bingous://signup?token=%s";
 
     }
 
