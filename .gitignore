@@ -38,3 +38,13 @@ out/
 .vscode/
 /logs/
 /logs/
+*firebase*.json
+*adminsdk*.json
+
+# 기타 민감한 파일들
+*.pem
+*.key
+*.p12
+application-prod.yml
+application-local.yml
+core-646a7-firebase-adminsdk-fbsvc-99e482523e.json

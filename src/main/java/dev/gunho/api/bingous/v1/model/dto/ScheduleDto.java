@@ -1,5 +1,6 @@
 package dev.gunho.api.bingous.v1.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.gunho.api.bingous.v1.model.enums.ScheduleType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -19,7 +20,9 @@ public class ScheduleDto {
             String title,
             String description,
             @NotNull(message = "마감 날짜는 필수입니다.")
+            @JsonProperty("due_date")
             LocalDate dueDate,
+            @JsonProperty("due_time")
             LocalTime dueTime
     ){}
 }

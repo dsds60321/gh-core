@@ -50,6 +50,7 @@ public class AuthService {
 
         return redisUtil.setString(redisKey, randomCode, Duration.ofMinutes(5))
                 .flatMap(saved -> {
+                    log.info("Email verify code saved successfully - Email: {}", request.email());
                     if (!saved) {
                         log.error("Redis save failed - Email: {}", request.email());
                         return Mono.just(false);
@@ -64,7 +65,7 @@ public class AuthService {
                     });
                 })
                 .onErrorResume(error -> {
-                    log.error("Error sendEmailVerifyCode - Email: {}", request.email(), error);
+                    log.info("Error sendEmailVerifyCode - Email: {}", request.email(), error);
                     return Mono.just(false);
                 });
     }

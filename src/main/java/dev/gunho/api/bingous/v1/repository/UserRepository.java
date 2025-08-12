@@ -30,6 +30,6 @@ public interface UserRepository extends ReactiveCrudRepository<User, String> {
     @Query("UPDATE users SET couple_id = :coupleIdx, updated_at = NOW() WHERE id IN (:userIds)")
     Mono<Integer> updateCoupleFk(long coupleIdx, List<String> userIds);
 
-    @Query("SELECT B.* FROM GD.app_sessions A LEFT OUTER JOIN GD.users B ON A.user_Id = B.id WHERE A.session_key = :key")
+    @Query("SELECT B.* FROM app_sessions A LEFT OUTER JOIN users B ON A.user_Id = B.id WHERE A.session_key = :key")
     Mono<User> findBySessionKey(String key);
 }

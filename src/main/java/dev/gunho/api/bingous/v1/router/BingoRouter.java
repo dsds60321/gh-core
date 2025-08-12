@@ -47,7 +47,7 @@ public class BingoRouter {
     public RouterFunction<ServerResponse> scheduleRoutes(ScheduleHandler scheduleHandler) {
         return RouterFunctions.route()
                 .path(V1_HOST, builder -> builder
-                        .POST("/schedule", scheduleHandler::create))
+                        .POST("/schedules", scheduleHandler::create))
                 .build();
     }
 

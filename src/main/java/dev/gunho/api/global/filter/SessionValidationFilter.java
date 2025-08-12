@@ -26,7 +26,7 @@ public class SessionValidationFilter implements WebFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         String path = exchange.getRequest().getPath().toString();
-
+        log.debug("path: {}", path);
         // 인증이 필요하지 않은 경로들
         if (isPublicPath(path)) {
             return chain.filter(exchange);
@@ -34,7 +34,14 @@ public class SessionValidationFilter implements WebFilter {
 
         // Authorization 헤더에서 세션 키 추출
         String sessionKey = exchange.getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
+
+        // 디버그
+        exchange.getRequest().getHeaders().forEach((name, values) -> {
+            log.debug("header: {} => {}", name, values);
+        });
+
         if (Util.CommonUtil.isEmpty(sessionKey)) {
+            log.warn("Session key is empty for path: {}", path);
             return unauthorizedResponse(exchange);
         }
 
