@@ -1,9 +1,7 @@
 package dev.gunho.api.bingous.v1.handler;
 
 import dev.gunho.api.bingous.v1.model.dto.ReflectionDto;
-import dev.gunho.api.bingous.v1.model.dto.ScheduleDto;
 import dev.gunho.api.bingous.v1.service.ReflectionService;
-import dev.gunho.api.bingous.v1.service.ScheduleService;
 import dev.gunho.api.global.model.dto.ApiResponse;
 import dev.gunho.api.global.util.RequestValidator;
 import dev.gunho.api.global.util.ResponseHelper;
@@ -32,10 +30,10 @@ public class ReflectionHandler {
                 .flatMap(scheduleRequest ->
                         reflectionService.create(scheduleRequest, request.exchange().getRequest())
                 )
-                .flatMap(isCreate -> {
+                .flatMap(reflection -> {
                     ApiResponse<?> response;
-                    if (isCreate) {
-                        response = ApiResponse.success("반성문 등록에 성공 했습니다.");
+                    if (Util.CommonUtil.isNotEmpty(reflection)) {
+                        response = ApiResponse.success(reflection, "반성문 등록에 성공 했습니다.");
                     } else {
                         response = ApiResponse.failure("반성문 등록에 실패 했습니다.");
                     }
@@ -67,6 +65,19 @@ public class ReflectionHandler {
                 .onErrorResume(ResponseHelper::handleException);
     }
 
+    public Mono<ServerResponse> detail(ServerRequest serverRequest) {
+        return reflectionService.detail(serverRequest)
+                .flatMap(result -> {
+                    ApiResponse<?> response;
+                    if (Util.CommonUtil.isNotEmpty(result) ) {
+                        response = ApiResponse.success(result);
+                    } else {
+                        response = ApiResponse.success("조회된 결과가 없습니다.");
+                    }
+                    return ResponseHelper.ok(response);
+                })
+                .onErrorResume(ResponseHelper::handleException);
+    }
 
     public Mono<ServerResponse> search(ServerRequest request) {
         return reflectionService.search(request)
@@ -82,4 +93,5 @@ public class ReflectionHandler {
                 })
                 .onErrorResume(ResponseHelper::handleException);
     }
+
 }

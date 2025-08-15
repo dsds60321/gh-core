@@ -33,6 +33,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'eu.bitwalker:UserAgentUtils:1.21'
+
+    implementation 'com.google.firebase:firebase-admin:9.2.0'
+
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

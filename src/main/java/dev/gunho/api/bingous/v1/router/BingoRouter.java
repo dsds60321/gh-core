@@ -66,6 +66,7 @@ public class BingoRouter {
                 .path(V1_HOST, builder -> builder
                         .POST("/reflections", reflectionHandler::create)
                         .GET("/reflections", reflectionHandler::search)
+                        .GET("/reflections/detail/{reflectionId}", reflectionHandler::detail)
                         .PUT("/reflections/{reflectionId}", reflectionHandler::updateStatus))
                 .build();
     }
@@ -78,4 +79,16 @@ public class BingoRouter {
                         .GET("/budget-items", budgetItemsHandler::search))
                 .build();
     }
+
+    @Bean
+    public RouterFunction<ServerResponse> notificationRoutes(NotificationHandler notificationHandler) {
+        return RouterFunctions.route()
+                .path(V1_HOST, builder -> builder
+                        .POST("/notifications/send", notificationHandler::sendPushNotification)
+                        .POST("/notifications/fcm-token", notificationHandler::registerFcmToken)
+                        .DELETE("/notifications/fcm-tokens", notificationHandler::deactivateAllTokens)
+                        .GET("/notifications/fcm-tokens", notificationHandler::getActiveTokens))
+                .build();
+    }
+
 }

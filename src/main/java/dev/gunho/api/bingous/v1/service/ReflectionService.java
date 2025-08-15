@@ -15,6 +15,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 @RequiredArgsConstructor
 @Service
 @Slf4j
@@ -24,29 +26,42 @@ public class ReflectionService {
     private final UserRepository userRepository;
     private final ReflectionRepository reflectionRepository;
 
-    public Mono<Boolean> create(ReflectionDto.Request request, ServerHttpRequest httpRequest) {
+    public Mono<Reflection> create(ReflectionDto.Request request, ServerHttpRequest httpRequest) {
         String key = httpRequest.getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
 
         if (Util.CommonUtil.isEmpty(key)) {
-            log.error("반성문 등록 중 오류가 발생했습니다");
-            return Mono.just(false);
+            log.error("반성문 등록 중 인증 키가 없습니다");
+            return Mono.empty();
         }
 
         return userRepository.findBySessionKey(key)
                 .flatMap(user -> {
+                    // 사용자 정보로 반성문 엔티티 생성 (요청의 authorUserId 대신 인증된 사용자 ID 사용)
+                    Reflection reflectionEntity = Reflection.builder()
+                            .coupleId(user.getCoupleId()) // 인증된 사용자의 커플 ID 사용
+                            .authorUserId(user.getId()) // 인증된 사용자 ID 사용
+                            .approverUserId(request.approverUserId())
+                            .incident(request.incident())
+                            .reason(request.reason())
+                            .improvement(request.improvement())
+                            .status("PENDING")
+                            .createdAt(LocalDateTime.now())
+                            .build();
 
-                    Reflection reflectionEntity = Reflection.createNew(request);
-
-                    return reflectionRepository.save(reflectionEntity)
-                            .map(scheduleEntity -> true);
-
+                    return reflectionRepository.save(reflectionEntity);
+                })
+                .doOnSuccess(reflection -> {
+                    if (reflection != null) {
+                        log.info("반성문이 성공적으로 등록되었습니다. reflectionId: {}, authorUserId: {}",
+                                reflection.getId(), reflection.getAuthorUserId());
+                    }
                 })
                 .onErrorResume(error -> {
-                    log.error("반성문 등록 중 오류가 발생했습니다: {}", error.getMessage());
-                    return Mono.just(false);
+                    log.error("반성문 등록 중 오류가 발생했습니다: {}", error.getMessage(), error);
+                    return Mono.empty(); // 또는 Mono.error(error)로 에러를 전파
                 });
-
     }
+
 
     /**
      * 반성문 상태 업데이트 (승인/반려)
@@ -105,6 +120,21 @@ public class ReflectionService {
                 });
     }
 
+    public Mono<Reflection> detail(ServerRequest request) {
+        String key = request.exchange().getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
+        Long reflectionId = Long.valueOf(request.pathVariable("reflectionId"));
+
+        if (Util.CommonUtil.isEmpty(key)) {
+            log.error("반성문 검색 중 인증 오류가 발생했습니다");
+            return Mono.error(new RuntimeException("인증 오류가 발생했습니다"));
+        }
+
+        return userRepository.findBySessionKey(key)
+                .flatMap(user -> {
+                    return reflectionRepository.findById(reflectionId);
+                })
+                .switchIfEmpty(Mono.empty());
+    }
 
     public Flux<Reflection> search(ServerRequest request) {
         String key = request.exchange().getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
