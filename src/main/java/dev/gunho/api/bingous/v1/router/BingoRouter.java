@@ -22,7 +22,8 @@ public class BingoRouter {
                         .POST("/sign-in", authHandler::signIn)
                         .GET("/sign-out", authHandler::signOut)
                         .POST("/sign-up/email/verify", authHandler::verifyEmail)
-                        .POST("/sign-up/email/confirm", authHandler::confirmEmail))
+                        .POST("/sign-up/email/confirm", authHandler::confirmEmail)
+                        .GET("/withdraw", authHandler::withDraw))
                 .build();
     }
 

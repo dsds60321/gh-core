@@ -121,4 +121,15 @@ public class AuthHandler {
                 .onErrorResume(ResponseHelper::handleException);
     }
 
+    public Mono<ServerResponse> withDraw(ServerRequest serverRequest) {
+        String key = serverRequest.exchange().getRequest().getHeaders().getFirst(CoreConstants.Network.AUTH_KEY);
+
+        return authService.withDraw(key)
+                .then(Mono.defer(() -> {
+                    ApiResponse<?> response = ApiResponse.success("탈퇴가 완료되었습니다.");
+                    return ResponseHelper.ok(response);
+                }))
+                .onErrorResume(ResponseHelper::handleException);
+    }
+
 }

@@ -5,6 +5,7 @@ import dev.gunho.api.bingous.v1.model.dto.SignInDto;
 import dev.gunho.api.bingous.v1.model.dto.SignUpDto;
 import dev.gunho.api.bingous.v1.model.entity.Couples;
 import dev.gunho.api.bingous.v1.model.entity.User;
+import dev.gunho.api.bingous.v1.model.enums.UserStatus;
 import dev.gunho.api.bingous.v1.repository.CoupleRepository;
 import dev.gunho.api.bingous.v1.repository.InviteTokenRepository;
 import dev.gunho.api.bingous.v1.repository.UserRepository;
@@ -259,6 +260,53 @@ public class AuthService {
                 });
     }
 
+    // 탈퇴하기
+    public Mono<Object> withDraw(String key) {
+        return userRepository.findBySessionKey(key)
+                .flatMap(user -> {
+                    log.info("User withdrawal - ID: {}", user.getId());
+
+                    // 사용자 상태를 DELETED로 변경
+                    return userRepository.updateUserStatus(user.getId(), UserStatus.DELETED.getValue())
+                            .flatMap(updateCount -> {
+                                if (updateCount > 0) {
+                                    log.info("User status updated to deleted - ID: {}", user.getId());
+
+                                    // 세션 무효화
+                                    return sessionService.invalidateAllUserSessions(user.getId())
+                                            .then(Mono.fromSupplier(() -> {
+                                                return new Object() {
+                                                    public final boolean success = true;
+                                                    public final String message = "탈퇴가 완료되었습니다.";
+                                                };
+                                            }));
+                                } else {
+                                    log.error("Failed to update user status - ID: {}", user.getId());
+                                    return Mono.fromSupplier(() -> {
+                                        return new Object() {
+                                            public final boolean success = false;
+                                            public final String message = "탈퇴 처리 중 오류가 발생했습니다.";
+                                        };
+                                    });
+                                }
+                            });
+                })
+                .switchIfEmpty(Mono.fromSupplier(() -> {
+                    return new Object() {
+                        public final boolean success = false;
+                        public final String message = "사용자 정보를 찾을 수 없습니다.";
+                    };
+                }))
+                .onErrorResume(error -> {
+                    log.error("Error in withDraw - key: {}", key, error);
+                    return Mono.fromSupplier(() -> {
+                        return new Object() {
+                            public final boolean success = false;
+                            public final String message = "탈퇴 처리 중 오류가 발생했습니다.";
+                        };
+                    });
+                });
+    }
 
     /**
      * Response 생성 헬퍼 메서드
@@ -270,5 +318,6 @@ public class AuthService {
                 .success(success)
                 .build();
     }
+
 
 }
