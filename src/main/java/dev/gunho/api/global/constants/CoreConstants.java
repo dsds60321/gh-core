@@ -1,5 +1,7 @@
 package dev.gunho.api.global.constants;
 
+import java.util.List;
+
 public class CoreConstants {
 
     /**
@@ -8,6 +10,11 @@ public class CoreConstants {
     public static class Host {
 
         public static final String V1_HOST = "/bingo-us/v1";
+        public static final String V1_ONGI_HOST = "/ongimemo/v1";
+        public static final List<String> V1_HOSTS = List.of(
+                "/bingo-us/v1",
+                "/ongimemo/v1"
+        );
         public static final String INVITE_URL = "bingous://signup?token=%s";
 
     }

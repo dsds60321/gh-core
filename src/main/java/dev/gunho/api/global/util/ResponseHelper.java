@@ -60,7 +60,6 @@ public class ResponseHelper {
         if (throwable instanceof ValidationException ex) {
             return validationError(ex.getValidationErrors());
         }
-
         // 기타 예외는 시스템 오류로 처리
         return systemError("시스템 오류가 발생했습니다.");
     }

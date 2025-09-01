@@ -13,8 +13,6 @@ import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
-import static dev.gunho.api.global.constants.CoreConstants.Host.V1_HOST;
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -29,6 +27,7 @@ public class SessionValidationFilter implements WebFilter {
         log.debug("path: {}", path);
         // 인증이 필요하지 않은 경로들
         if (isPublicPath(path)) {
+            log.debug("Public path: {}", path);
             return chain.filter(exchange);
         }
 
@@ -61,10 +60,23 @@ public class SessionValidationFilter implements WebFilter {
     }
 
     private boolean isPublicPath(String path) {
-        return path.startsWith(V1_HOST + "/sign-up") ||
-                path.startsWith(V1_HOST + "/sign-in") ||
-                path.startsWith(V1_HOST + "/sign-up/email/verify") ||
-                path.startsWith(V1_HOST + "/sign-up/email/confirm");
+        String[] publicSuffixes = new String[] {
+                "/sign-up",
+                "/sign-in",
+                "/sign-up/email/verify",
+                "/sign-up/email/confirm"
+        };
+
+
+        for (String hostPrefix : CoreConstants.Host.V1_HOSTS) {
+            for (String suffix : publicSuffixes) {
+                if (path.startsWith(hostPrefix + suffix)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
 
     private Mono<Void> unauthorizedResponse(ServerWebExchange exchange) {
