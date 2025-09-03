@@ -65,6 +65,10 @@ public class ApiResponse<T> {
         return new ApiResponse<>(false, "VALIDATION_ERROR", "올바르지 않은 입력값이 있습니다.", null, validationErrors);
     }
 
+    public static <T> ApiResponse<T> validationError(String message, Object validationErrors) {
+        return new ApiResponse<>(false, "VALIDATION_ERROR", message, null, validationErrors);
+    }
+
     // 시스템 오류 응답
     public static <T> ApiResponse<T> systemError(String message) {
         return new ApiResponse<>(false, "SYSTEM_ERROR", message, null, null);

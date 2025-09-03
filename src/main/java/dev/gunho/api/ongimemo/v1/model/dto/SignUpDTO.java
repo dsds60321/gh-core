@@ -1,7 +1,7 @@
 package dev.gunho.api.ongimemo.v1.model.dto;
 
-import dev.gunho.api.bingous.v1.model.enums.Gender;
-import dev.gunho.api.bingous.v1.model.enums.UserStatus;
+import dev.gunho.api.ongimemo.v1.model.enums.Gender;
+import dev.gunho.api.ongimemo.v1.model.enums.UserStatus;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -29,6 +29,6 @@ public class SignUpDTO {
     ){}
 
     @Builder
-    public record Response(String id, String email, String nickname, String token) {}
+    public record Response(String id, String email, String nickname) {}
 
 }

@@ -17,6 +17,7 @@ public class EmailTemplateUtil {
 
     private final TemplateRepository templateRepository;
 
+
     public Mono<String> generateContent(TemplateCode templateCode, List<String> variables) {
         return templateRepository.findByNameAndIsActive(templateCode.getName(), true)
                 .map(template -> Util.MsgUtil.getMessage(template.getContent(), variables))

@@ -12,7 +12,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Table("templates")
+@Table(schema = "common", name = "templates")
 public class TemplateEntity {
 
     @Id

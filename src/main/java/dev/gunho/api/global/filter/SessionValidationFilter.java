@@ -64,7 +64,9 @@ public class SessionValidationFilter implements WebFilter {
                 "/sign-up",
                 "/sign-in",
                 "/sign-up/email/verify",
-                "/sign-up/email/confirm"
+                "/sign-up/email/confirm",
+                "/request-sign-up",
+                "/complete-sign-up"
         };
 
 

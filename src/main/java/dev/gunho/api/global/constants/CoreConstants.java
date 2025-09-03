@@ -27,6 +27,8 @@ public class CoreConstants {
 
         public static final String EMAIL_VERIFY = "EMAIL_VERIFY:%s";
         public static final String COUPLE_INVITE = "COUPLE_INVITE:%s";
+        public static final String ONGI_SIGNUP_OBJ = "ONGI_SIGNUP_OBJ:%s";
+        public static final String ONGI_EMAIL_VERIFY = "ONGI_EMAIL_VERIFY:%s";
     }
 
 

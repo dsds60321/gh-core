@@ -18,7 +18,8 @@ public class OngiMemoRouter {
     RouterFunction<ServerResponse> authRoutes(AuthHandler authHandler) {
       return RouterFunctions.route()
               .path(V1_ONGI_HOST, builder -> builder
-                      .POST("/sign-up", authHandler::signUp))
+                      .POST("/request-sign-up", authHandler::signUpStep1)
+                      .POST("/complete-sign-up", authHandler::signUpStep2))
               .build();
     }
 }

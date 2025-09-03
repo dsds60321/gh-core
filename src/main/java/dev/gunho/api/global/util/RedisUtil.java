@@ -1,5 +1,7 @@
 package dev.gunho.api.global.util;
 
+import dev.gunho.api.ongimemo.v1.model.dto.SignUpCompleteDTO;
+import dev.gunho.api.ongimemo.v1.model.dto.SignUpDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
@@ -218,4 +220,17 @@ public class RedisUtil {
                 .doOnSuccess(result -> log.debug("Redis DECR - Key: {}, New value: {}", key, result))
                 .doOnError(error -> log.error("Redis DECR Error - Key: {}, Error: {}", key, error.getMessage()));
     }
+
+    public <T> Mono<T> getObject(String key, Class<T> clazz) {
+        return reactiveRedisTemplate.opsForValue()
+                .get(key)
+                .cast(clazz)
+                .doOnNext(value -> log.debug("Redis getObject success - Key: {}, Type: {}", key, clazz.getSimpleName()))
+                .doOnError(error -> log.error("Redis getObject failed - Key: {}, Type: {}", key, clazz.getSimpleName(), error))
+                .onErrorResume(error -> {
+                    log.warn("Redis getObject error, returning empty - Key: {}", key);
+                    return Mono.empty();
+                });
+    }
+
 }

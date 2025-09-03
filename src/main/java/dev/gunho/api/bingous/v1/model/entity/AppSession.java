@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table("app_sessions")
+@Table(schema = "common", name = "app_sessions")
 public class AppSession {
 
     @Id

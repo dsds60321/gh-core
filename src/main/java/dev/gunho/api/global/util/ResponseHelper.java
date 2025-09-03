@@ -1,5 +1,6 @@
 package dev.gunho.api.global.util;
 
+import dev.gunho.api.global.exception.CustomException;
 import dev.gunho.api.global.exception.ValidationException;
 import dev.gunho.api.global.model.dto.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -42,6 +43,16 @@ public class ResponseHelper {
     }
 
     /**
+     * 검증 오류 응답
+     */
+    public static Mono<ServerResponse> validationError(String message, Object validationErrors) {
+        return ServerResponse
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(ApiResponse.validationError(message, validationErrors));
+    }
+
+    /**
      * 시스템 오류 응답
      */
     public static Mono<ServerResponse> systemError(String message) {
@@ -59,6 +70,10 @@ public class ResponseHelper {
 
         if (throwable instanceof ValidationException ex) {
             return validationError(ex.getValidationErrors());
+        }
+
+        if (throwable instanceof CustomException ex) {
+            return validationError(ex.getMessage(), ex.getErrors());
         }
         // 기타 예외는 시스템 오류로 처리
         return systemError("시스템 오류가 발생했습니다.");

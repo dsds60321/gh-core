@@ -6,8 +6,11 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface UserRepository extends ReactiveCrudRepository<User, String> {
+public interface OngiMemoUserRepository extends ReactiveCrudRepository<User, Long> {
 
-    Mono<Boolean> existsById(String id);
+    Mono<Boolean> existsById(Long idx);
 
+    Mono<Boolean> existsByid(String id);
+
+    Mono<Boolean> existsByEmail(String email);
 }

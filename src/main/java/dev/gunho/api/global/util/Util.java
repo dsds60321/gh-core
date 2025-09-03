@@ -22,7 +22,6 @@ public class Util {
             return String.valueOf(code);
         }
 
-
         public static boolean isEmpty(Object obj) {
             if (obj == null) {
                 return true;
