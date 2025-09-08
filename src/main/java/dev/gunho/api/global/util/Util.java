@@ -112,5 +112,32 @@ public class Util {
                 return LocalDate.now();
             }
         }
+
+        public static LocalDateTime parseDateTime(String dateStr) {
+            if (Util.CommonUtil.isEmpty(dateStr)) {
+                log.warn("날짜 문자열이 null이거나 비어있습니다. 기본값을 사용합니다.");
+                return LocalDateTime.now();
+            }
+
+            try {
+                String normalizedDateStr = dateStr.trim();
+
+                // 공백을 T로 변환 (2024-02-01 00:00:00 -> 2024-02-01T00:00:00)
+                if (normalizedDateStr.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
+                    normalizedDateStr = normalizedDateStr.replace(" ", "T");
+                }
+
+                // 날짜만 있는 경우 (2024-02-01 -> 2024-02-01T00:00:00)
+                if (normalizedDateStr.matches("\\d{4}-\\d{2}-\\d{2}$")) {
+                    return LocalDate.parse(normalizedDateStr).atStartOfDay();
+                }
+
+                return LocalDateTime.parse(normalizedDateStr);
+
+            } catch (Exception e) {
+                log.warn("날짜 파싱 오류: {}. 기본값을 사용합니다. Error: {}", dateStr, e.getMessage());
+                return LocalDateTime.now();
+            }
+        }
     }
 }
