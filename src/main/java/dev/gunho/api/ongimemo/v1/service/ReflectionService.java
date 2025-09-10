@@ -39,7 +39,6 @@ public class ReflectionService {
                 .orElse(LocalDate.now().with(TemporalAdjusters.lastDayOfMonth()).atTime(23, 59, 59));
 
         log.info("search - Start Date: {}, End Date: {}", startDate, endDate);
-
         return ongiMemoReflectionRepository.findAllByCreatedAtBetween(startDate, endDate);
     }
 }

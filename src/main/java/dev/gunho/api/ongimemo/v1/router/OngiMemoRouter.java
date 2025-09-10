@@ -2,6 +2,7 @@ package dev.gunho.api.ongimemo.v1.router;
 
 import dev.gunho.api.ongimemo.v1.handler.AuthHandler;
 import dev.gunho.api.ongimemo.v1.handler.DashboardHandler;
+import dev.gunho.api.ongimemo.v1.handler.PraiseHandler;
 import dev.gunho.api.ongimemo.v1.handler.ReflectionHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +30,7 @@ public class OngiMemoRouter {
     RouterFunction<ServerResponse> dashboardRoutes(DashboardHandler dashboardHandler) {
         return RouterFunctions.route()
                 .path(V1_ONGI_HOST, builder -> builder
-                        .POST("/dashboard", dashboardHandler::getDashboard))
+                        .GET("/dashboard", dashboardHandler::getDashboard))
                 .build();
     }
 
@@ -38,6 +39,14 @@ public class OngiMemoRouter {
         return RouterFunctions.route()
                 .path(V1_ONGI_HOST, builder -> builder
                         .GET("/reflections", reflectionHandler::getAllByCreatedAt))
+                .build();
+    }
+
+    @Bean(name = "ongiMemoPraiseRoutes")
+    RouterFunction<ServerResponse> praiseRoutes(PraiseHandler praiseHandler) {
+        return RouterFunctions.route()
+                .path(V1_ONGI_HOST, builder -> builder
+                        .GET("/praises", praiseHandler::getAllByCreatedAt))
                 .build();
     }
 }

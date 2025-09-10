@@ -40,7 +40,7 @@ public class PraiseService {
                 .map(Util.Date::parseDateTime)
                 .orElse(LocalDate.now().with(TemporalAdjusters.lastDayOfMonth()).atTime(23, 59, 59));
 
-
+        log.info("search - Start Date: {}, End Date: {}", startDate, endDate);
         return praiseRepository.findAllByCreatedAtBetween(startDate, endDate);
     }
 }

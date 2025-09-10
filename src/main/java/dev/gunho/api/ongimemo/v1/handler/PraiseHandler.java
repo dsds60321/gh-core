@@ -1,5 +1,8 @@
 package dev.gunho.api.ongimemo.v1.handler;
 
+import dev.gunho.api.global.model.dto.ApiResponse;
+import dev.gunho.api.global.util.ResponseHelper;
+import dev.gunho.api.ongimemo.v1.service.PraiseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -12,8 +15,12 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class PraiseHandler {
 
-    public Mono<ServerResponse> getListPraise(ServerRequest request) {
-        log.info("PraiseHandler.getListPraise called");
-        return null;
+    private final PraiseService praiseService;
+
+    public Mono<ServerResponse> getAllByCreatedAt(ServerRequest serverRequest) {
+        return praiseService.search(serverRequest)
+                .collectList()
+                .flatMap(result -> ResponseHelper.ok(ApiResponse.success(result)))
+                .onErrorResume(ResponseHelper::handleException);
     }
 }
