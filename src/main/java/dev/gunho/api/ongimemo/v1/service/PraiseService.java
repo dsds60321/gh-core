@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -42,5 +43,9 @@ public class PraiseService {
 
         log.info("search - Start Date: {}, End Date: {}", startDate, endDate);
         return praiseRepository.findAllByCreatedAtBetween(startDate, endDate);
+    }
+
+    public Mono<?> create(PraiseDto.Request request) {
+        return null;
     }
 }
