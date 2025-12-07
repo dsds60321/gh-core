@@ -1255,3 +1255,756 @@ Using generated security password: e345ac26-70f1-45a0-98f4-48d5f86bd690
 2025-12-08T00:23:09.863+09:00  INFO 48933 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
 2025-12-08T00:23:09.863+09:00  INFO 48933 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
 2025-12-08T00:23:09.864+09:00  INFO 48933 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-08T00:24:35.147+09:00  INFO 49432 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.16 with PID 49432 (/Users/kanggeonho/workspace/server/gh-core/build/classes/java/main started by kanggeonho in /Users/kanggeonho/workspace/server/gh-core)
+2025-12-08T00:24:35.148+09:00 DEBUG 49432 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-12-08T00:24:35.148+09:00  INFO 49432 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-12-08T00:24:35.365+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:24:35.365+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-08T00:24:35.415+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 15 R2DBC repository interfaces.
+2025-12-08T00:24:35.421+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:24:35.421+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.BudgetItemsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.428+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.FriendsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.PraiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockDailyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockMetaRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:24:35.429+09:00  INFO 49432 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-12-08T00:24:35.642+09:00 ERROR 49432 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-12-08T00:24:35.926+09:00  INFO 49432 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d15fb629-092c-486c-888d-1d06ec1d9689
+
+2025-12-08T00:24:36.023+09:00  INFO 49432 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.0 created.
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.0
+2025-12-08T00:24:36.026+09:00  INFO 49432 --- [core] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@595184d8
+2025-12-08T00:24:36.054+09:00  INFO 49432 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 10001 (http)
+2025-12-08T00:24:36.055+09:00  INFO 49432 --- [core] [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2025-12-08T00:24:36.055+09:00  INFO 49432 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-08T00:24:36.059+09:00  INFO 49432 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.053 seconds (process running for 1.2)
+2025-12-08T00:25:00.011+09:00  INFO 49432 --- [core] [scheduling-1] d.g.a.s.v1.scheduler.TwelveScheduler     : 뉴욕 기중 17시 dailyStock 데이터 동기화 시작
+2025-12-08T00:25:00.037+09:00  INFO 49432 --- [core] [scheduling-1] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] stock_meta 처리 시작
+2025-12-08T00:25:00.112+09:00 DEBUG 49432 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.client.TwelveClient     : TwelveData time_series 호출 - symbol=AAPL
+2025-12-08T00:25:00.641+09:00  INFO 49432 --- [core] [reactor-http-nio-3] d.g.api.stock.v1.service.TwelveService   : response meta : TwelveDataTimeSeriesResponse[meta=Meta[symbol=AAPL, interval=1day, currency=USD, exchange=NASDAQ, micCode=XNGS], values=[Value[dateTime=2025-12-04, open=284.10001, high=284.73001, low=278.59000, close=280.70001, volume=43989100], Value[dateTime=2025-12-05, open=280.54001, high=281.14001, low=278.049988, close=278.78000, volume=47244000]], status=ok, message=null, code=null] 
+2025-12-08T00:25:00.649+09:00  WARN 49432 --- [core] [reactor-tcp-nio-11] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:25:00.650+09:00 ERROR 49432 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] ERROR : AAPL | executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date' 
+2025-12-08T00:25:00.650+09:00 ERROR 49432 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.service.TwelveService   : [notiDailyStock] 일별 데이터 수집 실패 - symbol=AAPL
+
+org.springframework.dao.DuplicateKeyException: executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:245) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:157) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$29(Flux.java:7353) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$30(Flux.java:7406) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:403) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:480) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:368) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:867) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:994) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:66) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.r2dbc.spi.R2dbcDataIntegrityViolationException: Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:50) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:25) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.from(ExceptionFactory.java:83) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.MariadbResult.lambda$map$2(MariadbResult.java:137) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.7.7.jar:3.7.7]
+	... 38 common frames omitted
+
+2025-12-08T00:25:00.653+09:00 DEBUG 49432 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.client.TwelveClient     : TwelveData time_series 호출 - symbol=NVDL
+2025-12-08T00:25:00.888+09:00  INFO 49432 --- [core] [reactor-http-nio-3] d.g.api.stock.v1.service.TwelveService   : response meta : TwelveDataTimeSeriesResponse[meta=Meta[symbol=NVDL, interval=1day, currency=USD, exchange=NASDAQ, micCode=XNMS], values=[Value[dateTime=2025-12-04, open=84.80000, high=87.40000, low=83.26000, close=86.39000, volume=12239000], Value[dateTime=2025-12-05, open=86.77000, high=87.49000, low=83.88000, close=85.34000, volume=9883700]], status=ok, message=null, code=null] 
+2025-12-08T00:25:00.891+09:00  WARN 49432 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'NVDL-2025-12-05' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:25:00.891+09:00 ERROR 49432 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] ERROR : NVDL | executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'NVDL-2025-12-05' for key 'uk_symbol_trade_date' 
+2025-12-08T00:25:00.891+09:00 ERROR 49432 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.service.TwelveService   : [notiDailyStock] 일별 데이터 수집 실패 - symbol=NVDL
+
+org.springframework.dao.DuplicateKeyException: executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'NVDL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:245) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:157) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$29(Flux.java:7353) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$30(Flux.java:7406) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:403) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:480) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:368) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:867) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:994) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:66) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.r2dbc.spi.R2dbcDataIntegrityViolationException: Duplicate entry 'NVDL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:50) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:25) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.from(ExceptionFactory.java:83) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.MariadbResult.lambda$map$2(MariadbResult.java:137) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.7.7.jar:3.7.7]
+	... 38 common frames omitted
+
+2025-12-08T00:25:55.151+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-08T00:25:55.151+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-08T00:25:55.152+09:00  INFO 49432 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-12-08T00:25:57.232+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2025-12-08T00:25:57.232+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-08T00:25:57.232+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-08T00:25:57.232+09:00  INFO 49432 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-08T00:25:58.289+09:00  INFO 49460 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.16 with PID 49460 (/Users/kanggeonho/workspace/server/gh-core/build/classes/java/main started by kanggeonho in /Users/kanggeonho/workspace/server/gh-core)
+2025-12-08T00:25:58.289+09:00 DEBUG 49460 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-12-08T00:25:58.290+09:00  INFO 49460 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-12-08T00:25:58.473+09:00  INFO 49462 --- [core] [main] dev.gunho.api.CoreApplication            : Starting CoreApplication using Java 17.0.16 with PID 49462 (/Users/kanggeonho/workspace/server/gh-core/build/classes/java/main started by kanggeonho in /Users/kanggeonho/workspace/server/gh-core)
+2025-12-08T00:25:58.473+09:00 DEBUG 49462 --- [core] [main] dev.gunho.api.CoreApplication            : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-12-08T00:25:58.474+09:00  INFO 49462 --- [core] [main] dev.gunho.api.CoreApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-12-08T00:25:58.517+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:25:58.518+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-08T00:25:58.570+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 15 R2DBC repository interfaces.
+2025-12-08T00:25:58.575+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:25:58.575+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.BudgetItemsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.582+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.FriendsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.PraiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockDailyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockMetaRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.583+09:00  INFO 49460 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-12-08T00:25:58.696+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:25:58.697+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-08T00:25:58.752+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 15 R2DBC repository interfaces.
+2025-12-08T00:25:58.757+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-08T00:25:58.758+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-08T00:25:58.768+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AnniversaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.769+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.AppSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.769+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.BudgetItemsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.769+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.CoupleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.InviteTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.ScheduleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.bingous.v1.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.global.repository.TemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.FriendsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoReflectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.OngiMemoUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.770+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.ongimemo.v1.repository.PraiseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.771+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockDailyRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.771+09:00  INFO 49462 --- [core] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface dev.gunho.api.stock.v1.repository.StockMetaRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-08T00:25:58.771+09:00  INFO 49462 --- [core] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-12-08T00:25:58.823+09:00 ERROR 49460 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-12-08T00:25:58.987+09:00 ERROR 49462 --- [core] [main] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-12-08T00:25:59.130+09:00  INFO 49460 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c045339e-237e-4a8c-b7a9-a7481260f8b1
+
+2025-12-08T00:25:59.232+09:00  INFO 49460 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.0 created.
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-08T00:25:59.235+09:00  INFO 49460 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.0
+2025-12-08T00:25:59.236+09:00  INFO 49460 --- [core] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@57eed461
+2025-12-08T00:25:59.265+09:00  INFO 49460 --- [core] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 10001 (http)
+2025-12-08T00:25:59.265+09:00  INFO 49460 --- [core] [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2025-12-08T00:25:59.265+09:00  INFO 49460 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-08T00:25:59.270+09:00  INFO 49460 --- [core] [main] dev.gunho.api.CoreApplication            : Started CoreApplication in 1.145 seconds (process running for 1.301)
+2025-12-08T00:25:59.289+09:00  INFO 49462 --- [core] [main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: af20edd8-1817-4b50-bf56-ed7b8922ea6b
+
+2025-12-08T00:25:59.380+09:00  INFO 49462 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.0 created.
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.0
+2025-12-08T00:25:59.384+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5f803481
+2025-12-08T00:26:00.005+09:00  INFO 49460 --- [core] [scheduling-1] d.g.a.s.v1.scheduler.TwelveScheduler     : 뉴욕 기중 17시 dailyStock 데이터 동기화 시작
+2025-12-08T00:26:00.021+09:00  INFO 49460 --- [core] [scheduling-1] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] stock_meta 처리 시작
+2025-12-08T00:26:00.086+09:00 DEBUG 49460 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.client.TwelveClient     : TwelveData time_series 호출 - symbol=AAPL
+2025-12-08T00:26:00.533+09:00  INFO 49460 --- [core] [reactor-http-nio-3] d.g.api.stock.v1.service.TwelveService   : response meta : TwelveDataTimeSeriesResponse[meta=Meta[symbol=AAPL, interval=1day, currency=USD, exchange=NASDAQ, micCode=XNGS], values=[Value[dateTime=2025-12-02, open=283, high=287.39999, low=282.63000, close=286.19000, volume=53669500], Value[dateTime=2025-12-03, open=286.20001, high=288.62000, low=283.29999, close=284.14999, volume=43538700], Value[dateTime=2025-12-04, open=284.10001, high=284.73001, low=278.59000, close=280.70001, volume=43989100], Value[dateTime=2025-12-05, open=280.54001, high=281.14001, low=278.049988, close=278.78000, volume=47244000]], status=ok, message=null, code=null] 
+2025-12-08T00:26:00.541+09:00  WARN 49460 --- [core] [reactor-tcp-nio-10] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'AAPL-2025-12-04' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:26:00.541+09:00  WARN 49460 --- [core] [reactor-tcp-nio-11] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:26:00.542+09:00 ERROR 49460 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] ERROR : AAPL | executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date' 
+2025-12-08T00:26:00.542+09:00 ERROR 49460 --- [core] [reactor-tcp-nio-10] reactor.core.publisher.Operators         : Operator called default onErrorDropped
+
+org.springframework.dao.DuplicateKeyException: executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'AAPL-2025-12-04' for key 'uk_symbol_trade_date'
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:245) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:157) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$29(Flux.java:7353) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$30(Flux.java:7406) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:403) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:480) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:368) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:867) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:994) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:66) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.r2dbc.spi.R2dbcDataIntegrityViolationException: Duplicate entry 'AAPL-2025-12-04' for key 'uk_symbol_trade_date'
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:50) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:25) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.from(ExceptionFactory.java:83) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.MariadbResult.lambda$map$2(MariadbResult.java:137) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.7.7.jar:3.7.7]
+	... 38 common frames omitted
+
+2025-12-08T00:26:00.542+09:00 ERROR 49460 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.service.TwelveService   : [notiDailyStock] 일별 데이터 수집 실패 - symbol=AAPL
+
+org.springframework.dao.DuplicateKeyException: executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:245) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:157) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$29(Flux.java:7353) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$30(Flux.java:7406) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:403) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:480) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:368) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:867) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:994) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:66) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.r2dbc.spi.R2dbcDataIntegrityViolationException: Duplicate entry 'AAPL-2025-12-05' for key 'uk_symbol_trade_date'
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:50) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:25) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.from(ExceptionFactory.java:83) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.MariadbResult.lambda$map$2(MariadbResult.java:137) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.7.7.jar:3.7.7]
+	... 38 common frames omitted
+
+2025-12-08T00:26:00.545+09:00 DEBUG 49460 --- [core] [reactor-tcp-nio-11] d.g.api.stock.v1.client.TwelveClient     : TwelveData time_series 호출 - symbol=NVDL
+2025-12-08T00:26:00.767+09:00  INFO 49460 --- [core] [reactor-http-nio-3] d.g.api.stock.v1.service.TwelveService   : response meta : TwelveDataTimeSeriesResponse[meta=Meta[symbol=NVDL, interval=1day, currency=USD, exchange=NASDAQ, micCode=XNMS], values=[Value[dateTime=2025-12-02, open=84.92000, high=88.53000, low=83.31000, close=84.55000, volume=12600300], Value[dateTime=2025-12-03, open=84.30500, high=85.54000, low=82.46000, close=82.95000, volume=10990400], Value[dateTime=2025-12-04, open=84.80000, high=87.40000, low=83.26000, close=86.39000, volume=12239000], Value[dateTime=2025-12-05, open=86.77000, high=87.49000, low=83.88000, close=85.34000, volume=9883700]], status=ok, message=null, code=null] 
+2025-12-08T00:26:00.770+09:00  WARN 49460 --- [core] [reactor-tcp-nio-2] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'NVDL-2025-12-04' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:26:00.770+09:00  WARN 49460 --- [core] [reactor-tcp-nio-11] o.m.r2dbc.message.server.ErrorPacket     : Error: 'Duplicate entry 'NVDL-2025-12-05' for key 'uk_symbol_trade_date'' sqlState='23000' code=1062 
+2025-12-08T00:26:00.770+09:00 ERROR 49460 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.service.TwelveService   : [saveDailyStock] ERROR : NVDL | executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'NVDL-2025-12-04' for key 'uk_symbol_trade_date' 
+2025-12-08T00:26:00.771+09:00 ERROR 49460 --- [core] [reactor-tcp-nio-2] d.g.api.stock.v1.service.TwelveService   : [notiDailyStock] 일별 데이터 수집 실패 - symbol=NVDL
+
+org.springframework.dao.DuplicateKeyException: executeMany; SQL [INSERT INTO stock.stock_daily (symbol, trade_date, open_price, high_price, low_price, close_price, volume, turnover, adj_close) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]; Duplicate entry 'NVDL-2025-12-04' for key 'uk_symbol_trade_date'
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:245) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:157) ~[spring-r2dbc-6.2.8.jar:6.2.8]
+	at reactor.core.publisher.Flux.lambda$onErrorMap$29(Flux.java:7353) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Flux.lambda$onErrorResume$30(Flux.java:7406) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:403) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:480) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2230) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:210) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:547) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:788) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:901) ~[reactor-pool-1.1.3.jar:1.1.3]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:241) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:204) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2572) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:68) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:368) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:846) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:612) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:592) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.innerError(FluxFlatMap.java:867) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onError(FluxFlatMap.java:994) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:201) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drainRegular(FluxWindowPredicate.java:670) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.drain(FluxWindowPredicate.java:748) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowFlux.onNext(FluxWindowPredicate.java:790) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onNext(FluxWindowPredicate.java:268) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
+	at org.mariadb.r2dbc.client.Exchange.emit(Exchange.java:66) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:770) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.SimpleClient$ServerMessageSubscriber.onNext(SimpleClient.java:712) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.r2dbc.spi.R2dbcDataIntegrityViolationException: Duplicate entry 'NVDL-2025-12-04' for key 'uk_symbol_trade_date'
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:50) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.createException(ExceptionFactory.java:25) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.ExceptionFactory.from(ExceptionFactory.java:83) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at org.mariadb.r2dbc.client.MariadbResult.lambda$map$2(MariadbResult.java:137) ~[r2dbc-mariadb-1.3.0.jar:1.3.0]
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:179) ~[reactor-core-3.7.7.jar:3.7.7]
+	... 38 common frames omitted
+
+2025-12-08T00:26:01.499+09:00  WARN 49462 --- [core] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-08T00:26:01.500+09:00  INFO 49462 --- [core] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2025-12-08T00:26:01.501+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-08T00:26:01.501+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-08T00:26:01.502+09:00  INFO 49462 --- [core] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-08T00:26:01.515+09:00  INFO 49462 --- [core] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-08T00:26:01.524+09:00 ERROR 49462 --- [core] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 10001 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 10001 or configure this application to listen on another port.
+
+2025-12-08T00:26:08.582+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-08T00:26:08.583+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-08T00:26:08.583+09:00  INFO 49460 --- [core] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-12-08T00:26:10.687+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2025-12-08T00:26:10.687+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-08T00:26:10.687+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-08T00:26:10.688+09:00  INFO 49460 --- [core] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.

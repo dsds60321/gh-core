@@ -13,8 +13,7 @@ public class TwelveScheduler {
 
     private final TwelveService twelveService;
     // 미국 기준  15:00
-//    @Scheduled(cron = "0 0 17 * * MON-FRI", zone = "America/New_York")
-    @Scheduled(cron = "0 23 00 * * MON-SUN", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 0 17 * * MON-FRI", zone = "America/New_York")
     public void saveDailyStock() {
         log.info("뉴욕 기중 17시 dailyStock 데이터 동기화 시작");
         twelveService.saveDailyStock()

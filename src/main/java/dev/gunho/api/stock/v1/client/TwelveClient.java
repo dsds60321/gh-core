@@ -38,7 +38,7 @@ public class TwelveClient {
                         .queryParam("interval", INTERVAL.ONE_DAY.getValue())
                         .queryParam("outputsize", 5000)
                         .queryParam("order", "asc")
-                        .queryParam("start_date", LocalDate.now().minusDays(3))
+                        .queryParam("start_date", LocalDate.now())
                         .queryParam("apikey", properties.getApiKey())
                         .build())
                 .accept(MediaType.APPLICATION_JSON)

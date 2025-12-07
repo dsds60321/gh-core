@@ -3,14 +3,20 @@ package dev.gunho.api.stock.v1.service;
 import dev.gunho.api.global.util.Util;
 import dev.gunho.api.stock.v1.client.TwelveClient;
 import dev.gunho.api.stock.v1.entity.StockDailyEntity;
+import dev.gunho.api.stock.v1.entity.StockMetaEntity;
 import dev.gunho.api.stock.v1.model.TwelveDataTimeSeriesResponse;
 import dev.gunho.api.stock.v1.repository.StockDailyRepository;
 import dev.gunho.api.stock.v1.repository.StockMetaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -35,27 +41,9 @@ public class TwelveService {
                             }
 
                             return Flux.fromIterable(response.valuesOrEmpty())
-                                    .map(value -> {
-                                        StockDailyEntity origin = response.toEntity(meta, value);
-                                        log.info("origin entity class = {}", origin.getClass());
-                                        return StockDailyEntity.builder()
-                                                .symbol(origin.getSymbol())
-                                                .tradeDate(origin.getTradeDate())
-                                                .openPrice(origin.getOpenPrice())
-                                                .highPrice(origin.getHighPrice())
-                                                .lowPrice(origin.getLowPrice())
-                                                .closePrice(origin.getClosePrice())
-                                                .adjClose(origin.getAdjClose())
-                                                .volume(origin.getVolume())
-                                                .turnover(origin.getTurnover())
-                                                .build();
-                                    })
-                                    .doOnNext(e -> log.info("will save entity class = {}", e.getClass()))
+                                    .map(value -> response.toEntity(meta, value))
                                     .flatMap(stockDailyRepository::save)
-
-                                    .doOnError(ex -> log.error("[saveDailyStock] ERROR : {} | {} ",
-                                            stockMeta.getSymbol(), ex.getMessage()));
-
+                                    .doOnError(ex -> log.error("[saveDailyStock] ERROR : {} | {} ", stockMeta.getSymbol(), ex.getMessage()));
 
                         })
                         .onErrorResume(ex -> {
@@ -64,5 +52,4 @@ public class TwelveService {
                         }))
                 .then();
     }
-
 }
