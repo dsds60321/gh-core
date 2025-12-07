@@ -1,8 +1,10 @@
 package dev.gunho.api.global.util;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -42,6 +44,20 @@ public class Util {
 
         public static boolean isNotEmpty(Object obj) {
             return !CommonUtil.isEmpty(obj);
+        }
+
+
+
+        public static BigDecimal toBigDecimal(String raw) {
+            return StringUtils.hasText(raw) ? new BigDecimal(raw) : null;
+        }
+
+        public static Long toLong(String raw) {
+            try {
+                return StringUtils.hasText(raw) ? Long.parseLong(raw.replaceAll(",", "")) : null;
+            } catch (NumberFormatException ex) {
+                return null;
+            }
         }
 
     }

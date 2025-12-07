@@ -1,0 +1,1 @@
+GET https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min&start_date=2025-12-07&apikey=demo

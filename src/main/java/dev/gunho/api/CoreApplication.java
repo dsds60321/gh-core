@@ -4,9 +4,11 @@ import dev.gunho.api.global.config.GhBeanNameGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @ComponentScan(nameGenerator = GhBeanNameGenerator.class)
 @SpringBootApplication
+@EnableScheduling
 public class CoreApplication {
 
     public static void main(String[] args) {
