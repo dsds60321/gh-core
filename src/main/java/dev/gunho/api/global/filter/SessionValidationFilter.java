@@ -1,7 +1,9 @@
 package dev.gunho.api.global.filter;
 
 import dev.gunho.api.bingous.v1.service.SessionService;
+import dev.gunho.api.global.annotation.GhSession;
 import dev.gunho.api.global.constants.CoreConstants;
+import dev.gunho.api.global.model.dto.SessionDto;
 import dev.gunho.api.global.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,11 +49,14 @@ public class SessionValidationFilter implements WebFilter {
         // 세션 검증
         return sessionService.validateSession(sessionKey)
                 .flatMap(session -> {
+                    SessionDto sessionDto = SessionDto.from(session); // 어노테이션용 session 생성
+
                     // 요청에 사용자 정보 추가 (다른 서비스에서 사용할 수 있도록)
                     exchange.getAttributes().put("userId", session.getUserId());
-                    exchange.getAttributes().put("sessionKey", sessionKey); // ✅ 이제 정상 작동!
+                    exchange.getAttributes().put("sessionKey", sessionKey);
                     exchange.getAttributes().put("sessionId", session.getId());
-                    return chain.filter(exchange);
+                    return chain.filter(exchange)
+                            .contextWrite(ctx -> ctx.put(GhSession.class, sessionDto));
                 })
                 .onErrorResume(error -> {
                     log.warn("Session validation failed for key: {}", sessionKey, error);

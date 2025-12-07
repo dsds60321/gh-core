@@ -1,9 +1,8 @@
 package dev.gunho.api.ongimemo.v1.router;
 
-import dev.gunho.api.ongimemo.v1.handler.AuthHandler;
-import dev.gunho.api.ongimemo.v1.handler.DashboardHandler;
-import dev.gunho.api.ongimemo.v1.handler.PraiseHandler;
-import dev.gunho.api.ongimemo.v1.handler.ReflectionHandler;
+import dev.gunho.api.global.annotation.GhSession;
+import dev.gunho.api.global.model.dto.SessionDto;
+import dev.gunho.api.ongimemo.v1.handler.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +37,8 @@ public class OngiMemoRouter {
     RouterFunction<ServerResponse> reflectionRoutes(ReflectionHandler reflectionHandler) {
         return RouterFunctions.route()
                 .path(V1_ONGI_HOST, builder -> builder
-                        .GET("/reflections", reflectionHandler::getAllByCreatedAt))
+                        .GET("/reflections", reflectionHandler::getAllByCreatedAt)
+                        .POST("/reflections", reflectionHandler::createReflection))
                 .build();
     }
 
@@ -46,7 +46,17 @@ public class OngiMemoRouter {
     RouterFunction<ServerResponse> praiseRoutes(PraiseHandler praiseHandler) {
         return RouterFunctions.route()
                 .path(V1_ONGI_HOST, builder -> builder
-                        .GET("/praises", praiseHandler::getAllByCreatedAt))
+                        .GET("/praises", praiseHandler::getAllByCreatedAt)
+                        .POST("/praises", praiseHandler::createPraise))
+                .build();
+    }
+
+    @Bean(name = "ongiMemoFriendsRoutes")
+    RouterFunction<ServerResponse> friendsRoutes(FriendsHandler friendsHandler) {
+        return RouterFunctions.route()
+                .path(V1_ONGI_HOST, builder -> builder
+                        .GET("/friends", friendsHandler::getFriends)
+                        .POST("/friends/invite", friendsHandler::inviteFriend))
                 .build();
     }
 }

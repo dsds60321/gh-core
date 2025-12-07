@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -40,5 +41,9 @@ public class ReflectionService {
 
         log.info("search - Start Date: {}, End Date: {}", startDate, endDate);
         return ongiMemoReflectionRepository.findAllByCreatedAtBetween(startDate, endDate);
+    }
+
+    public Mono<?> create(ReflectionDTO.Request request) {
+        return null;
     }
 }
